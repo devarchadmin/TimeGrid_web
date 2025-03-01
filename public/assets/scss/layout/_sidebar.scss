@@ -17,7 +17,8 @@
 
 .header-logo {
   img {
-    @apply h-full w-[150px];
+    @apply h-full w-[125px];
+    @apply pt-5 pb-5;
   }
   .dark-logo {
     @apply hidden;

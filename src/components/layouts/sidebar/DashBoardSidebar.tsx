@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import sidebarMainLogo from "../../../../public/assets/images/logo/logo.svg";
-import sidebarDarkLogo from "../../../../public/assets/images/logo/logo-white.svg";
+import sidebarMainLogo from "../../../../public/assets/images/logo/GB-Full-Logo.svg";
+import sidebarDarkLogo from "../../../../public/assets/images/logo/GW-Full-Logo.svg";
 import useGlobalContext from "@/hooks/use-context";
 import sidebarImg from "../../../../public/assets/images/bg/side-bar.png";
 import sidebarData from "@/data/sidebar-data";
@@ -124,13 +124,13 @@ const DashBoardSidebar = () => {
         <div className="main-sidebar-header">
           <Link href="/" className="header-logo">
             <Image
-              className="main-logo"
+              className="main-logo w-1/3"
               src={sidebarMainLogo}
               priority
               alt="logo"
             />
             <Image
-              className="dark-logo"
+              className="dark-logo h-5"
               src={sidebarDarkLogo}
               priority
               alt="logo"

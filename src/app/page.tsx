@@ -6,7 +6,7 @@ import HomeMainArea from "@/components/pagesUI/apps/home/HomeMainArea";
 const Home = () => {
   return (
     <>
-      <MetaData pageTitle="HRM Dashboard">
+      <MetaData pageTitle="Time Grid Admin Dashboard">
         <Wrapper>
           <HomeMainArea />
         </Wrapper>
