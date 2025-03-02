@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import logoSvg from '../../../../public/assets/images/logo/logo.svg';
-import logoWhite from '../../../../public/assets/images/logo/logo-white.svg';
+import logoSvg from '../../../../public/assets/images/logo/GB-Full-Logo.svg';
+import logoWhite from '../../../../public/assets/images/logo/GW-Full-Logo.svg';
 import SignInBasicForm from '@/form/auth/SignIn/basic-form';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 
@@ -21,8 +21,8 @@ const SignInBasicMain = () => {
                                 <Link href="#" className="authentication-logo logo-white">
                                     <Image style={{ width: "100%", height: "auto" }} src={logoWhite} alt="logo" />
                                 </Link>
-                                <h4 className="mb-[15px]">Welcome to Manez</h4>
-                                <p className="mb-[15px]">Please sign-in to your account and start the adventure</p>
+                                <h4 className="mb-[15px]">Welcome to Time Grid</h4>
+                                <p className="mb-[15px]">Please sign-in to your account and start the monitoring</p>
                             </div>
                             {/* Sign in basic form area*/}
                             <SignInBasicForm />
@@ -30,14 +30,9 @@ const SignInBasicMain = () => {
                             <p className="text-center">
                                 <span>New on our platform? </span>
                                 <Link href="/auth/signup-basic">
-                                    <span>Create an account</span>
+                                    <span className='underline'>Create an account</span>
                                 </Link>
                             </p>
-                            <div className="divider mb-2.5 text-center">
-                                <div className="divider-text">or</div>
-                            </div>
-                            {/* Social link*/}
-                            <SocialLinks />
                         </div>
                     </div>
                 </div>

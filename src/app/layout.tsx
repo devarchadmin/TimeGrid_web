@@ -23,7 +23,7 @@ export default function RootLayout({
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link rel="icon" href="/src/app/GW-Fav.svg" />
+          <link rel="icon" href="public/assets/images/logo/GW-Fav.svg" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
