@@ -86,7 +86,7 @@ const ResetPasswordBasicForm = () => {
                 <button className="btn btn-primary w-full" type="submit">Set new password</button>
             </div>
             <div className="text-center">
-                <Link href="/auth/signin-basic">Back to login</Link>
+                <Link href="/auth/signin">Back to login</Link>
             </div>
         </form>
     );

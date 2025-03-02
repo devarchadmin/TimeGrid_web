@@ -83,72 +83,6 @@ const HeaderAction = () => {
             <div className="app__header-action">
                 <ul>
                     <li>
-                        <div className="nav-item relative">
-                            <button id="langdropdown" className="langdropdown" onClick={handleShowLanguage}>
-                                <span>
-                                    <WorldSvg/>
-                                </span>
-                                <span className="language-text">English</span>
-                            </button>
-                            {isOpenLanguage && (
-                            <div className={`lang__dropdown ${isOpenLanguage ? "lang-enable" : " "}`} >
-                                <ul>
-                                    <li>
-                                        <Link className="lang__item" href="#">
-                                            <div className="lang__icon">
-                                                <EnglishFlag/>
-                                            </div>
-                                            <div className="lang__country">
-                                                <span>English</span>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="lang__item" href="#">
-                                            <div className="lang__icon">
-                                                <ArabicFlag/>
-                                            </div>
-                                            <div className="lang__country">
-                                                <span>لعربية</span>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="lang__item" href="#">
-                                            <div className="lang__icon">
-                                               <ChineseFlag/>
-                                            </div>
-                                            <div className="lang__country">
-                                                <span>简体中文</span>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="lang__item" href="#">
-                                            <div className="lang__icon">
-                                              <GermanFlag/>
-                                            </div>
-                                            <div className="lang__country">
-                                                <span>Deutsch</span>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="lang__item" href="#">
-                                            <div className="lang__icon">
-                                              <FrenchFlag/>
-                                            </div>
-                                            <div className="lang__country">
-                                                <span>Français</span>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            )}
-                        </div>
-                    </li>
-                    <li>
                         <button onClick={handleToggleFullScreen} className='flex'>
                             <div className="nav-item">
                                 <div className="notification__icon cursor-pointer">
@@ -157,7 +91,6 @@ const HeaderAction = () => {
                             </div>
                         </button>
                     </li>
-                    <EmailNotification handleShowNotificationEmail={handleShowNotificationEmail} isOpenEmail={isOpenEmail}/>
                     <Notification handleShowNotification={handleShowNotification} isOpenNotification={isOpenNotification}/>
                 </ul>
             </div>

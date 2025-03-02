@@ -4,7 +4,6 @@ import React from 'react';
 import logoSvg from '../../../../public/assets/images/logo/GB-Full-Logo.svg';
 import logoWhite from '../../../../public/assets/images/logo/GW-Full-Logo.svg';
 import SignInBasicForm from '@/form/auth/SignIn/basic-form';
-import SocialLinks from '@/components/SocialLinks/SocialLinks';
 
 const SignInBasicMain = () => {
     return (
@@ -21,15 +20,15 @@ const SignInBasicMain = () => {
                                 <Link href="#" className="authentication-logo logo-white">
                                     <Image style={{ width: "100%", height: "auto" }} src={logoWhite} alt="logo" />
                                 </Link>
-                                <h4 className="mb-[15px]">Welcome to Time Grid</h4>
-                                <p className="mb-[15px]">Please sign-in to your account and start the monitoring</p>
+                                <h4 className="mb-[15px]">Welcome Back to Manager</h4>
+                                <p className="mb-[15px]">Please sign-in to your account and start the monitoring and managing</p>
                             </div>
                             {/* Sign in basic form area*/}
                             <SignInBasicForm />
                             {/* Sign in basic end area*/}
                             <p className="text-center">
                                 <span>New on our platform? </span>
-                                <Link href="/auth/signup-basic">
+                                <Link href="/auth/signup">
                                     <span className='underline'>Create an account</span>
                                 </Link>
                             </p>

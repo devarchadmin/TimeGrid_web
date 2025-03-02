@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import logoSvg from '../../../../public/assets/images/logo/logo.svg';
-import logoWhite from '../../../../public/assets/images/logo/logo-white.svg';
+import logoSvg from '../../../../public/assets/images/logo/GB-Full-Logo.svg';
+import logoWhite from '../../../../public/assets/images/logo/GW-Full-Logo.svg';
 import ForgotBasicForm from '@/form/auth/forgot-password/basic-form';
 
 const ForgotPasswordBasicMain = () => {

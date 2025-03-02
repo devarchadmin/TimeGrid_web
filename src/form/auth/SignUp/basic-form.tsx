@@ -66,9 +66,6 @@ const SignUpBasicForm = () => {
                 <div className="from__input-box">
                     <div className="form__input-title flex justify-between">
                         <label htmlFor="passwordInput">Password</label>
-                        <Link href="/auth/auth-forgot-password-basic">
-                            <small>Forgot Password?</small>
-                        </Link>
                     </div>
                     <div className="form__input">
                         <input
@@ -82,6 +79,11 @@ const SignUpBasicForm = () => {
                             <i className={`fa-sharp fa-light ${isPasswordVisible ? "fa-eye" : "fa-eye-slash"}`}></i>
                         </div>
                     </div>
+                    <div className="form__input-title flex justify-end mt-2">
+            <Link href="/auth/forgot-password">
+              <small>Forgot Password?</small>
+            </Link>
+          </div>
                 </div>
                 <div className="mb-4">
                     <div className="form-check">

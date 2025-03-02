@@ -53,7 +53,7 @@ const ForgotBasicForm = () => {
                     <button className="btn btn-primary w-full" type="submit">Send Reset Link</button>
                 </div>
                 <div className="text-center">
-                    <Link className="back-to-btn" href="/auth/signin-basic">Back to login</Link>
+                    <Link className="back-to-btn" href="/auth/signin">Back to login</Link>
                 </div>
             </form>
         </>

@@ -33,7 +33,8 @@ const HeaderUserProfile = ({handleShowUserDrowdown, isOpenUserDropdown}:TUserPro
                 {isOpenUserDropdown && (
                     <div className={`user__dropdown ${isOpenUserDropdown ? "user-enable" : " "}`}>
                     <ul>
-                        <li>
+                        <li>Coming Soon ...</li>
+                        {/* <li>
                             <Link href="/hrm/employee-profile">
                             <UserIcon/>
                                 Profile</Link>
@@ -59,7 +60,7 @@ const HeaderUserProfile = ({handleShowUserDrowdown, isOpenUserDropdown}:TUserPro
                             <Link href="/auth/signin-basic">
                         <LogOut/>
                                 Log Out</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 )}

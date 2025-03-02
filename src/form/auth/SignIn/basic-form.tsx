@@ -71,7 +71,7 @@ const SignInBasicForm = () => {
             </div>
           </div>
           <div className="form__input-title flex justify-end mt-2">
-            <Link href="/auth/auth-forgot-password-basic">
+            <Link href="/auth/forgot-password">
               <small>Forgot Password?</small>
             </Link>
           </div>

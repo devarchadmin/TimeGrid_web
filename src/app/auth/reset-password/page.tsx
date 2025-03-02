@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import logoSvg from '../../../../public/assets/images/logo/logo.svg';
-import logoWhite from '../../../../public/assets/images/logo/logo-white.svg';
+import logoSvg from '../../../../public/assets/images/logo/GB-Full-Logo.svg';
+import logoWhite from '../../../../public/assets/images/logo/GW-Full-Logo.svg';
 import Image from 'next/image';
 import ResetPasswordBasicForm from '@/form/auth/reset-password-basic/basic-form';
 

@@ -120,12 +120,12 @@ module.exports = {
           dark: '#FFFFFF',    // dark mode
         },
         primary: {
-          DEFAULT: '#6C5FFC', // light mode
-          dark: '#6C5FFC',    // dark mode
+          DEFAULT: '#006E5B', // light mode
+          dark: '#006E5B',    // dark mode
         },
         secondary: {
-          DEFAULT: '#1ABC9C', // light mode
-          dark: '#1ABC9C',    // dark mode
+          DEFAULT: '#131313', // light mode
+          dark: '#131313',    // dark mode
         },
         tertiary: {
           DEFAULT: '#ABA3FD', // light mode
