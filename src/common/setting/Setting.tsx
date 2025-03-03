@@ -21,7 +21,7 @@ const Setting = () => {
     >
       <div className="bd-theme-wrapper">
         <div className="bd-theme-header text-center">
-          <h4 className="bd-theme-header-title">Template Settings</h4>
+          <h4 className="bd-theme-header-title">Theme Settings</h4>
         </div>
 
         {/* -- THEME TOGGLER -- */}

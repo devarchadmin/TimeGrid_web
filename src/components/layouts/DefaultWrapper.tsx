@@ -43,6 +43,14 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
       >
         <DashBoardSidebar />
         <div className="page__body-wrapper">
+          <>
+            <BackToTop />
+            {renderHeader()}
+            {children}
+            {renderFooter()}
+          </>
+        </div>
+        {/* <div className="page__body-wrapper">
           {isLoading ? (
             <Preloader />
           ) : (
@@ -53,7 +61,7 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
               {renderFooter()}
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </>
   );
