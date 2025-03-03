@@ -63,7 +63,7 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
                   </Link>
                   <Link
                     className="btn btn-outline-primary"
-                    href={`/hrm/employee/${employee.id}`}
+                    href={`/employee/${employee.id}`}
                   >
                     View
                   </Link>
