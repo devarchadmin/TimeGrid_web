@@ -2,9 +2,9 @@ import { SidebarCategory } from "@/interface";
 
 const sidebarData: SidebarCategory[] = [
   {
-    id:2,
+    id: 1,
     category: "Authentication",
-    items:[
+    items: [
       {
         id: 1,
         label: "Sign In",
@@ -29,9 +29,28 @@ const sidebarData: SidebarCategory[] = [
         icon: "icon-question",
         link: "/auth/forgot-password",
       },
-    ]
+    ],
   },
-  
+
+  {
+    id: 2,
+    category: "Main",
+    items: [
+      {
+        id: 1,
+        label: "Employees",
+        icon: "icon-users",
+        link: "/hrm/employees",
+      },
+      {
+        id: 2,
+        label: "Employee Profile",
+        icon: "icon-user",
+        link: "/hrm/employee/1",
+      },
+    ],
+  },
+
   /*{
     id: 1,
     category: "Main",

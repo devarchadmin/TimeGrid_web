@@ -78,39 +78,39 @@ export const emailNotifications:IEmailNotification[] = [
   ];
   
   export const notificationsData :INotification[]  = [
-    {
-        id: 1,
-        category: "HRM",
-        message: "New employee onboarding session at 10 AM.",
-        time: "1h ago",
-        image: avatar1
-    },
-    {
-        id: 2,
-        category: "CRM",
-        message: "Upcoming meeting with ABC Corp at 2 PM.",
-        time: "2h ago",
-        image: avatar2
-    },
-    {
-        id: 3,
-        category: "HRM",
-        message: "Performance review deadlines approaching.",
-        time: "3h ago",
-        image: avatar3
-    },
-    {
-        id: 4,
-        category: "CRM",
-        message: "Follow-up call with XYZ Ltd scheduled for 4 PM.",
-        time: "4h ago",
-        image: avatar4
-    },
-    {
-        id: 5,
-        category: "HRM",
-        message: "Reminder to submit timesheets by EOD.",
-        time: "5h ago",
-        image: avatar5
-    }
+    // {
+    //     id: 1,
+    //     category: "HRM",
+    //     message: "New employee onboarding session at 10 AM.",
+    //     time: "1h ago",
+    //     image: avatar1
+    // },
+    // {
+    //     id: 2,
+    //     category: "CRM",
+    //     message: "Upcoming meeting with ABC Corp at 2 PM.",
+    //     time: "2h ago",
+    //     image: avatar2
+    // },
+    // {
+    //     id: 3,
+    //     category: "HRM",
+    //     message: "Performance review deadlines approaching.",
+    //     time: "3h ago",
+    //     image: avatar3
+    // },
+    // {
+    //     id: 4,
+    //     category: "CRM",
+    //     message: "Follow-up call with XYZ Ltd scheduled for 4 PM.",
+    //     time: "4h ago",
+    //     image: avatar4
+    // },
+    // {
+    //     id: 5,
+    //     category: "HRM",
+    //     message: "Reminder to submit timesheets by EOD.",
+    //     time: "5h ago",
+    //     image: avatar5
+    // }
 ];

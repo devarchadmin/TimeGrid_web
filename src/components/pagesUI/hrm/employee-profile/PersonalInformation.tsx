@@ -33,6 +33,8 @@ const PersonalInformation = ({ data }: propsType) => {
                     <Link href="#">
                       <Image
                         src={data?.image}
+                        width={100}
+                        height={100}
                         priority
                         style={{ width: "100%", height: "auto" }}
                         alt={`${data?.name} image`}

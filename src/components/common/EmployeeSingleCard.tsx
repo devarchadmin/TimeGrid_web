@@ -1,5 +1,6 @@
 
 import { IEmployee } from "@/interface";
+import { auto } from "@popperjs/core";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -18,6 +19,8 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
               <Link href={`/hrm/employee-profile/${employee.id}`}>
                 <Image
                   src={employee.image}
+                  width={100}
+                  height={100}
                   style={{ width: "100%", height: "auto" }}
                   priority
                   alt={`${employee.name}'s image`}
@@ -60,7 +63,7 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
                   </Link>
                   <Link
                     className="btn btn-outline-primary"
-                    href={`/hrm/employee-profile/${employee.id}`}
+                    href={`/hrm/employee/${employee.id}`}
                   >
                     View
                   </Link>

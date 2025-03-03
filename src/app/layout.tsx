@@ -23,7 +23,8 @@ export default function RootLayout({
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link rel="icon" href="public/assets/images/logo/GW-Fav.svg" />
+          <title>Time Grid | Admin Portal</title>
+          <link rel="icon" href="src/app/favicon.ico" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
