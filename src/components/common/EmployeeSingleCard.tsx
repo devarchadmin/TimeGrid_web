@@ -36,7 +36,7 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
                 </h4>
                 <p>{employee.position}</p>
               </div>
-              <div className="common-social mb-[20px]">
+              {/* <div className="common-social mb-[20px]">
                 <Link href={employee.socialLinks.facebook} target="_blank">
                   <i className="fa-brands fa-facebook-f"></i>
                 </Link>
@@ -52,14 +52,14 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
                 <Link href={employee.socialLinks.website} target="_blank">
                   <i className="fa-thin fa-globe"></i>
                 </Link>
-              </div>
+              </div> */}
               <div className="employee__btn">
                 <div className="flex items-center justify-center gap-[15px]">
                   <Link
                     className="btn btn-outline-primary"
                     href={`tel:${employee.phone}`}
                   >
-                    Call
+                    Message
                   </Link>
                   <Link
                     className="btn btn-outline-primary"

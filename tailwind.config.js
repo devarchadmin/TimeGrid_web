@@ -228,8 +228,8 @@ module.exports = {
         },
         //gradient
         gradientPrimary: {
-          DEFAULT: 'linear-gradient(90deg, #6C5FFC 0%, #003cff 100%)', // light mode
-          dark: 'linear-gradient(90deg, #4C51BF 0%, #2C5282 100%)',    // dark mode
+          DEFAULT: 'linear-gradient(90deg, #006E5B 0%, #019D82 100%)', // light mode
+          dark: 'linear-gradient(90deg, #006E5B 0%, #019D82 100%)',    // dark mode
         },
         gradientSecondary: {
           DEFAULT: 'linear-gradient(90deg, #FF6339 0%, #FF2259 100%)', // light mode

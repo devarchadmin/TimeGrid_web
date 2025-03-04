@@ -48,6 +48,12 @@ const sidebarData: SidebarCategory[] = [
         icon: "icon-user",
         link: "/employee/1",
       },
+      {
+        id: 3,
+        label: "Chats",
+        icon: "icon-message",
+        link: "/chats",
+      },
     ],
   },
 

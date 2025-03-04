@@ -8,7 +8,7 @@ const Passport = () => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
-      <div className="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-4">
+      <div className="col-span-12 md:col-span-6 xl:col-span-4 xxl:col-span-6">
         <div className="card__wrapper">
           <div className="employee__profile-single-box relative">
             <div className="card__title-wrap flex align-center justify-between mb-[15px]">

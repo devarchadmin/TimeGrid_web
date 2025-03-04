@@ -459,7 +459,7 @@ a.btn-outline-primary {
 }
 
 .chatbox__submit-btn {
-  @apply absolute flex items-center justify-center w-[45px] bg-gradientPrimary h-[45px] -translate-y-2/4 rounded-[50%] top-2/4 end-0 maxXs:top-auto maxXs:bottom-0 maxXs:transform-none;
+  @apply absolute flex items-center justify-center w-[45px] bg-primary h-[45px] -translate-y-2/4 rounded-[50%] top-2/4 end-0 maxXs:top-auto maxXs:bottom-0 maxXs:transform-none;
   @include rtl {
     svg {
       @apply -rotate-180;
