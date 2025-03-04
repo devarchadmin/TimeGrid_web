@@ -16,10 +16,7 @@ const DashboardFooter = () => {
             <div className="card__footer flex justify-center">
               <p>
                 Copyright © {getCurrentYear()}{' '}
-                <span className="text-black dark:text-black-dark">Time Grid.</span> Designed with by{' '}
-                <Link href="https://infinitydestudio.com" target="_blank">
-                  Infinity De Studio
-                </Link> All rights reserved
+                <span className="text-black dark:text-black-dark">Time Grid.</span> All rights reserved
               </p>
             </div>
           </div>
