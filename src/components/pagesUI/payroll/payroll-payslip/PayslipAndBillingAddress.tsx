@@ -34,15 +34,15 @@ const PayslipAndBillingAddress = () => {
       <div className="flex justify-between row g-60 gy-20">
         <div className="col-xl-6 col-lg-6 col-sm-6">
           <div className="payslip__employee-address">
-            <h5 className="mb-[10px] font-semibold">Ethan Mitchell</h5>
+            <h5 className="mb-[10px] font-semibold">Michael Wilson</h5>
             <p className="text-muted">
-              Position: <span>Business Intelligence Analyst</span>{" "}
+              Position: <span>Orthopedic Surgeon</span>{" "}
             </p>
             <p className="text-muted">
-              Department: <span> Information Technology Department</span>
+              Department: <span>Orthopedic</span>
             </p>
             <p className="text-muted">
-              Email: <span>ethanmitchell@manez.com</span>
+              Email: <span>michael.wilson@timegrid.com</span>
             </p>
             <p className="text-muted">
               Phone: <span> +1(800) 642 7676</span>

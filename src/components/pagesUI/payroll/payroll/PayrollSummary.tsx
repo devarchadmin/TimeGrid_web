@@ -4,7 +4,7 @@ import SummarySingleCard from "@/components/common/SummarySingleCard"; // Adjust
 const PayrollSummary: React.FC = () => {
   const payrollData = [
     {
-      iconClass: "fa-sharp fa-regular fa-gear",
+      iconClass: "fa-regular fa-users",
       title: "Total Employee",
       value: "8450",
       description: "",
@@ -12,7 +12,7 @@ const PayrollSummary: React.FC = () => {
       isIncrease: true,
     },
     {
-      iconClass: "fa-light fa-badge-check",
+      iconClass: "fa-regular fa-badge-check",
       title: "Total Paid",
       value: "950",
       description: "",
@@ -20,7 +20,7 @@ const PayrollSummary: React.FC = () => {
       isIncrease: false,
     },
     {
-      iconClass: "fa-sharp fa-regular fa-user",
+      iconClass: "fa-regular fa-circle-xmark",
       title: "Total Unpaid",
       value: "3130",
       description: "",
@@ -28,9 +28,9 @@ const PayrollSummary: React.FC = () => {
       isIncrease: false,
     },
     {
-      iconClass: "fa-sharp fa-regular fa-house-person-leave",
-      title: "Total Leave",
-      value: "55",
+      iconClass: "fa-regular fa-money-bill-transfer",
+      title: "Total Unpaid",
+      value: "$38,200.16",
       description: "",
       percentageChange: "",
       isIncrease: true,

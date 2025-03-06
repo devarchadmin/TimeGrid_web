@@ -12,8 +12,8 @@ const employeeData: IEmployee[] = [
   {
     id: 1,
     image: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Naira Muskan",
-    position: "Chief Executive Officer",
+    name: "Dr. Sarah Johnson",
+    position: "Chief Medical Officer",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -26,8 +26,8 @@ const employeeData: IEmployee[] = [
   {
     id: 2,
     image: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Emily Johnson",
-    position: "Chief Innovation Officer",
+    name: "Dr. Emily Williams",
+    position: "Cardiologist",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -40,8 +40,8 @@ const employeeData: IEmployee[] = [
   {
     id: 3,
     image: "https://images.pexels.com/photos/15773193/pexels-photo-15773193/free-photo-of-portrait-of-smiling-blonde-woman-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Jessica Miller",
-    position: "Product Manager",
+    name: "Dr. Jessica Parker",
+    position: "Neurologist",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -53,9 +53,9 @@ const employeeData: IEmployee[] = [
   },
   {
     id: 4,
-    image: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
-    name: "Jennifer Brown",
-    position: "Engineering Project Manager",
+    image: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    name: "Dr. Jennifer Miller",
+    position: "Pediatrician",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -68,8 +68,8 @@ const employeeData: IEmployee[] = [
   {
     id: 5,
     image: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Sarah Martinez",
-    position: "Software Developer",
+    name: "Dr. Rachel Chen",
+    position: "Dermatologist",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -82,8 +82,8 @@ const employeeData: IEmployee[] = [
   {
     id: 6,
     image: "https://images.pexels.com/photos/18041953/pexels-photo-18041953/free-photo-of-woman-in-seductive-pose-looking-at-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Amanda Taylor",
-    position: "Technical Lead",
+    name: "Dr. Amanda Taylor",
+    position: "Psychiatrist",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -96,8 +96,8 @@ const employeeData: IEmployee[] = [
   {
     id: 7,
     image: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Christopher Wilson",
-    position: "Chief Architect",
+    name: "Dr. Michael Wilson",
+    position: "Orthopedic Surgeon",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",
@@ -110,8 +110,8 @@ const employeeData: IEmployee[] = [
   {
     id: 8,
     image: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    name: "Matthew Clark",
-    position: "Chief Digital Officer",
+    name: "Dr. David Clark",
+    position: "Radiologist",
     phone: "+15551234567",
     socialLinks: {
       facebook: "https://www.facebook.com",

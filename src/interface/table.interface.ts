@@ -198,7 +198,7 @@ export interface IPaylist {
   joiningDate: string;
   salaryMonthly: number;
   status: "Paid" | "Unpaid";
-  employeeImg?: StaticImageData;
+  employeeImg?: string;
 }
 // Define an interface for the earning
 export interface IEarning {

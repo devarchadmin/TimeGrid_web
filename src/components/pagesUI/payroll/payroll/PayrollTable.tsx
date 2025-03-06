@@ -111,16 +111,18 @@ const PayrollTable = () => {
                               <span className="table-avatar flex justify-start items-center">
                                 <Link
                                   className="avatar-img me-[10px]"
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/employee/${index + 1}`}
                                 >
                                   <Image
                                     className="img-48 border-circle"
                                     src={row?.employeeImg}
                                     alt="User Image"
+                                    width={100}
+                                    height={100}
                                   />
                                 </Link>
                                 <Link
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/employee/${index + 1}`}
                                 >
                                   {row?.employeeName}
                                 </Link>
