@@ -1,6 +1,6 @@
 {
-  "name": "manez",
-  "version": "1.1",
+  "name": "time-grid",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

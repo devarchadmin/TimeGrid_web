@@ -17,11 +17,11 @@ const LeavesEmployeeMainArea = () => {
                 <Link href="/">Home</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Employee Leave
+                Time Off Requests
               </li>
             </ol>
           </nav>
-          <div className="breadcrumb__btn">
+          {/* <div className="breadcrumb__btn">
             <button
               type="button"
               className="btn btn-primary"
@@ -29,7 +29,7 @@ const LeavesEmployeeMainArea = () => {
             >
               Add Leave
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <LeavesSummary />

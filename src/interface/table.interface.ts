@@ -69,8 +69,8 @@ export interface IAdminLeave {
   leaveDuration: string;
   days: number;
   reason: string;
-  status: "Approved" | "Pending";
-  adminImg?: StaticImageData;
+  status: "Approved" | "Pending" | "Rejected";
+  adminImg?: string;
   startDate?: string;
   endDate?: string;
 }

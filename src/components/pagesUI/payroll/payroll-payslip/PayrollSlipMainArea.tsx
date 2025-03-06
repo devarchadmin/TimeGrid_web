@@ -32,10 +32,10 @@ const PayrollSlipMainArea = () => {
               <TimeOffTable/>
               
               <div className="flex flex-wrap lg:justify-end gap-[10px]">
-                <button className="btn btn-secondary" onClick={handlePrint}>
+                {/* <button className="btn btn-secondary" onClick={handlePrint}>
                   <i className="fa-sharp fa-regular fa-eye"></i>
                   Print
-                </button>
+                </button> */}
                 {/* <button className="btn btn-success">
                   <i className="fa-sharp fa-light fa-floppy-disk"></i> Save
                 </button> */}

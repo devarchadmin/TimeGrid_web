@@ -4,15 +4,15 @@ import SummarySingleCard from "@/components/common/SummarySingleCard";
 const LeavesSummary: React.FC = () => {
   const leaveData = [
     {
-      iconClass: "fa-light fa-ban",
-      title: "Total Leave",
+      iconClass: "fa-regular fa-code-pull-request",
+      title: "Total Time Off",
       value: "15",
       description: "",
       percentageChange: "",
       isIncrease: true,
     },
     {
-      iconClass: "fa-light fa-badge-check",
+      iconClass: "fa-regular fa-badge-check",
       title: "Approve",
       value: "12",
       description: "",
@@ -20,7 +20,7 @@ const LeavesSummary: React.FC = () => {
       isIncrease: false,
     },
     {
-      iconClass: "fa-sharp fa-regular fa-user",
+      iconClass: "fa-regular fa-circle-xmark",
       title: "Rejected",
       value: "2",
       description: "",
@@ -28,7 +28,7 @@ const LeavesSummary: React.FC = () => {
       isIncrease: false,
     },
     {
-      iconClass: "fa-sharp fa-regular fa-house-person-leave",
+      iconClass: "fa-regular fa-stopwatch",
       title: "Pending",
       value: "5",
       description: "",

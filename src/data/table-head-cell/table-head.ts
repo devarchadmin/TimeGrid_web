@@ -765,6 +765,45 @@ export const announcementHeadCells: IHeadCell[] = [
   },
 ];
 
+export const timeOffHeadCells: IHeadCell[]=[
+  {
+    id: "employeeName",
+    numeric: false,
+    disablePadding: false,
+    label: "Employee Name",
+  },
+  {
+    id: "designation",
+    numeric: false,
+    disablePadding: false,
+    label: "Designation",
+  },
+  {
+    id: "timeOffType",
+    numeric: false,
+    disablePadding: false,
+    label: "Time Off Type",
+  },
+  {
+    id: "date",
+    numeric: false,
+    disablePadding: false,
+    label: "Date",
+  },
+  {
+    id: "duration",
+    numeric: false,
+    disablePadding: false,
+    label: "Duration",
+  },
+  {
+    id: "status",
+    numeric: false,
+    disablePadding: false,
+    label: "Status",
+  },
+];
+
 export const adminLeaveHeadCells: IHeadCell[] = [
   {
     id: "employeeName",

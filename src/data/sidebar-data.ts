@@ -66,6 +66,12 @@ const sidebarData: SidebarCategory[] = [
         icon: "fa-sharp fa-light fa-money-check-dollar",
         link: "/payroll-payslip",
       },
+      {
+        id: 6,
+        label: "Time Off Requests",
+        icon: "fa-regular fa-person-walking-arrow-right",
+        link: "/time-off",
+      },
     ],
   },
 

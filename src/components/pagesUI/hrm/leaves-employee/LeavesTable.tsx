@@ -11,13 +11,10 @@ import Pagination from "@mui/material/Pagination";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 import { visuallyHidden } from "@mui/utils";
 import useMaterialTableHook from "@/hooks/useMaterialTableHook";
 import { IEmployeeLeave } from "@/interface/table.interface";
-import { adminLeaveHeadCells } from "@/data/table-head-cell/table-head";
+import { adminLeaveHeadCells, timeOffHeadCells } from "@/data/table-head-cell/table-head";
 import { useTableStatusHook } from "@/hooks/use-condition-class";
 import LeavesEditModal from "./LeavesEditModal";
 import { employeeLeaveData } from "@/data/hrm/employee-leave";
@@ -68,7 +65,7 @@ const LeavesTable = () => {
                   >
                     <TableHead>
                       <TableRow className="table__title">
-                        {adminLeaveHeadCells.map((headCell) => (
+                        {timeOffHeadCells.map((headCell) => (
                           <TableCell
                             className="table__title"
                             key={headCell.id}
@@ -94,7 +91,7 @@ const LeavesTable = () => {
                             </TableSortLabel>
                           </TableCell>
                         ))}
-                        <TableCell>Action</TableCell>
+                        <TableCell>Actions</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody className="table__body">
@@ -110,16 +107,18 @@ const LeavesTable = () => {
                               <span className="table-avatar flex justify-start items-center">
                                 <Link
                                   className="avatar-img me-[10px]"
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/employee/${index + 1}`}
                                 >
                                   <Image
                                     className="img-48 border-circle"
                                     src={row?.adminImg}
                                     alt="User Image"
+                                    width={100}
+                                    height={100}
                                   />
                                 </Link>
                                 <Link
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/employee/${index + 1}`}
                                 >
                                   {row?.employeeName}
                                 </Link>
@@ -139,9 +138,6 @@ const LeavesTable = () => {
                             <TableCell className="table__loan-created">
                               {row?.days}
                             </TableCell>
-                            <TableCell className="table__loan-created">
-                              {row?.reason}
-                            </TableCell>
 
                             <TableCell className="table__delivery">
                               <span className={`bd-badge ${stausClass}`}>
@@ -150,7 +146,19 @@ const LeavesTable = () => {
                             </TableCell>
                             <TableCell className="table__icon-box">
                               <div className="flex items-center justify-start gap-[10px]">
-                                <button
+                                <Link href="#"
+                                  className="table__icon edit">
+                                  <i className="fa-regular fa-eye"></i>
+                                </Link>
+                                <Link href="#"
+                                  className="table__icon download">
+                                  <i className="fa-regular fa-check"></i>
+                                </Link>
+                                <Link href="#"
+                                  className="table__icon delete">
+                                  <i className="fa-regular fa-xmark"></i>
+                                </Link>
+                                {/* <button
                                   type="button"
                                   className="table__icon edit"
                                   onClick={(e) => {
@@ -170,7 +178,7 @@ const LeavesTable = () => {
                                   }}
                                 >
                                   <i className="fa-regular fa-trash"></i>
-                                </button>
+                                </button> */}
                               </div>
                             </TableCell>
                           </TableRow>
