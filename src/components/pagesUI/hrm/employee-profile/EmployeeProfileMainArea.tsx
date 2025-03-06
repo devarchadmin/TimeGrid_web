@@ -26,7 +26,7 @@ const EmployeeProfileMainArea = ({ id }: idType) => {
           <ExperienceDetails />
           <BankAccount />
           <Passport />
-          <SocialProfile />
+          {/* <SocialProfile /> */}
         </div>
       </div>
     </>

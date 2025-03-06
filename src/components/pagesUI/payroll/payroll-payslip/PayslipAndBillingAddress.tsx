@@ -16,7 +16,7 @@ const PayslipAndBillingAddress = () => {
           <p>finance@timegrid.com</p>
           <p>+1(800) 872 2616</p>
         </div>
-        <div className="payslip__serial-number w-[16.5%]">
+        <div className="payslip__serial-number min-w-[16.5%]">
           <div className="mb-[10px]">
             <h5 className="card__heading-title">PAYSLIP #TG-00114</h5>
           </div>
@@ -49,7 +49,7 @@ const PayslipAndBillingAddress = () => {
             </p>
           </div>
         </div>
-        <div className="col-xl-6 col-lg-6 col-sm-6 w-[16.5%]">
+        <div className="col-xl-6 col-lg-6 col-sm-6 min-w-[16.5%]">
           <div className="payslip__employee-address">
             <h5 className="mb-[10px] font-semibold">Payment Details:</h5>
             <p className="text-muted">

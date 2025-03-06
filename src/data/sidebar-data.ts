@@ -64,7 +64,7 @@ const sidebarData: SidebarCategory[] = [
         id: 5,
         label: "Payroll Slip",
         icon: "fa-sharp fa-light fa-money-check-dollar",
-        link: "/payroll-slip",
+        link: "/payroll-payslip",
       },
     ],
   },

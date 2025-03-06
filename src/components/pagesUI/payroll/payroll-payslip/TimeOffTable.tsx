@@ -48,13 +48,13 @@ const TimeOffTable = () => {
         >
           <div style={{ textAlign: "right" }}>
             <p>
-              <strong>Net Salary :</strong> $1500.00
+              <strong>Gross Pay :</strong> $2760.00
             </p>
             <p>
-              <strong>Rebate :</strong> $0.00
+              <strong>Tax (22%) :</strong> $607.2
             </p>
             <p>
-              <strong>Payable Amount :</strong> $1500.00
+              <strong>Payable Amount :</strong> $2152.8
             </p>
           </div>
         </div>
