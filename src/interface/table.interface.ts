@@ -214,6 +214,12 @@ export interface IDeduction {
   type: string; // Type of deduction (e.g., Fixed, Percentage)
   amount: number; // Monetary value of the deduction
 }
+
+export interface ITimeOff{
+  title: string,
+  details:string,
+  hourse:number
+}
 // Define an interface for the expese
 export interface IExpese {
   invoiceNumber: string; // Unique identifier for the invoice

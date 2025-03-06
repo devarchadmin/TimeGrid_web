@@ -1,10 +1,11 @@
 import { deductionData } from "@/data/payroll/deduction-data";
 import { earningData } from "@/data/payroll/earning-data";
+import { timeOffData } from "@/data/payroll/time-off-data";
 import React from "react";
 
-const DeductionTable = () => {
-  const totalAmount = deductionData.reduce(
-    (sum, item) => sum + item?.amount,
+const TimeOffTable = () => {
+  const totalAmount = timeOffData.reduce(
+    (sum, item) => sum + item?.hourse,
     0
   );
   return (
@@ -18,23 +19,23 @@ const DeductionTable = () => {
           </colgroup>
           <thead>
             <tr className="table__title">
-              <th>Deduction</th>
-              <th>Title</th>
-              <th>Amount</th>
+              <th>Time Off</th>
+              <th>Details</th>
+              <th>Hours</th>
             </tr>
           </thead>
           <tbody className="table__body">
-            {deductionData.map((deduction, index) => (
+            {timeOffData.map((timeoff, index) => (
               <tr key={index}>
-                <td>{deduction.deduction}</td>
-                <td>{deduction.title}</td>
-                <td>{deduction.amount}</td>
+                <td>{timeoff.title}</td>
+                <td>{timeoff.details}</td>
+                <td>{timeoff.hourse} Hourse</td>
               </tr>
             ))}
             <tr>
               <td></td>
               <td>Total</td>
-              <td>${totalAmount}</td>
+              <td>{totalAmount} Hours</td>
             </tr>
           </tbody>
         </table>
@@ -62,4 +63,4 @@ const DeductionTable = () => {
   );
 };
 
-export default DeductionTable;
+export default TimeOffTable;

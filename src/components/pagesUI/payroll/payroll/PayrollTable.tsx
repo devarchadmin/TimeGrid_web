@@ -145,7 +145,7 @@ const PayrollTable = () => {
                             </TableCell>
                             <TableCell className="table__icon-box">
                               <div className="flex items-center justify-start gap-[10px]">
-                                <Link href="/payroll/payroll-payslip"
+                                <Link href="/payroll-payslip"
                                   className="table__icon download">
                                   <i className="fa-regular fa-eye"></i>
                                 </Link>
