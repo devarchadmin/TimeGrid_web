@@ -1,15 +1,5 @@
 import { IAdminLeave } from "@/interface/table.interface";
 
-import img1 from "../../../public/assets/images/avatar/avatar5.png";
-import img2 from "../../../public/assets/images/avatar/avatar9.png";
-import img3 from "../../../public/assets/images/avatar/avatar1.png";
-import img4 from "../../../public/assets/images/avatar/avatar15.png";
-import img5 from "../../../public/assets/images/avatar/avatar.png";
-import img6 from "../../../public/assets/images/avatar/avatar2.png";
-import img7 from "../../../public/assets/images/avatar/avatar3.png";
-import img8 from "../../../public/assets/images/avatar/avatar4.png";
-import img9 from "../../../public/assets/images/avatar/avatar6.png";
-
 export const adminLeaveData: IAdminLeave[] = [
   {
     employeeName: "Dr. Chris Johnson",

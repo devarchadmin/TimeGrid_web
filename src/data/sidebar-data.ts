@@ -72,6 +72,12 @@ const sidebarData: SidebarCategory[] = [
         icon: "fa-regular fa-person-walking-arrow-right",
         link: "/time-off",
       },
+      {
+        id: 7,
+        label: "Company Holidays",
+        icon: "fa-regular fa-tree-christmas",
+        link: "/company-holidays",
+      },
     ],
   },
 

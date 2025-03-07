@@ -132,8 +132,8 @@ module.exports = {
           dark: '#ABA3FD',    // dark mode
         },
         success: {
-          DEFAULT: '#34B53A', // light mode
-          dark: '#34B53A',    // dark mode
+          DEFAULT: '#006E5B', // light mode
+          dark: '#006E5B',    // dark mode
         },
         info: {
           DEFAULT: '#0dcaf0', // light mode
