@@ -21,7 +21,7 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
                   src={employee.image}
                   width={100}
                   height={100}
-                  style={{ width: "100%", height: "auto" }}
+                  className="rounded-full w-[100px] h-[100px] object-cover"
                   priority
                   alt={`${employee.name}'s image`}
                 />

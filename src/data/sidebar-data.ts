@@ -78,6 +78,18 @@ const sidebarData: SidebarCategory[] = [
         icon: "fa-regular fa-tree-christmas",
         link: "/company-holidays",
       },
+      {
+        id: 8,
+        label: "Patients",
+        icon: "fa-solid fa-users-medical",
+        link: "/patients",
+      },
+      {
+        id: 9,
+        label: "Patient Profile",
+        icon: "fa-regular fa-user",
+        link: "/patient/1",
+      },
     ],
   },
 

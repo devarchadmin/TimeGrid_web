@@ -22,6 +22,7 @@ import { payListData } from "@/data/payroll/pay-list-data";
 import EditSalaryModal from "./EditSalaryModal";
 import DeleteModal from "@/components/common/DeleteModal";
 import TableControls from "@/components/elements/SharedInputs/TableControls";
+import PayrollHistoryModal from "./PayrollHistoryModal";
 
 const PayrollTable = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -29,6 +30,11 @@ const PayrollTable = () => {
 
   const [modalDeleteOpen, setModalDeleteOpen] = useState(false);
   const [deleteId, setDeleteId] = useState<number>(0);
+  
+  // Add state for payroll history modal
+  const [historyModalOpen, setHistoryModalOpen] = useState(false);
+  const [selectedEmployee, setSelectedEmployee] = useState<IPaylist | null>(null);
+  
   const {
     order,
     orderBy,
@@ -45,6 +51,14 @@ const PayrollTable = () => {
     handleChangeRowsPerPage,
     handleSearchChange,
   } = useMaterialTableHook<IPaylist | any>(payListData, 10);
+
+  // Function to handle opening the history modal
+  const handleOpenHistoryModal = (e: React.MouseEvent<HTMLAnchorElement>, employee: IPaylist) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelectedEmployee(employee);
+    setHistoryModalOpen(true);
+  };
 
   return (
     <>
@@ -121,11 +135,13 @@ const PayrollTable = () => {
                                     height={100}
                                   />
                                 </Link>
-                                <Link
-                                  href={`/employee/${index + 1}`}
+                                <a
+                                  href="#"
+                                  onClick={(e) => handleOpenHistoryModal(e, row)}
+                                  className="text-primary hover:underline"
                                 >
                                   {row?.employeeName}
-                                </Link>
+                                </a>
                               </span>
                             </TableCell>
                             <TableCell className="table__loan-amount">
@@ -216,6 +232,15 @@ const PayrollTable = () => {
           setOpen={setModalDeleteOpen}
           handleDeleteFunc={handleDelete}
           deleteId={deleteId}
+        />
+      )}
+      
+      {/* Payroll History Modal */}
+      {historyModalOpen && selectedEmployee && (
+        <PayrollHistoryModal
+          open={historyModalOpen}
+          setOpen={setHistoryModalOpen}
+          employee={selectedEmployee}
         />
       )}
     </>

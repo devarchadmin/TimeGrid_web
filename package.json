@@ -43,6 +43,7 @@
     "react-modal-video": "^2.0.0",
     "react-redux": "^8.1.1",
     "react-select": "^5.8.1",
+    "react-tabs": "^6.1.0",
     "react-use": "^17.4.0",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",

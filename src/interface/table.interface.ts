@@ -425,3 +425,14 @@ export interface ICreateProject {
   priority: string;
   status: string;
 }
+
+export interface IPayrollHistory {
+  id: string;
+  employeeId: string;
+  employeeName: string;
+  paymentDate: string;
+  salaryMonth: string;
+  amount: number;
+  paymentMethod: string;
+  status: "Paid" | "Unpaid";
+}
