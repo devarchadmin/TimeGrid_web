@@ -81,10 +81,6 @@ const PatientPersonalInfo = ({ patient, onEdit }: PatientPersonalInfoProps) => {
                       {patient.address}, {patient.city}, {patient.state} {patient.zipCode}, {patient.country}
                     </div>
                   </li>
-                  <li>
-                    <div className="title">Emergency:</div>
-                    <div className="text">{patient.emergencyContact || "Not specified"}</div>
-                  </li>
                 </ul>
               </div>
             </div>

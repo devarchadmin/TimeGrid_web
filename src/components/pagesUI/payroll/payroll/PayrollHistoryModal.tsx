@@ -22,7 +22,12 @@ import { useRouter } from "next/navigation";
 import CloseIcon from "@mui/icons-material/Close";
 import { IPaylist, IPayrollHistory } from "@/interface/table.interface";
 import { getPayrollHistoryByEmployeeId } from "@/data/payroll/payroll-history-data";
-import { useTableStatusHook } from "@/hooks/use-condition-class";
+import { getTableStatusClass } from "@/hooks/use-condition-class";
+
+// Helper function to get status class without using hooks
+const getStatusClass = (status: string): string => {
+  return getTableStatusClass(status);
+};
 
 interface PayrollHistoryModalProps {
   open: boolean;
@@ -181,7 +186,6 @@ const PayrollHistoryModal: React.FC<PayrollHistoryModalProps> = ({
                 <TableBody className="table__body">
                   {filteredHistory.length > 0 ? (
                     filteredHistory.map((record) => {
-                      const statusClass = useTableStatusHook(record.status);
                       return (
                         <TableRow 
                           key={record.id} 
@@ -194,7 +198,7 @@ const PayrollHistoryModal: React.FC<PayrollHistoryModalProps> = ({
                           <TableCell>${record.amount.toFixed(2)}</TableCell>
                           <TableCell>{record.paymentMethod}</TableCell>
                           <TableCell className="table__delivery">
-                            <span className={`bd-badge ${statusClass}`}>
+                            <span className={`bd-badge ${getStatusClass(record.status)}`}>
                               {record.status}
                             </span>
                           </TableCell>

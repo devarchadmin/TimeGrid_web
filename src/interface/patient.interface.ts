@@ -32,11 +32,15 @@ export interface IPatient {
   emergencyContactName?: string;
   emergencyRelationship?: string;
   emergencyAddress?: string;
+  primaryContactName?: string;
+  primaryContactPhone?: string;
   // Secondary emergency contact
   secondaryEmergencyContact?: string;
   secondaryEmergencyContactName?: string;
   secondaryEmergencyRelationship?: string;
   secondaryEmergencyAddress?: string;
+  secondaryContactName?: string;
+  secondaryContactPhone?: string;
   medicalConditions?: string[];
   allergies?: string[];
   medications?: string[];

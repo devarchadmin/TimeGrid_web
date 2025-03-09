@@ -66,7 +66,9 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     label="Full Name"
                     id="emergencyContactName"
                     type="text"
-                    register={register("emergencyContactName")}
+                    register={register("emergencyContactName", {
+                      required: "Primary contact name is required",
+                    })}
                     error={errors.emergencyContactName}
                   />
                 </div>
@@ -75,7 +77,9 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     label="Relationship"
                     id="emergencyRelationship"
                     type="text"
-                    register={register("emergencyRelationship")}
+                    register={register("emergencyRelationship", {
+                      required: "Relationship is required",
+                    })}
                     error={errors.emergencyRelationship}
                   />
                 </div>
@@ -84,7 +88,9 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     label="Phone Number"
                     id="emergencyContact"
                     type="text"
-                    register={register("emergencyContact")}
+                    register={register("emergencyContact", {
+                      required: "Primary contact phone is required",
+                    })}
                     error={errors.emergencyContact}
                   />
                 </div>
@@ -93,7 +99,9 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     label="Address"
                     id="emergencyAddress"
                     type="text"
-                    register={register("emergencyAddress")}
+                    register={register("emergencyAddress", {
+                      required: "Address is required",
+                    })}
                     error={errors.emergencyAddress}
                   />
                 </div>
@@ -110,6 +118,7 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     type="text"
                     register={register("secondaryEmergencyContactName")}
                     error={errors.secondaryEmergencyContactName}
+                    required={false}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
@@ -119,6 +128,7 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     type="text"
                     register={register("secondaryEmergencyRelationship")}
                     error={errors.secondaryEmergencyRelationship}
+                    required={false}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
@@ -128,6 +138,7 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     type="text"
                     register={register("secondaryEmergencyContact")}
                     error={errors.secondaryEmergencyContact}
+                    required={false}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
@@ -137,6 +148,7 @@ const EditEmergencyContactModal = ({ open, setOpen, patient }: EditEmergencyCont
                     type="text"
                     register={register("secondaryEmergencyAddress")}
                     error={errors.secondaryEmergencyAddress}
+                    required={false}
                   />
                 </div>
               </div>

@@ -45,12 +45,12 @@ const PatientSingleCard = ({ patient, onEdit }: propsType) => {
               </div>
               <div className="employee__btn">
                 <div className="flex items-center justify-center gap-[15px]">
-                  <button
+                  <Link
                     className="btn btn-outline-primary"
-                    onClick={handleEdit}
+                    href={`tel:${patient.phone}`}
                   >
-                    Edit
-                  </button>
+                    Call
+                  </Link>
                   <Link
                     className="btn btn-outline-primary"
                     href={`/patient/${patient.id}`}

@@ -27,11 +27,11 @@ const PatientMedicalInfo = ({ patient }: PatientMedicalInfoProps) => {
             </div>
             <div className="personal-info-wrapper">
               <ul className="personal-info">
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Blood Group:</div>
                   <div className="text">{patient.bloodGroup || "Not provided"}</div>
                 </li>
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Medical Conditions:</div>
                   <div className="text">
                     {patient.medicalConditions && patient.medicalConditions.length > 0
@@ -39,7 +39,7 @@ const PatientMedicalInfo = ({ patient }: PatientMedicalInfoProps) => {
                       : "None"}
                   </div>
                 </li>
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Allergies:</div>
                   <div className="text">
                     {patient.allergies && patient.allergies.length > 0
@@ -47,7 +47,7 @@ const PatientMedicalInfo = ({ patient }: PatientMedicalInfoProps) => {
                       : "None"}
                   </div>
                 </li>
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Current Medications:</div>
                   <div className="text">
                     {patient.medications && patient.medications.length > 0
@@ -55,11 +55,11 @@ const PatientMedicalInfo = ({ patient }: PatientMedicalInfoProps) => {
                       : "None"}
                   </div>
                 </li>
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Insurance Provider:</div>
                   <div className="text">{patient.insuranceProvider || "Not provided"}</div>
                 </li>
-                <li>
+                <li className="flex justify-between">
                   <div className="title">Insurance Number:</div>
                   <div className="text">{patient.insuranceNumber || "Not provided"}</div>
                 </li>

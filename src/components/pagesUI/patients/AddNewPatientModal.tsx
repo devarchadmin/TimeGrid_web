@@ -16,6 +16,8 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
   const [medicalConditions, setMedicalConditions] = useState<string>("");
   const [allergies, setAllergies] = useState<string>("");
   const [medications, setMedications] = useState<string>("");
+  const [birthDateError, setBirthDateError] = useState<string | null>(null);
+  const [registrationDateError, setRegistrationDateError] = useState<string | null>(null);
   
   const { register, handleSubmit, control, formState: { errors } } = useForm<IPatient>();
   
@@ -43,6 +45,22 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
   // Handle form submission
   const onSubmit = async (data: IPatient) => {
     try {
+      // Validate birth date
+      if (!birthDate) {
+        setBirthDateError("Date of Birth is required");
+        return;
+      } else {
+        setBirthDateError(null);
+      }
+      
+      // Validate registration date
+      if (!registrationDate) {
+        setRegistrationDateError("Registration Date is required");
+        return;
+      } else {
+        setRegistrationDateError(null);
+      }
+      
       // Process comma-separated strings into arrays
       const medicalConditionsArray = medicalConditions.split(',').map(item => item.trim()).filter(Boolean);
       const allergiesArray = allergies.split(',').map(item => item.trim()).filter(Boolean);
@@ -57,6 +75,11 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
         medicalConditions: medicalConditionsArray,
         allergies: allergiesArray,
         medications: medicationsArray,
+        // Add emergency contact information
+        emergencyContact: data.primaryContactPhone,
+        emergencyContactName: data.primaryContactName,
+        secondaryEmergencyContact: data.secondaryContactPhone,
+        secondaryEmergencyContactName: data.secondaryContactName,
         // Add default social links
         socialLinks: {
           facebook: "https://www.facebook.com",
@@ -154,12 +177,15 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
-                  <FormLabel label="Date of Birth" id="dateOfBirth" />
+                  <FormLabel label="Date of Birth" id="dateOfBirth" optional={false} />
                   <div className="datepicker-style">
                     <DatePicker
                       id="dateOfBirth"
                       selected={birthDate}
-                      onChange={(date) => setBirthDate(date)}
+                      onChange={(date) => {
+                        setBirthDate(date);
+                        setBirthDateError(null);
+                      }}
                       showYearDropdown
                       showMonthDropdown
                       useShortMonthInDropdown
@@ -169,9 +195,12 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
                       isClearable
                       dateFormat="MM/dd/yyyy"
                       placeholderText="Date of Birth"
-                      className="w-full"
+                      className={`w-full ${birthDateError ? "is-invalid" : ""}`}
                     />
                   </div>
+                  {birthDateError && (
+                    <div className="error-message text-danger mt-1">{birthDateError}</div>
+                  )}
                 </div>
                 <div className="col-span-12 md:col-span-6">
                   <SelectBox
@@ -251,24 +280,68 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
             </div>
             
             <div className="card__wrapper mt-[20px]">
-              <h6 className="card__sub-title mb-4">Medical Information</h6>
+              <h6 className="card__sub-title mb-4">Emergency Contact</h6>
               <div className="grid grid-cols-12 gap-y-6 gap-x-6 maxXs:gap-x-0 justify-center align-center">
                 <div className="col-span-12 md:col-span-6">
+                  <h6 className="card__sub-title mb-2.5">Primary Contact</h6>
                   <InputField
-                    label="Emergency Contact"
-                    id="emergencyContact"
+                    label="Name"
+                    id="primaryContactName"
                     type="text"
-                    register={register("emergencyContact")}
-                    error={errors.emergencyContact}
+                    register={register("primaryContactName", {
+                      required: "Primary contact name is required",
+                    })}
+                    error={errors.primaryContactName}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
-                  <FormLabel label="Registration Date" id="registrationDate" />
+                  <h6 className="card__sub-title mb-2.5">Secondary Contact</h6>
+                  <InputField
+                    label="Name"
+                    id="secondaryContactName"
+                    type="text"
+                    register={register("secondaryContactName")}
+                    error={errors.secondaryContactName}
+                    required={false}
+                  />
+                </div>
+                <div className="col-span-12 md:col-span-6">
+                  <InputField
+                    label="Phone"
+                    id="primaryContactPhone"
+                    type="text"
+                    register={register("primaryContactPhone", {
+                      required: "Primary contact phone is required",
+                    })}
+                    error={errors.primaryContactPhone}
+                  />
+                </div>
+                <div className="col-span-12 md:col-span-6">
+                  <InputField
+                    label="Phone"
+                    id="secondaryContactPhone"
+                    type="text"
+                    register={register("secondaryContactPhone")}
+                    error={errors.secondaryContactPhone}
+                    required={false}
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="card__wrapper mt-[20px]">
+              <h6 className="card__sub-title mb-4">Medical Information</h6>
+              <div className="grid grid-cols-12 gap-y-6 gap-x-6 maxXs:gap-x-0 justify-center align-center">
+                <div className="col-span-12 md:col-span-6">
+                  <FormLabel label="Registration Date" id="registrationDate" optional={false} />
                   <div className="datepicker-style">
                     <DatePicker
                       id="registrationDate"
                       selected={registrationDate}
-                      onChange={(date) => setRegistrationDate(date)}
+                      onChange={(date) => {
+                        setRegistrationDate(date);
+                        setRegistrationDateError(null);
+                      }}
                       showYearDropdown
                       showMonthDropdown
                       useShortMonthInDropdown
@@ -278,9 +351,12 @@ const AddNewPatientModal = ({ open, setOpen }: statePropsType) => {
                       isClearable
                       dateFormat="MM/dd/yyyy"
                       placeholderText="Registration Date"
-                      className="w-full"
+                      className={`w-full ${registrationDateError ? "is-invalid" : ""}`}
                     />
                   </div>
+                  {registrationDateError && (
+                    <div className="error-message text-danger mt-1">{registrationDateError}</div>
+                  )}
                 </div>
                 <div className="col-span-12 md:col-span-6">
                   <InputField

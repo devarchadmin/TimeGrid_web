@@ -32,6 +32,8 @@ const EditPatientModal = ({ open, setOpen, patient }: EditPatientModalProps) => 
     patient.medications ? patient.medications.join(', ') : ""
   );
   
+  const [birthDateError, setBirthDateError] = useState<string | null>(null);
+  
   const { register, handleSubmit, control, formState: { errors }, setValue } = useForm<IPatient>({
     defaultValues: {
       firstName: patient.firstName,
@@ -76,6 +78,14 @@ const EditPatientModal = ({ open, setOpen, patient }: EditPatientModalProps) => 
   // Handle form submission
   const onSubmit = async (data: IPatient) => {
     try {
+      // Validate birth date
+      if (!birthDate) {
+        setBirthDateError("Date of Birth is required");
+        return;
+      } else {
+        setBirthDateError(null);
+      }
+      
       // Process comma-separated strings into arrays
       const medicalConditionsArray = medicalConditions.split(',').map(item => item.trim()).filter(Boolean);
       const allergiesArray = allergies.split(',').map(item => item.trim()).filter(Boolean);
@@ -186,12 +196,15 @@ const EditPatientModal = ({ open, setOpen, patient }: EditPatientModalProps) => 
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
-                  <FormLabel label="Date of Birth" id="dateOfBirth" />
+                  <FormLabel label="Date of Birth" id="dateOfBirth" optional={false} />
                   <div className="datepicker-style">
                     <DatePicker
                       id="dateOfBirth"
                       selected={birthDate}
-                      onChange={(date) => setBirthDate(date)}
+                      onChange={(date) => {
+                        setBirthDate(date);
+                        setBirthDateError(null);
+                      }}
                       showYearDropdown
                       showMonthDropdown
                       useShortMonthInDropdown
@@ -201,9 +214,12 @@ const EditPatientModal = ({ open, setOpen, patient }: EditPatientModalProps) => 
                       isClearable
                       dateFormat="MM/dd/yyyy"
                       placeholderText="Date of Birth"
-                      className="w-full"
+                      className={`w-full ${birthDateError ? "is-invalid" : ""}`}
                     />
                   </div>
+                  {birthDateError && (
+                    <div className="error-message text-danger mt-1">{birthDateError}</div>
+                  )}
                 </div>
                 <div className="col-span-12 md:col-span-6">
                   <SelectBox
@@ -287,15 +303,6 @@ const EditPatientModal = ({ open, setOpen, patient }: EditPatientModalProps) => 
             <div className="card__wrapper mt-[20px]">
               <h6 className="card__sub-title mb-4">Medical Information</h6>
               <div className="grid grid-cols-12 gap-y-6 gap-x-6 maxXs:gap-x-0 justify-center align-center">
-                <div className="col-span-12 md:col-span-6">
-                  <InputField
-                    label="Emergency Contact"
-                    id="emergencyContact"
-                    type="text"
-                    register={register("emergencyContact")}
-                    error={errors.emergencyContact}
-                  />
-                </div>
                 <div className="col-span-12 md:col-span-6">
                   <InputField
                     label="Insurance Provider"

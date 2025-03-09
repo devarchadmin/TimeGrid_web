@@ -83,7 +83,9 @@ const EditMedicalInfoModal = ({ open, setOpen, patient }: EditMedicalInfoModalPr
                     label="Blood Group"
                     id="bloodGroup"
                     type="text"
-                    register={register("bloodGroup")}
+                    register={register("bloodGroup", {
+                      required: "Blood Group is required",
+                    })}
                     error={errors.bloodGroup}
                   />
                 </div>
@@ -94,6 +96,7 @@ const EditMedicalInfoModal = ({ open, setOpen, patient }: EditMedicalInfoModalPr
                     type="text"
                     register={register("insuranceProvider")}
                     error={errors.insuranceProvider}
+                    required={false}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
@@ -103,6 +106,7 @@ const EditMedicalInfoModal = ({ open, setOpen, patient }: EditMedicalInfoModalPr
                     type="text"
                     register={register("insuranceNumber")}
                     error={errors.insuranceNumber}
+                    required={false}
                   />
                 </div>
                 <div className="col-span-12">
