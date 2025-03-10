@@ -28,6 +28,25 @@ const mockPatientCounts = {
   "Holiday": { count: 0, names: [] }
 };
 
+// Function to get attendance icon class based on status
+// This is moved outside the component to avoid the React Hook rule violation
+const getAttendanceIconClass = (status: string) => {
+  switch (status) {
+    case "Holiday":
+      return "fa fa-star text-primary";
+    case "Present":
+      return "fa fa-check text-success";
+    case "Late":
+      return "fa fa-exclamation-circle text-warning";
+    case "Absent":
+      return "fa fa-times text-danger";
+    case "On Leave":
+      return "fa fa-plane-departure text-link";
+    default:
+      return "";
+  }
+};
+
 const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
   employee,
   onViewDetails,
@@ -109,7 +128,7 @@ const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
           <TableBody>
             {filteredDateKeys.map((dateKey) => {
               const status = employee[dateKey];
-              const attendanceIcon = useAttendanceHook(status);
+              const attendanceIcon = getAttendanceIconClass(status);
               const dateString = getDateString(dateKey);
               const dayOfWeek = getDayOfWeek(dateKey);
               const { firstCheckIn, lastCheckOut, totalHours, patientCount, patientNames } = getAttendanceDetails(status);

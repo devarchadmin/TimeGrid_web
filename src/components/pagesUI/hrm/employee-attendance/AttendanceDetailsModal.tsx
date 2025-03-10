@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { useAttendanceHook } from "@/hooks/use-condition-class";
 import dynamic from 'next/dynamic';
 import { ApexOptions } from 'apexcharts';
 import Image from "next/image";
@@ -17,6 +16,24 @@ interface AttendanceDetailsModalProps {
   attendanceSessions: any[];
 }
 
+// Function to get attendance icon class based on status
+const getAttendanceIconClass = (status: string) => {
+  switch (status) {
+    case "Holiday":
+      return "fa fa-star text-primary";
+    case "Present":
+      return "fa fa-check text-success";
+    case "Late":
+      return "fa fa-exclamation-circle text-warning";
+    case "Absent":
+      return "fa fa-times text-danger";
+    case "On Leave":
+      return "fa fa-plane-departure text-link";
+    default:
+      return "";
+  }
+};
+
 const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
   isOpen,
   onClose,
@@ -26,7 +43,7 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
   timelineData,
   attendanceSessions,
 }) => {
-  const attendanceIcon = useAttendanceHook(status);
+  const attendanceIcon = getAttendanceIconClass(status);
   const [activeTab, setActiveTab] = useState<string>("timeline");
 
   // Calculate total hours worked
