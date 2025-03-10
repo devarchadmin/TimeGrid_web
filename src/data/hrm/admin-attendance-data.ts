@@ -11,7 +11,7 @@ import img8 from "../../../public/assets/images/avatar/avatar4.png";
 import img9 from "../../../public/assets/images/avatar/avatar6.png";
 export const adminAttendanceData: IAdminAttendance[] = [
   {
-    employeeImg: img1,
+    employeeImg: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "John Doe",
     date1: "Present",
     date2: "Holiday",
@@ -46,7 +46,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Absent",
   },
   {
-    employeeImg: img2,
+    employeeImg: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Jane Smith",
     date1: "Present",
     date2: "Present",
@@ -81,7 +81,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img3,
+    employeeImg: "https://images.pexels.com/photos/15773193/pexels-photo-15773193/free-photo-of-portrait-of-smiling-blonde-woman-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Robert Johnson",
     date1: "Time Off",
     date2: "Present",
@@ -116,7 +116,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img4,
+    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Michael Brown",
     date1: "Present",
     date2: "Present",
@@ -151,7 +151,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Time Off",
   },
   {
-    employeeImg: img5,
+    employeeImg: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Emily Davis",
     date1: "Absent",
     date2: "Holiday",
@@ -186,7 +186,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Holiday",
   },
   {
-    employeeImg: img6,
+    employeeImg: "https://images.pexels.com/photos/18041953/pexels-photo-18041953/free-photo-of-woman-in-seductive-pose-looking-at-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Olivia Wilson",
     date1: "Time Off",
     date2: "Present",
@@ -221,7 +221,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img7,
+    employeeImg: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Sophia Martinez",
     date1: "Present",
     date2: "Present",
@@ -256,7 +256,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img8,
+    employeeImg: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Jackson Taylor",
     date1: "Absent",
     date2: "Holiday",
@@ -291,7 +291,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img9,
+    employeeImg: "https://images.pexels.com/photos/673021/pexels-photo-673021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Ava White",
     date1: "Present",
     date2: "Holiday",
@@ -326,7 +326,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img1,
+    employeeImg: "https://images.pexels.com/photos/5528835/pexels-photo-5528835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "John Doe",
     date1: "Present",
     date2: "Holiday",
@@ -361,7 +361,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img2,
+    employeeImg: "https://images.pexels.com/photos/2599509/pexels-photo-2599509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Jane Smith",
     date1: "Absent",
     date2: "Present",
@@ -396,7 +396,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img3,
+    employeeImg: "https://images.pexels.com/photos/15012251/pexels-photo-15012251/free-photo-of-photo-of-a-young-man-sitting-by-a-gray-wall-and-looking-at-a-smart-phone.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Robert Johnson",
     date1: "Time Off",
     date2: "Present",
@@ -431,7 +431,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img4,
+    employeeImg: "https://images.pexels.com/photos/2599509/pexels-photo-2599509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Michael Brown",
     date1: "Present",
     date2: "Present",
@@ -466,7 +466,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Time Off",
   },
   {
-    employeeImg: img5,
+    employeeImg: "https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Emily Davis",
     date1: "Absent",
     date2: "Holiday",
@@ -501,7 +501,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Holiday",
   },
   {
-    employeeImg: img6,
+    employeeImg: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Olivia Wilson",
     date1: "Time Off",
     date2: "Present",
@@ -536,7 +536,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img7,
+    employeeImg: "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Sophia Martinez",
     date1: "Present",
     date2: "Present",
@@ -571,7 +571,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img8,
+    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
     name: "Jackson Taylor",
     date1: "Absent",
     date2: "Holiday",
@@ -606,7 +606,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img9,
+    employeeImg: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Benjamin Moore",
     date1: "Time Off",
     date2: "Holiday",
@@ -641,7 +641,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img1,
+    employeeImg: "https://images.pexels.com/photos/15235470/pexels-photo-15235470/free-photo-of-close-up-shot-of-a-blonde-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Lucas Clark",
     date1: "Present",
     date2: "Holiday",
@@ -676,7 +676,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img2,
+    employeeImg: "https://images.pexels.com/photos/30701542/pexels-photo-30701542/free-photo-of-smiling-young-man-in-stylish-glasses-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Mason Lee",
     date1: "Absent",
     date2: "Time Off",
@@ -711,7 +711,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: img3,
+    employeeImg: "https://images.pexels.com/photos/19987431/pexels-photo-19987431/free-photo-of-portrait-of-man-with-dyed-blonde-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Ethan Harris",
     date1: "Holiday",
     date2: "Present",
@@ -746,7 +746,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Time Off",
   },
   {
-    employeeImg: img4,
+    employeeImg: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Charlotte Martin",
     date1: "Absent",
     date2: "Time Off",
@@ -781,7 +781,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img5,
+    employeeImg: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Amelia Wilson",
     date1: "Time Off",
     date2: "Holiday",
@@ -816,7 +816,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img6,
+    employeeImg: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     name: "Isabella Thompson",
     date1: "Present",
     date2: "Time Off",
@@ -851,7 +851,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: img7,
+    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
     name: "Henry Walker",
     date1: "Time Off",
     date2: "Present",

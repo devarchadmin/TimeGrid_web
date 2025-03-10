@@ -351,7 +351,7 @@ export interface IAnnouncement {
 }
 // Define an interface for the admin attendance
 export interface IAdminAttendance {
-  employeeImg?: StaticImageData;
+  employeeImg?: string;
   name: string;
   date1: string;
   date2: string;

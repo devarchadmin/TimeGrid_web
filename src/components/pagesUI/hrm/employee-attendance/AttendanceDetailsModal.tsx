@@ -26,7 +26,7 @@ const getAttendanceIconClass = (status: string) => {
       return "fa fa-exclamation-circle text-warning";
     case "Absent":
       return "fa fa-times text-danger";
-    case "Time Off":
+    case "On Leave":
       return "fa fa-plane-departure text-link";
     default:
       return "";
@@ -160,7 +160,7 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-[1000] flex justify-center items-center">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl max-h-[90vh] overflow-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">

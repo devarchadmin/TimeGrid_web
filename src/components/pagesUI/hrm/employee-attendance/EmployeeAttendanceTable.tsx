@@ -113,6 +113,8 @@ const EmployeeAttendanceTable = () => {
                                     className=" border-circle"
                                     src={row?.employeeImg}
                                     alt="User Image"
+                                    width={100}
+                                    height={100}
                                   />
                                 </Link>
                                 <Link
