@@ -90,6 +90,12 @@ const sidebarData: SidebarCategory[] = [
         icon: "fa-regular fa-user",
         link: "/patient/1",
       },
+      {
+        id: 10,
+        label: "Attendance",
+        icon: "fa-regular fa-clock-ten",
+        link: "/attendance",
+      },
     ],
   },
 

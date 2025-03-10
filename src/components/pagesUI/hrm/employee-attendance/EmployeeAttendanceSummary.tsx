@@ -33,7 +33,7 @@ const EmployeeAttendanceSummary = () => {
           <div className="flex items-center gap-[30px] maxSm:gap-5">
             <div className="card__icon">
               <span>
-                <i className="fa-sharp fa-regular fa-gear"></i>
+                <i className="fa-regular fa-clock-ten"></i>
               </span>
             </div>
             <div className="card__title-wrap">
@@ -56,11 +56,11 @@ const EmployeeAttendanceSummary = () => {
           <div className="flex items-center gap-[30px] maxSm:gap-5">
             <div className="card__icon">
               <span>
-                <i className="fa-light fa-badge-check"></i>
+                <i className="fa-regular fa-mug-saucer"></i>
               </span>
             </div>
             <div className="card__title-wrap">
-              <h6 className="card__sub-title mb-[10px]">Total Bark Time</h6>
+              <h6 className="card__sub-title mb-[10px]">Total Break Time</h6>
               <div className="card__content">
                 <h3 className="card__title mb-[5px]">05 Hrs : 55 Min</h3>
                 <span className="card__desc style_two">
@@ -79,11 +79,11 @@ const EmployeeAttendanceSummary = () => {
           <div className="flex items-center gap-[30px] maxSm:gap-5">
             <div className="card__icon">
               <span>
-                <i className="fa-sharp fa-regular fa-user"></i>
+                <i className="fa-regular fa-arrow-right-from-bracket"></i>
               </span>
             </div>
             <div className="card__title-wrap">
-              <h6 className="card__sub-title mb-[10px]">Total Leave</h6>
+              <h6 className="card__sub-title mb-[10px]">Total Time Off</h6>
               <div className="card__content">
                 <h3 className="card__title mb-[5px]">03 Days</h3>
                 <span className="card__desc style_two">

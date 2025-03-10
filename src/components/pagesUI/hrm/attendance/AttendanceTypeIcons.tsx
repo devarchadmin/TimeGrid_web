@@ -16,25 +16,11 @@ const AttendanceTypeIcons = () => {
                 <h6 className="text-dark small">Holiday</h6>
               </div>
               <div className="attendant__info-icon">
-                <i className="fa fa-calendar-week text-secondary"></i>
-                <span className="attachment__info-arrow">
-                  <i className="fa fa-arrow-right text-lightest"></i>
-                </span>
-                <h6 className="text-dark small">Day Off</h6>
-              </div>
-              <div className="attendant__info-icon">
                 <i className="fa fa-check text-success"></i>
                 <span className="attachment__info-arrow">
                   <i className="fa fa-arrow-right text-lightest"></i>
                 </span>
                 <h6 className="text-dark small">Present</h6>
-              </div>
-              <div className="attendant__info-icon">
-                <i className="fa fa-star-half-alt text-info"></i>
-                <span className="attachment__info-arrow">
-                  <i className="fa fa-arrow-right text-lightest"></i>
-                </span>
-                <h6 className="text-dark small">Half Day</h6>
               </div>
               <div className="attendant__info-icon">
                 <i className="fa fa-exclamation-circle text-warning"></i>

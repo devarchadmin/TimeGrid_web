@@ -107,7 +107,7 @@ const EmployeeAttendanceTable = () => {
                               <span className="table-avatar flex justify-start items-center">
                                 <Link
                                   className="me-2.5 avatar-img"
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/attendance/${index + 1}`}
                                 >
                                   <Image
                                     className=" border-circle"
@@ -116,7 +116,7 @@ const EmployeeAttendanceTable = () => {
                                   />
                                 </Link>
                                 <Link
-                                  href={`/hrm/employee-profile/${index + 1}`}
+                                  href={`/attendance/${index + 1}`}
                                   className="avatar-name"
                                 >
                                   {row?.name}

@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import PatientPersonalInfo from "./PatientPersonalInfo";
 import PatientMedicalInfo from "./PatientMedicalInfo";
 import PatientEmergencyContact from "./PatientEmergencyContact";
-import EditPatientModal from "./EditPatientModal";
+import EditPersonalInfoModal from "./EditPersonalInfoModal";
 
 
 interface PatientProfileMainAreaProps {
@@ -17,7 +17,7 @@ interface PatientProfileMainAreaProps {
 
 const PatientProfileMainArea = ({ id }: PatientProfileMainAreaProps) => {
   const [patient, setPatient] = useState<IPatient | null>(null);
-  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [editPersonalInfoModalOpen, setEditPersonalInfoModalOpen] = useState(false);
 
   useEffect(() => {
     // In a real application, this would be an API call
@@ -54,17 +54,17 @@ const PatientProfileMainArea = ({ id }: PatientProfileMainAreaProps) => {
       <div className="app__slide-wrapper">
         <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" />
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
-          <PatientPersonalInfo patient={patient} onEdit={() => setEditModalOpen(true)} />
+          <PatientPersonalInfo patient={patient} onEdit={() => setEditPersonalInfoModalOpen(true)} />
           <PatientEmergencyContact patient={patient} />
           <PatientMedicalInfo patient={patient} />
         </div>
       </div>
       
-      {/* Edit Patient Modal */}
-      {editModalOpen && (
-        <EditPatientModal 
-          open={editModalOpen} 
-          setOpen={setEditModalOpen} 
+      {/* Edit Personal Info Modal */}
+      {editPersonalInfoModalOpen && (
+        <EditPersonalInfoModal 
+          open={editPersonalInfoModalOpen} 
+          setOpen={setEditPersonalInfoModalOpen} 
           patient={patient}
         />
       )}
