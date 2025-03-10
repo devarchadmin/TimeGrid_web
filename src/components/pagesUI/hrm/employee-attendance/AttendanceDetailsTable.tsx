@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { dateKeys } from "@/data/hrm/admin-attendance-data";
-import { useAttendanceHook } from "@/hooks/use-condition-class";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -11,12 +10,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Tooltip from "@mui/material/Tooltip";
 import Chip from "@mui/material/Chip";
-import IconButton from "@mui/material/IconButton";
+import Link from "next/link";
 
 interface AttendanceDetailsTableProps {
   employee: any;
   onViewDetails: (date: string, status: string) => void;
-  selectedMonth: Date;
+  startDate: string;
+  endDate: string;
 }
 
 // Mock patient data for the table
@@ -50,17 +50,15 @@ const getAttendanceIconClass = (status: string) => {
 const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
   employee,
   onViewDetails,
-  selectedMonth,
+  startDate,
+  endDate,
 }) => {
-  // Get the selected year and month
-  const selectedYear = selectedMonth.getFullYear();
-  const selectedMonthIndex = selectedMonth.getMonth();
-
   // Function to get the date string for a given date key (date1, date2, etc.)
   const getDateString = (dateKey: string) => {
     const dayNumber = parseInt(dateKey.replace("date", ""));
-    // Create a date object for the selected month and the day number
-    const date = new Date(selectedYear, selectedMonthIndex, dayNumber);
+    // Create a date object for the current month and the day number
+    const date = new Date();
+    date.setDate(dayNumber);
     
     // Format the date manually
     const monthNames = [
@@ -74,9 +72,22 @@ const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
   // Function to get the day of week
   const getDayOfWeek = (dateKey: string) => {
     const dayNumber = parseInt(dateKey.replace("date", ""));
-    const date = new Date(selectedYear, selectedMonthIndex, dayNumber);
+    const date = new Date();
+    date.setDate(dayNumber);
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return days[date.getDay()];
+  };
+
+  // Function to check if a date is within the selected range
+  const isDateInRange = (dateKey: string) => {
+    const dayNumber = parseInt(dateKey.replace("date", ""));
+    const date = new Date();
+    date.setDate(dayNumber);
+    
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    return date >= start && date <= end;
   };
 
   // Function to get check-in and check-out times based on status
@@ -106,8 +117,8 @@ const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
     return { firstCheckIn, lastCheckOut, totalHours, patientCount, patientNames };
   };
 
-  // Filter date keys for the current month (all dates are shown for demo purposes)
-  const filteredDateKeys = dateKeys;
+  // Filter date keys for the selected date range
+  const filteredDateKeys = dateKeys.filter(isDateInRange);
 
   return (
     <div className="attendance-details-table">
@@ -126,73 +137,90 @@ const AttendanceDetailsTable: React.FC<AttendanceDetailsTableProps> = ({
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredDateKeys.map((dateKey) => {
-              const status = employee[dateKey];
-              const attendanceIcon = getAttendanceIconClass(status);
-              const dateString = getDateString(dateKey);
-              const dayOfWeek = getDayOfWeek(dateKey);
-              const { firstCheckIn, lastCheckOut, totalHours, patientCount, patientNames } = getAttendanceDetails(status);
+            {filteredDateKeys.length > 0 ? (
+              filteredDateKeys.map((dateKey) => {
+                const status = employee[dateKey];
+                const attendanceIcon = getAttendanceIconClass(status);
+                const dateString = getDateString(dateKey);
+                const dayOfWeek = getDayOfWeek(dateKey);
+                const { firstCheckIn, lastCheckOut, totalHours, patientCount, patientNames } = getAttendanceDetails(status);
 
-              // Determine row color based on status
-              let rowClass = "";
-              if (status === "Holiday") rowClass = "bg-blue-50";
-              else if (status === "Absent") rowClass = "bg-red-50";
-              else if (status === "On Leave") rowClass = "bg-purple-50";
+                // Determine row color based on status
+                let rowClass = "";
+                if (status === "Holiday") rowClass = "bg-blue-50";
+                else if (status === "Absent") rowClass = "bg-red-50";
+                else if (status === "On Leave") rowClass = "bg-purple-50";
 
-              return (
-                <TableRow key={dateKey} className={`${rowClass} hover:bg-gray-50`}>
-                  <TableCell>{dateString}</TableCell>
-                  <TableCell>{dayOfWeek}</TableCell>
-                  <TableCell>
-                    <div className="flex items-center">
-                      <i className={`${attendanceIcon} mr-2`}></i>
-                      <span>{status}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell>{firstCheckIn}</TableCell>
-                  <TableCell>{lastCheckOut}</TableCell>
-                  <TableCell>{totalHours}</TableCell>
-                  <TableCell>
-                    {patientCount > 0 ? (
-                      <Tooltip 
-                        title={
-                          <div>
-                            <p className="font-semibold mb-1">Patients:</p>
-                            <ul className="pl-4">
-                              {patientNames.map((name, idx) => (
-                                <li key={idx} className="text-xs">• {name}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        } 
-                        arrow
-                      >
-                        <Chip 
-                          label={`${patientCount} patients`} 
-                          size="small" 
-                          color="primary" 
-                          variant="outlined"
-                        />
-                      </Tooltip>
-                    ) : (
-                      "--"
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    <Tooltip title="View Details">
-                      <IconButton
-                        onClick={() => onViewDetails(dateString, status)}
-                        disabled={status === "Holiday" || status === "Absent" || status === "On Leave"}
-                        className={status === "Holiday" || status === "Absent" || status === "On Leave" ? "text-gray-300" : "text-primary"}
-                        size="small"
-                      >
-                        <i className="fa fa-eye"></i>
-                      </IconButton>
-                    </Tooltip>
-                  </TableCell>
-                </TableRow>
-              );
-            })}
+                return (
+                  <TableRow key={dateKey} className={`${rowClass} hover:bg-gray-50`}>
+                    <TableCell>{dateString}</TableCell>
+                    <TableCell>{dayOfWeek}</TableCell>
+                    <TableCell>
+                      <div className="flex items-center">
+                        <i className={`${attendanceIcon} mr-2`}></i>
+                        <span>{status}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell>{firstCheckIn}</TableCell>
+                    <TableCell>{lastCheckOut}</TableCell>
+                    <TableCell>{totalHours}</TableCell>
+                    <TableCell>
+                      {patientCount > 0 ? (
+                        <Tooltip 
+                          title={
+                            <div>
+                              <p className="font-semibold mb-1">Patients:</p>
+                              <ul className="pl-4">
+                                {patientNames.map((name, idx) => (
+                                  <li key={idx} className="text-xs">• {name}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          } 
+                          arrow
+                        >
+                          <Chip 
+                            label={`${patientCount} patients`} 
+                            size="small" 
+                            color="primary" 
+                            variant="outlined"
+                          />
+                        </Tooltip>
+                      ) : (
+                        "--"
+                      )}
+                    </TableCell>
+                    <TableCell>
+                      {status !== "Holiday" && status !== "Absent" && status !== "On Leave" ? (
+                        <a 
+                          href="#" 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            onViewDetails(dateString, status);
+                          }}
+                          className="table__icon download"
+                        >
+                          <i className="fa-regular fa-eye"></i>
+                        </a>
+                      ) : (
+                        <span className="table__icon edit !text-gray-500 !bg-gray-200/50 !hover:bg-gray-200/70">
+                          <i className="fa-regular fa-eye"></i>
+                        </span>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                );
+              })
+            ) : (
+              <TableRow>
+                <TableCell colSpan={8} className="text-center py-8">
+                  <div className="text-gray-500">
+                    <i className="fa fa-calendar-times text-2xl mb-2"></i>
+                    <p>No attendance records found for the selected date range.</p>
+                  </div>
+                </TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </TableContainer>

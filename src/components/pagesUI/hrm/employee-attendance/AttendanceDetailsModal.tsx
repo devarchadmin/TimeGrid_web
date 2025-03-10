@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import dynamic from 'next/dynamic';
 import { ApexOptions } from 'apexcharts';
-import Image from "next/image";
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -27,7 +26,7 @@ const getAttendanceIconClass = (status: string) => {
       return "fa fa-exclamation-circle text-warning";
     case "Absent":
       return "fa fa-times text-danger";
-    case "On Leave":
+    case "Time Off":
       return "fa fa-plane-departure text-link";
     default:
       return "";
@@ -44,7 +43,6 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
   attendanceSessions,
 }) => {
   const attendanceIcon = getAttendanceIconClass(status);
-  const [activeTab, setActiveTab] = useState<string>("timeline");
 
   // Calculate total hours worked
   const totalHours = attendanceSessions.reduce((total, session) => {
@@ -163,7 +161,7 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-5xl max-h-[90vh] overflow-auto">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl max-h-[90vh] overflow-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-semibold">Attendance Details</h3>
@@ -210,124 +208,71 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
             </div>
           </div>
 
-          <div className="tabs mb-4">
-            <div className="flex border-b">
-              <button 
-                className={`py-2 px-4 font-medium ${activeTab === 'timeline' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
-                onClick={() => setActiveTab('timeline')}
-              >
-                Timeline
-              </button>
-              <button 
-                className={`py-2 px-4 font-medium ${activeTab === 'sessions' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-500'}`}
-                onClick={() => setActiveTab('sessions')}
-              >
-                Patient Sessions
-              </button>
-            </div>
+          <div className="timeline-view">
+            {timelineData && timelineData.length > 0 ? (
+              <div className="attendance-timeline">
+                {typeof window !== 'undefined' && (
+                  <Chart options={options} series={options.series || []} type="rangeBar" height={350} />
+                )}
+                <div className="timeline-legend flex justify-center mt-4 gap-6">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-primary mr-2"></div>
+                    <span className="text-sm">Patient Care</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-warning mr-2"></div>
+                    <span className="text-sm">Break Time</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center h-[350px] bg-gray-50 rounded-lg">
+                <div className="text-center text-gray-500">
+                  <i className="fa fa-chart-bar text-4xl mb-2"></i>
+                  <p>Timeline data not available for this attendance record.</p>
+                </div>
+              </div>
+            )}
           </div>
 
-          {activeTab === 'timeline' ? (
-            <div className="timeline-view">
-              {timelineData && timelineData.length > 0 ? (
-                <div className="attendance-timeline">
-                  {typeof window !== 'undefined' && (
-                    <Chart options={options} series={options.series || []} type="rangeBar" height={350} />
-                  )}
-                  <div className="timeline-legend flex justify-center mt-4 gap-6">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-primary mr-2"></div>
-                      <span className="text-sm">Patient Care</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-warning mr-2"></div>
-                      <span className="text-sm">Break Time</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 rounded-full bg-danger mr-2"></div>
-                      <span className="text-sm">Check Out</span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex justify-center items-center h-[350px] bg-gray-50 rounded-lg">
-                  <div className="text-center text-gray-500">
-                    <i className="fa fa-chart-bar text-4xl mb-2"></i>
-                    <p>Timeline data not available for this attendance record.</p>
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="sessions-view">
-              {attendanceSessions.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="attendance-sessions mt-6">
+            <h4 className="text-lg font-medium mb-4">Activity Summary</h4>
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white border">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="py-2 px-4 border text-left">Time</th>
+                    <th className="py-2 px-4 border text-left">Activity</th>
+                    <th className="py-2 px-4 border text-left">Duration</th>
+                    <th className="py-2 px-4 border text-left">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
                   {attendanceSessions.map((session, index) => (
-                    <div 
-                      key={index} 
-                      className={`session-card border rounded-lg p-4 hover:shadow-md transition-shadow ${
-                        session.type === 'break' ? 'border-l-4 border-l-warning' : 'border-l-4 border-l-primary'
-                      }`}
-                    >
-                      {session.type === 'work' && session.patient ? (
-                        <div className="flex items-start mb-3">
-                          <div className="patient-avatar mr-3">
-                            {session.patient.image && (
-                              <Image
-                                src={session.patient.image}
-                                alt={session.patient.name}
-                                width={50}
-                                height={50}
-                                className="rounded-full"
-                              />
-                            )}
-                          </div>
-                          <div>
-                            <h4 className="font-semibold">{session.patient.name}</h4>
-                            <p className="text-sm text-gray-500">Patient ID: {session.patient.id}</p>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="mb-3">
-                          <h4 className="font-semibold text-warning">
-                            <i className="fa fa-coffee mr-2"></i>
-                            Break Time
-                          </h4>
-                        </div>
-                      )}
-                      
-                      <div className="session-details grid grid-cols-2 gap-2 mb-3">
-                        <div>
-                          <p className="text-gray-600 text-sm">Check In:</p>
-                          <p className="font-medium">{session.checkIn}</p>
-                        </div>
-                        <div>
-                          <p className="text-gray-600 text-sm">Check Out:</p>
-                          <p className="font-medium">{session.checkOut}</p>
-                        </div>
-                        <div>
-                          <p className="text-gray-600 text-sm">Duration:</p>
-                          <p className="font-medium">{session.duration}</p>
-                        </div>
-                      </div>
-                      
-                      <div className="session-notes">
-                        <p className="text-gray-600 text-sm">Notes:</p>
-                        <p className="text-sm bg-gray-50 p-2 rounded">{session.notes}</p>
-                      </div>
-                    </div>
+                    <tr key={index} className="border hover:bg-gray-50">
+                      <td className="py-2 px-4 border">
+                        {session.checkIn} - {session.checkOut}
+                      </td>
+                      <td className="py-2 px-4 border">
+                        {session.type === 'break' ? (
+                          <span className="text-warning flex items-center">
+                            <i className="fa fa-coffee mr-2"></i> Break Time
+                          </span>
+                        ) : (
+                          <span className="text-primary flex items-center">
+                            <i className="fa fa-user-md mr-2"></i> 
+                            {session.patient ? `Patient: ${session.patient.name}` : 'Work'}
+                          </span>
+                        )}
+                      </td>
+                      <td className="py-2 px-4 border">{session.duration}</td>
+                      <td className="py-2 px-4 border text-sm">{session.notes}</td>
+                    </tr>
                   ))}
-                </div>
-              ) : (
-                <div className="flex justify-center items-center h-[350px] bg-gray-50 rounded-lg">
-                  <div className="text-center text-gray-500">
-                    <i className="fa fa-user-clock text-4xl mb-2"></i>
-                    <p>No patient sessions available for this attendance record.</p>
-                  </div>
-                </div>
-              )}
+                </tbody>
+              </table>
             </div>
-          )}
+          </div>
 
           <div className="flex justify-end mt-6">
             <button

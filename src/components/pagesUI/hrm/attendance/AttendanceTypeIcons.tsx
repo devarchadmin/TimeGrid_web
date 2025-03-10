@@ -41,7 +41,7 @@ const AttendanceTypeIcons = () => {
                 <span className="attachment__info-arrow">
                   <i className="fa fa-arrow-right text-lightest"></i>
                 </span>
-                <h6 className="text-dark small">On Leave</h6>
+                <h6 className="text-dark small">Time Off</h6>
               </div>
             </div>
           </div>

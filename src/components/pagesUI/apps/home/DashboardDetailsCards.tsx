@@ -13,7 +13,7 @@ const DashboardDetailsCards = () => {
     },
     {
       iconClass: "fa-sharp fa-regular fa-house-person-leave",
-      title: "On Leave Employee",
+      title: "Time Off Employees",
       value: 55,
       description: "Than Last Month",
       percentageChange: "+2.15%",

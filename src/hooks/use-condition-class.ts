@@ -8,7 +8,7 @@ export const useAttendanceHook = (tag: any) => {
       return "fa fa-exclamation-circle text-warning";
     case "Absent":
       return "fa fa-times text-danger";
-    case "On Leave":
+    case "Time Off":
       return "fa fa-plane-departure text-link";
     default:
       return "";

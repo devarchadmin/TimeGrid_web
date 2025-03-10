@@ -38,7 +38,7 @@ const AttendanceSummary = () => {
       <div className="col-span-12 sm:col-span-6 xxl:col-span-3">
         <SummarySingleCard
           iconClass="fa-sharp fa-regular fa-house-person-leave"
-          title="On Leave Employee"
+          title="Time Off Employee"
           value={55}
           description="Than Last Month"
           percentageChange="+2.15%"
