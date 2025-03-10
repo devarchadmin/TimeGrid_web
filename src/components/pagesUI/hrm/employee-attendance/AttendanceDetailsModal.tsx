@@ -88,7 +88,17 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
       type: 'rangeBar' as const,
       foreColor: '#7A7A7A',
       toolbar: {
-        show: false
+        show: true,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true
+        },
+        autoSelected: 'zoom'
       }
     },
     plotOptions: {
@@ -161,8 +171,8 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-[1000] flex justify-center items-center">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl max-h-[90vh] overflow-auto">
-        <div className="p-6">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-4xl max-h-[90vh] overflow-hidden">
+        <div className="p-6 overflow-y-auto max-h-[90vh] rounded-lg">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-semibold">Attendance Details</h3>
             <button
@@ -241,7 +251,8 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
               <table className="min-w-full bg-white border">
                 <thead>
                   <tr className="bg-gray-100">
-                    <th className="py-2 px-4 border text-left">Time</th>
+                    <th className="py-2 px-4 border text-left">Check In</th>
+                    <th className="py-2 px-4 border text-left">Check Out</th>
                     <th className="py-2 px-4 border text-left">Activity</th>
                     <th className="py-2 px-4 border text-left">Duration</th>
                     <th className="py-2 px-4 border text-left">Notes</th>
@@ -249,9 +260,16 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
                 </thead>
                 <tbody>
                   {attendanceSessions.map((session, index) => (
-                    <tr key={index} className="border hover:bg-gray-50">
+                    <tr key={index} className={`border hover:bg-gray-50 ${index % 2 === 0 ? 'bg-gray-50' : ''}`}>
                       <td className="py-2 px-4 border">
-                        {session.checkIn} - {session.checkOut}
+                        <span className="text-success font-medium">
+                          <i className="fa fa-sign-in-alt mr-1"></i> {session.checkIn}
+                        </span>
+                      </td>
+                      <td className="py-2 px-4 border">
+                        <span className="text-danger font-medium">
+                          <i className="fa fa-sign-out-alt mr-1"></i> {session.checkOut}
+                        </span>
                       </td>
                       <td className="py-2 px-4 border">
                         {session.type === 'break' ? (
@@ -265,7 +283,7 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
                           </span>
                         )}
                       </td>
-                      <td className="py-2 px-4 border">{session.duration}</td>
+                      <td className="py-2 px-4 border font-medium">{session.duration}</td>
                       <td className="py-2 px-4 border text-sm">{session.notes}</td>
                     </tr>
                   ))}
@@ -288,4 +306,4 @@ const AttendanceDetailsModal: React.FC<AttendanceDetailsModalProps> = ({
   );
 };
 
-export default AttendanceDetailsModal; 
+export default AttendanceDetailsModal;
