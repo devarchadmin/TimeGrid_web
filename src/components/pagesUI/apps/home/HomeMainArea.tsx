@@ -101,7 +101,7 @@ const HomeMainArea = () => {
           <div className="col-span-12 lg:col-span-6 mb-0">
             <div className="card__wrapper h-full">
               <div className="card__title-wrap flex flex-wrap gap-[10px] items-center justify-between mb-[25px]">
-                <h5 className="card__heading-title">Daily Attendance</h5>
+                <h5 className="card__heading-title">Attendance (Last 2 Weeks)</h5>
                 <Link href="/attendance" className="btn btn-sm btn-primary">View Details</Link>
               </div>
               <div className="attendance-chart" style={{ height: "320px" }}>
@@ -232,8 +232,8 @@ const HomeMainArea = () => {
                       <th>Patient Name</th>
                       <th>ID</th>
                       <th>Age</th>
-                      <th>Condition</th>
-                      <th>Doctor</th>
+                      <th>Insurance Provider</th>
+                      <th>Emergency Contact</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -241,36 +241,36 @@ const HomeMainArea = () => {
                       <td>Alice Cooper</td>
                       <td>PT-1001</td>
                       <td>42</td>
-                      <td>Hypertension</td>
-                      <td>Dr. Johnson</td>
+                      <td>Blue Cross</td>
+                      <td>John Cooper (Spouse)</td>
                     </tr>
                     <tr>
                       <td>Bob Marley</td>
                       <td>PT-1002</td>
                       <td>35</td>
-                      <td>Diabetes</td>
-                      <td>Dr. Smith</td>
+                      <td>Aetna</td>
+                      <td>Rita Marley (Spouse)</td>
                     </tr>
                     <tr>
                       <td>Carol Danvers</td>
                       <td>PT-1003</td>
                       <td>29</td>
-                      <td>Asthma</td>
-                      <td>Dr. Williams</td>
+                      <td>United Healthcare</td>
+                      <td>Maria Danvers (Mother)</td>
                     </tr>
                     <tr>
                       <td>David Bowie</td>
                       <td>PT-1004</td>
                       <td>51</td>
-                      <td>Arthritis</td>
-                      <td>Dr. Brown</td>
+                      <td>Cigna</td>
+                      <td>Iman Bowie (Spouse)</td>
                     </tr>
                     <tr>
                       <td>Eva Green</td>
                       <td>PT-1005</td>
                       <td>38</td>
-                      <td>Migraine</td>
-                      <td>Dr. Davis</td>
+                      <td>Kaiser Permanente</td>
+                      <td>James Green (Brother)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -292,18 +292,43 @@ const AttendanceChart = () => {
     setIsMounted(true);
   }, []);
 
-  // Generate last 30 days for the chart
+  // Generate last 14 days for the chart
   const generateDailyData = () => {
     const days = [];
     const presentData = [];
     const absentData = [];
+    const dateLabels = [];
     
     const today = new Date();
+    const twoWeeksAgo = new Date(today);
+    twoWeeksAgo.setDate(today.getDate() - 13);
     
-    for (let i = 29; i >= 0; i--) {
+    // Format dates for period display: "28 Feb, 2025 to 13 Mar, 2025"
+    const formatDateForPeriod = (date: Date) => {
+      const day = date.getDate();
+      const month = date.toLocaleString('en-US', { month: 'short' });
+      const year = date.getFullYear();
+      return `${day} ${month}, ${year}`;
+    };
+    
+    // Format dates for x-axis: "28 Feb"
+    const formatDateForAxis = (date: Date) => {
+      const day = date.getDate();
+      const month = date.toLocaleString('en-US', { month: 'short' });
+      return `${day} ${month}`;
+    };
+    
+    const startDateStr = formatDateForPeriod(twoWeeksAgo);
+    const endDateStr = formatDateForPeriod(today);
+    
+    for (let i = 13; i >= 0; i--) {
       const date = new Date(today);
       date.setDate(today.getDate() - i);
-      days.push(date.getDate().toString());
+      
+      // Format as "28 Feb"
+      const formattedDate = formatDateForAxis(date);
+      days.push(formattedDate);
+      dateLabels.push(date.toLocaleDateString('en-US', { weekday: 'short' }));
       
       // Generate random attendance data between 85-100%
       const presentValue = Math.floor(Math.random() * 15) + 85;
@@ -311,10 +336,10 @@ const AttendanceChart = () => {
       absentData.push(100 - presentValue);
     }
     
-    return { days, presentData, absentData };
+    return { days, presentData, absentData, dateLabels, startDateStr, endDateStr };
   };
   
-  const { days, presentData, absentData } = generateDailyData();
+  const { days, presentData, absentData, dateLabels, startDateStr, endDateStr } = generateDailyData();
 
   const options = {
     series: [
