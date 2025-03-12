@@ -37,6 +37,12 @@ const sidebarData: SidebarCategory[] = [
     category: "Main",
     items: [
       {
+        id: 11,
+        label: "Dashboard",
+        icon: "fa-regular fa-grid-2",
+        link: "/",
+      },
+      {
         id: 1,
         label: "Employees",
         icon: "fa-regular fa-users",
