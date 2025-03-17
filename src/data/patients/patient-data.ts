@@ -45,7 +45,6 @@ const patientData: IPatient[] = [
         medicineName: "Albuterol",
         dosage: "2 puffs",
         frequency: "As needed",
-        startDate: "2022-03-15",
         instructions: "Use for acute asthma symptoms",
         timeOfDay: ["Morning", "Evening"]
       },
@@ -54,7 +53,6 @@ const patientData: IPatient[] = [
         medicineName: "Flonase",
         dosage: "1 spray per nostril",
         frequency: "Daily",
-        startDate: "2022-03-15",
         instructions: "Use for allergic rhinitis symptoms",
         timeOfDay: ["Morning"]
       },
@@ -63,8 +61,6 @@ const patientData: IPatient[] = [
         medicineName: "Zyrtec",
         dosage: "10mg",
         frequency: "Daily",
-        startDate: "2023-05-10",
-        endDate: "2023-08-10",
         instructions: "Take during allergy season",
         timeOfDay: ["Morning"]
       }
@@ -146,7 +142,6 @@ const patientData: IPatient[] = [
         medicineName: "Lisinopril",
         dosage: "10mg",
         frequency: "Daily",
-        startDate: "2021-11-10",
         instructions: "Take for hypertension",
         timeOfDay: ["Morning"]
       },
@@ -155,7 +150,6 @@ const patientData: IPatient[] = [
         medicineName: "Metformin",
         dosage: "500mg",
         frequency: "Twice daily",
-        startDate: "2021-11-10",
         instructions: "Take with meals for diabetes management",
         timeOfDay: ["Morning", "Evening"]
       }
@@ -234,7 +228,6 @@ const patientData: IPatient[] = [
         medicineName: "Sumatriptan",
         dosage: "50mg",
         frequency: "As needed",
-        startDate: "2022-02-10",
         instructions: "Take at first sign of migraine. May repeat after 2 hours if needed. Do not exceed 200mg in 24 hours.",
         timeOfDay: ["Morning", "Afternoon", "Evening", "Night"]
       },
@@ -243,7 +236,6 @@ const patientData: IPatient[] = [
         medicineName: "Sertraline",
         dosage: "50mg",
         frequency: "Daily",
-        startDate: "2022-02-10",
         instructions: "Take with food to reduce stomach upset",
         timeOfDay: ["Morning"]
       },
@@ -252,7 +244,6 @@ const patientData: IPatient[] = [
         medicineName: "Magnesium",
         dosage: "400mg",
         frequency: "Daily",
-        startDate: "2022-05-15",
         instructions: "Supplement for migraine prevention",
         timeOfDay: ["Evening"]
       }
@@ -331,7 +322,6 @@ const patientData: IPatient[] = [
         medicineName: "Atorvastatin",
         dosage: "40mg",
         frequency: "Daily",
-        startDate: "2020-09-10",
         instructions: "Take in the evening to maximize effectiveness",
         timeOfDay: ["Evening"]
       },
@@ -340,7 +330,6 @@ const patientData: IPatient[] = [
         medicineName: "Clopidogrel",
         dosage: "75mg",
         frequency: "Daily",
-        startDate: "2020-09-10",
         instructions: "Take with food to reduce stomach upset",
         timeOfDay: ["Morning"]
       },
@@ -349,8 +338,6 @@ const patientData: IPatient[] = [
         medicineName: "Aspirin (Low-dose)",
         dosage: "81mg",
         frequency: "Daily",
-        startDate: "2021-03-15",
-        endDate: "2021-09-15",
         instructions: "Discontinued due to allergy development",
         timeOfDay: ["Morning"]
       }
@@ -434,7 +421,6 @@ const patientData: IPatient[] = [
         medicineName: "Levothyroxine",
         dosage: "75mcg",
         frequency: "Daily",
-        startDate: "2021-11-15",
         instructions: "Take on empty stomach, 30-60 minutes before breakfast. Avoid calcium and iron supplements within 4 hours.",
         timeOfDay: ["Morning"]
       },
@@ -443,7 +429,6 @@ const patientData: IPatient[] = [
         medicineName: "Vitamin D",
         dosage: "2000 IU",
         frequency: "Daily",
-        startDate: "2022-02-20",
         instructions: "Take with food to improve absorption",
         timeOfDay: ["Evening"]
       }
@@ -527,7 +512,6 @@ const patientData: IPatient[] = [
         medicineName: "Omeprazole",
         dosage: "20mg",
         frequency: "Daily",
-        startDate: "2022-06-05",
         instructions: "Take 30 minutes before breakfast",
         timeOfDay: ["Morning"]
       },
@@ -536,7 +520,6 @@ const patientData: IPatient[] = [
         medicineName: "Zolpidem",
         dosage: "5mg",
         frequency: "As needed",
-        startDate: "2022-06-05",
         instructions: "Take 30 minutes before bedtime. Use only when necessary for insomnia. Do not use more than 3 times per week.",
         timeOfDay: ["Night"]
       },
@@ -545,7 +528,6 @@ const patientData: IPatient[] = [
         medicineName: "Melatonin",
         dosage: "3mg",
         frequency: "Daily",
-        startDate: "2022-08-15",
         instructions: "Take 1 hour before bedtime to help regulate sleep cycle",
         timeOfDay: ["Night"]
       }

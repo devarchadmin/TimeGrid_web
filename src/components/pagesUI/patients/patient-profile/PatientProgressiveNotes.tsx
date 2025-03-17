@@ -1,24 +1,59 @@
 "use client";
-import React from "react";
-import { IPatient } from "@/interface/patient.interface";
+import React, { useState, useMemo } from "react";
+import { IPatient, IProgressiveNote } from "@/interface/patient.interface";
 
 interface PatientProgressiveNotesProps {
   patient: IPatient;
 }
 
 const PatientProgressiveNotes = ({ patient }: PatientProgressiveNotesProps) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Sort notes in chronological order (newest first) and filter by doctor name
+  const filteredNotes = useMemo(() => {
+    if (!patient.progressiveNotes) return [];
+    
+    // Sort by date (newest first)
+    const sortedNotes = [...patient.progressiveNotes].sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    
+    // Filter by doctor name if search term exists
+    if (searchTerm.trim() === "") {
+      return sortedNotes;
+    }
+    
+    return sortedNotes.filter(note => 
+      note.addedBy.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [patient.progressiveNotes, searchTerm]);
+
   return (
     <>
       <div className="col-span-12 md:col-span-6 xl:col-span-6">
-        <div className="card__wrapper">
-          <div className="employee__profile-single-box relative">
+        <div className="card__wrapper h-full">
+          <div className="employee__profile-single-box relative h-full flex flex-col">
             <div className="card__title-wrap flex align-center justify-between mb-[15px]">
               <h5 className="card__heading-title">Progressive Notes</h5>
             </div>
-            <div className="progressive-notes-wrapper">
-              {patient.progressiveNotes && patient.progressiveNotes.length > 0 ? (
+            
+            {/* Search input */}
+            <div className="search-box mb-3">
+              <div className="form__input">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search by doctor name..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            </div>
+            
+            <div className="progressive-notes-wrapper overflow-y-auto h-[50vh] pr-2 scrollbar-hide">
+              {filteredNotes.length > 0 ? (
                 <div className="progressive-notes-list">
-                  {patient.progressiveNotes.map((note) => (
+                  {filteredNotes.map((note) => (
                     <div key={note.id} className="progressive-note-item p-3 mb-3 border border-gray-200 rounded-md">
                       <div className="flex justify-between items-start">
                         <div className="w-full">
@@ -34,7 +69,11 @@ const PatientProgressiveNotes = ({ patient }: PatientProgressiveNotesProps) => {
                 </div>
               ) : (
                 <div className="no-data text-center p-4">
-                  <p className="text-gray-500">No progressive notes available for this patient.</p>
+                  {patient.progressiveNotes && patient.progressiveNotes.length > 0 ? (
+                    <p className="text-gray-500">No matching notes found. Try a different search term.</p>
+                  ) : (
+                    <p className="text-gray-500">No progressive notes available for this patient.</p>
+                  )}
                 </div>
               )}
             </div>

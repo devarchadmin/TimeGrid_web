@@ -31,7 +31,8 @@ export default function RootLayout({
           />
         </head>
 
-        <body suppressHydrationWarning={true} className="body-area">
+        {/* Use custom-scrollbar for transparent scrollbar or scrollbar-hide to completely remove it */}
+        <body suppressHydrationWarning={true} className="body-area custom-scrollbar">
           <ReduxProvider>
             <AppProvider>
               <DirectionProvider>

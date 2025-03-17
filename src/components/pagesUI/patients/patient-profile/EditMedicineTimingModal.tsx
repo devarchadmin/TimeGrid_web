@@ -15,8 +15,6 @@ const EditMedicineTimingModal = ({ open, setOpen, patient, medicineTiming }: Edi
   const [medicineName, setMedicineName] = useState(medicineTiming.medicineName);
   const [dosage, setDosage] = useState(medicineTiming.dosage);
   const [frequency, setFrequency] = useState(medicineTiming.frequency);
-  const [startDate, setStartDate] = useState(medicineTiming.startDate);
-  const [endDate, setEndDate] = useState(medicineTiming.endDate || "");
   const [instructions, setInstructions] = useState(medicineTiming.instructions || "");
   const [timeOfDay, setTimeOfDay] = useState<string[]>(medicineTiming.timeOfDay);
 
@@ -33,7 +31,7 @@ const EditMedicineTimingModal = ({ open, setOpen, patient, medicineTiming }: Edi
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!medicineName || !dosage || !frequency || !startDate || timeOfDay.length === 0) {
+    if (!medicineName || !dosage || !frequency || timeOfDay.length === 0) {
       toast.error("Please fill in all required fields");
       return;
     }
@@ -108,35 +106,6 @@ const EditMedicineTimingModal = ({ open, setOpen, patient, medicineTiming }: Edi
                       onChange={(e) => setFrequency(e.target.value)}
                       placeholder="Enter frequency (e.g., Daily, Twice daily)"
                       required
-                    />
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6">
-                  <div className="form-group">
-                    <label htmlFor="startDate" className="form-label">
-                      Start Date <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="date"
-                      id="startDate"
-                      className="form-control"
-                      value={startDate}
-                      onChange={(e) => setStartDate(e.target.value)}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6">
-                  <div className="form-group">
-                    <label htmlFor="endDate" className="form-label">
-                      End Date
-                    </label>
-                    <input
-                      type="date"
-                      id="endDate"
-                      className="form-control"
-                      value={endDate}
-                      onChange={(e) => setEndDate(e.target.value)}
                     />
                   </div>
                 </div>

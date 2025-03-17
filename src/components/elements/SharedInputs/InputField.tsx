@@ -13,6 +13,7 @@ interface InputFieldProps {
   groupText?: string;
   isTextArea?: boolean;
   defaultValue?: string | number;
+  rows?: number;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -26,6 +27,7 @@ const InputField: React.FC<InputFieldProps> = ({
   groupInput = false,
   isTextArea = false,
   defaultValue = "",
+  rows = 3,
 }) => {
   return (
     <div className="form__input-box">
@@ -73,6 +75,7 @@ const InputField: React.FC<InputFieldProps> = ({
                 id={id}
                 className={`form-control ${error ? "is-invalid" : ""}`}
                 defaultValue={defaultValue} // Set the default value
+                rows={rows}
                 {...(register ? register : {})}
               ></textarea>
             </div>

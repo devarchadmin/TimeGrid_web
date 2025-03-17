@@ -29,8 +29,8 @@ const PatientMedicineTimings = ({ patient }: PatientMedicineTimingsProps) => {
   return (
     <>
       <div className="col-span-12 md:col-span-6 xl:col-span-6">
-        <div className="card__wrapper">
-          <div className="employee__profile-single-box relative">
+        <div className="card__wrapper h-full">
+          <div className="employee__profile-single-box relative h-full flex flex-col">
             <div className="card__title-wrap flex align-center justify-between mb-[15px]">
               <h5 className="card__heading-title">Medicine Timings</h5>
               <button
@@ -41,53 +41,45 @@ const PatientMedicineTimings = ({ patient }: PatientMedicineTimingsProps) => {
                 <i className="fa-solid fa-plus"></i>
               </button>
             </div>
-            <div className="medicine-timings-wrapper">
+            <div className="medicine-timings-wrapper overflow-y-auto h-[50vh] pr-2 scrollbar-hide">
               {patient.medicineTimings && patient.medicineTimings.length > 0 ? (
                 <div className="medicine-timings-list">
                   {patient.medicineTimings.map((medicineTiming) => (
-                    <div className="flex gap-2 w-full">
-                      <div key={medicineTiming.id} className="medicine-timing-item p-3 mb-3 border border-gray-200 rounded-md w-full">
-                        <div className="flex justify-between items-start">
-                          <div className="flex flex-col gap-2">
-                            <h6 className="font-semibold text-gray-800">{medicineTiming.medicineName}</h6>
-                            <div className="grid grid-cols-2 gap-x-10">
-                              <p className="text-sm text-gray-600 !mb-0 !mt-2">
-                                <span className="font-medium">Dosage:</span> {medicineTiming.dosage}
-                              </p>
-                              <p className="text-sm text-gray-600 !mb-0">
-                                <span className="font-medium">Frequency:</span> {medicineTiming.frequency}
-                              </p>
+                    <div key={medicineTiming.id} className="medicine-timing-item p-3 mb-3 border border-gray-200 rounded-md w-full">
+                      <div className="flex justify-between items-start">
+                        <div className="flex flex-col gap-2">
+                          <h6 className="font-semibold text-gray-800">{medicineTiming.medicineName}</h6>
+                          <p className="text-sm text-gray-600 !mb-0 !mt-2">
+                            <span className="font-medium">Dosage:</span> {medicineTiming.dosage}
+                          </p>
+                          <p className="text-sm text-gray-600 !mb-0">
+                            <span className="font-medium">Frequency:</span> {medicineTiming.frequency}
+                          </p>
 
-                              <p className="text-sm text-gray-600 !mb-0">
-                                <span className="font-medium">Time of Day:</span> {medicineTiming.timeOfDay.join(", ")}
-                              </p>
-                              <p className="text-sm text-gray-600 !mb-0">
-                                <span className="font-medium">Start Date:</span> {medicineTiming.startDate}
-                                {medicineTiming.endDate && ` - End Date: ${medicineTiming.endDate}`}
-                              </p>
-                            </div>
-                              {medicineTiming.instructions && (
-                                <p className="text-sm text-gray-600 !mb-0 col-span-1">
-                                  <span className="font-medium">Instructions:</span> {medicineTiming.instructions}
-                                </p>
-                              )}
-                          </div>
+                          <p className="text-sm text-gray-600 !mb-0">
+                            <span className="font-medium">Time of Day:</span> {medicineTiming.timeOfDay.join(", ")}
+                          </p>
+                          {medicineTiming.instructions && (
+                            <p className="text-sm text-gray-600 !mb-0 col-span-1">
+                              <span className="font-medium">Instructions:</span> {medicineTiming.instructions}
+                            </p>
+                          )}
                         </div>
-                      </div>
-                      <div className="p-3 mb-3 border border-gray-200 rounded-md flex flex-col justify-around items-center">
-                        <button
-                          type="button"
-                          className="table__icon edit"
-                          onClick={() => handleEdit(medicineTiming)}
-                        >
-                          <i className="fa-sharp fa-light fa-pen"></i>
-                        </button>
-                        <button
-                          className="removeBtn table__icon delete"
-                          onClick={() => handleDelete(medicineTiming.id)}
-                        >
-                          <i className="fa-regular fa-trash"></i>
-                        </button>
+                        <div className="flex gap-3 justify-around items-center">
+                          <button
+                            type="button"
+                            className="table__icon edit"
+                            onClick={() => handleEdit(medicineTiming)}
+                          >
+                            <i className="fa-sharp fa-light fa-pen"></i>
+                          </button>
+                          <button
+                            className="removeBtn table__icon delete"
+                            onClick={() => handleDelete(medicineTiming.id)}
+                          >
+                            <i className="fa-regular fa-trash"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   ))}

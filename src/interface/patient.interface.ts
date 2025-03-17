@@ -15,8 +15,6 @@ export interface IMedicineTiming {
   medicineName: string;
   dosage: string;
   frequency: string;
-  startDate: string;
-  endDate?: string;
   instructions?: string;
   timeOfDay: ("Morning" | "Afternoon" | "Evening" | "Night")[];
 }

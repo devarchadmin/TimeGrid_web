@@ -28,7 +28,6 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
       lastName: patient.lastName,
       email: patient.email,
       phone: patient.phone,
-      patientID: patient.patientID,
       routeNumber: patient.routeNumber,
       gender: patient.gender,
       address: patient.address,
@@ -168,17 +167,6 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
                       required: "Phone Number is required",
                     })}
                     error={errors.phone}
-                  />
-                </div>
-                <div className="col-span-12 md:col-span-6">
-                  <InputField
-                    label="Patient ID"
-                    id="patientID"
-                    type="text"
-                    register={register("patientID", {
-                      required: "Patient ID is required",
-                    })}
-                    error={errors.patientID}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">
