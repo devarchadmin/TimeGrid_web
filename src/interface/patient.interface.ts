@@ -9,6 +9,26 @@ interface SocialLinks {
   website: string;
 }
 
+// Define an interface for medicine timings
+export interface IMedicineTiming {
+  id: number;
+  medicineName: string;
+  dosage: string;
+  frequency: string;
+  startDate: string;
+  endDate?: string;
+  instructions?: string;
+  timeOfDay: ("Morning" | "Afternoon" | "Evening" | "Night")[];
+}
+
+// Define an interface for progressive notes
+export interface IProgressiveNote {
+  id: number;
+  date: string;
+  note: string;
+  addedBy: string;
+}
+
 // Define an interface for the patient data
 export interface IPatient {
   id: number;
@@ -18,6 +38,7 @@ export interface IPatient {
   lastName?: string;
   email?: string;
   patientID?: string;
+  routeNumber?: string; // National ID No.
   dateOfBirth?: string;
   gender?: "Male" | "Female" | "Other";
   bloodGroup?: string;
@@ -49,6 +70,10 @@ export interface IPatient {
   registrationDate?: string;
   lastVisit?: string;
   socialLinks: SocialLinks;
+  // New fields
+  description?: string;
+  medicineTimings?: IMedicineTiming[];
+  progressiveNotes?: IProgressiveNote[];
 }
 
 // Define an interface for the patient's medical history

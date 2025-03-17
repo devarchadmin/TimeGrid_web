@@ -6,9 +6,10 @@ import patientData from "@/data/patients/patient-data";
 import Link from "next/link";
 import { toast } from "sonner";
 import PatientPersonalInfo from "./PatientPersonalInfo";
-import PatientMedicalInfo from "./PatientMedicalInfo";
-import PatientEmergencyContact from "./PatientEmergencyContact";
+import PatientDescription from "./PatientDescription";
+import PatientMedicineTimings from "./PatientMedicineTimings";
 import EditPersonalInfoModal from "./EditPersonalInfoModal";
+import PatientProgressiveNotes from "./PatientProgressiveNotes";
 
 
 interface PatientProfileMainAreaProps {
@@ -55,8 +56,9 @@ const PatientProfileMainArea = ({ id }: PatientProfileMainAreaProps) => {
         <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" subtitleLink='/patients'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <PatientPersonalInfo patient={patient} onEdit={() => setEditPersonalInfoModalOpen(true)} />
-          <PatientEmergencyContact patient={patient} />
-          <PatientMedicalInfo patient={patient} />
+          <PatientDescription patient={patient} />
+          <PatientMedicineTimings patient={patient} />
+          <PatientProgressiveNotes patient={patient} />
         </div>
       </div>
       

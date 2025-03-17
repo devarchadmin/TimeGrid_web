@@ -31,7 +31,6 @@ export interface IEmployee {
   educationQualification?: IEducationQualification;
   workExperience?: IWorkExperience;
   bankAccount?: IBankAccount;
-  passport?: IPassport;
   socialMediaLinks?: ISocialMediaLinks;
 }
 

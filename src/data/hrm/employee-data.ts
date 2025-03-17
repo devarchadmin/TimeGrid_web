@@ -38,13 +38,6 @@ const employeeData: IEmployee[] = [
       secondaryEmailAddress: "emily.johnson@example.com",
       secondaryAddress: "200 Terminal, Fort Lauderdale, Miami 33315, United States",
     },
-    passport: {
-      passportNumber: "A1234567",
-      nationality: "American",
-      issueDate: "01 Jan 2010",
-      expiryDate: "01 Jan 2025",
-      scanCopy: "passport.pdf"
-    },
     bankAccount: {
       accountHolderName: "Sarah Johnson",
       accountNumber: "1234567890",
@@ -118,13 +111,6 @@ const employeeData: IEmployee[] = [
       secondaryEmailAddress: "sarah.williams@example.com",
       secondaryAddress: "300 Terminal, Fort Lauderdale, Miami 33315, United States",
     },
-    passport: {
-      passportNumber: "B2345678",
-      nationality: "American",
-      issueDate: "15 Feb 2012",
-      expiryDate: "15 Feb 2027",
-      scanCopy: "passport.pdf"
-    },
     bankAccount: {
       accountHolderName: "Emily Williams",
       accountNumber: "2345678901",
@@ -169,13 +155,6 @@ const employeeData: IEmployee[] = [
       secondaryPhoneNumber2: "+15551234571",
       secondaryEmailAddress: "emma.parker@example.com",
       secondaryAddress: "400 Terminal, Fort Lauderdale, Miami 33315, United States",
-    },
-    passport: {
-      passportNumber: "C3456789",
-      nationality: "American",
-      issueDate: "20 Mar 2015",
-      expiryDate: "20 Mar 2030",
-      scanCopy: "passport.pdf"
     },
     bankAccount: {
       accountHolderName: "Jessica Parker",
@@ -222,13 +201,6 @@ const employeeData: IEmployee[] = [
       secondaryEmailAddress: "sophie.miller@example.com",
       secondaryAddress: "500 Terminal, Fort Lauderdale, Miami 33315, United States",
     },
-    passport: {
-      passportNumber: "D4567890",
-      nationality: "American",
-      issueDate: "25 Apr 2018",
-      expiryDate: "25 Apr 2033",
-      scanCopy: "passport.pdf"
-    },
     bankAccount: {
       accountHolderName: "Jennifer Miller",
       accountNumber: "4567890123",
@@ -273,13 +245,6 @@ const employeeData: IEmployee[] = [
       secondaryPhoneNumber2: "+15551234571",
       secondaryEmailAddress: "lily.chen@example.com",
       secondaryAddress: "600 Terminal, Fort Lauderdale, Miami 33315, United States",
-    },
-    passport: {
-      passportNumber: "E5678901",
-      nationality: "American",
-      issueDate: "30 May 2020",
-      expiryDate: "30 May 2035",
-      scanCopy: "passport.pdf"
     },
     bankAccount: {
       accountHolderName: "Rachel Chen",
@@ -326,13 +291,6 @@ const employeeData: IEmployee[] = [
       secondaryEmailAddress: "olivia.taylor@example.com",
       secondaryAddress: "700 Terminal, Fort Lauderdale, Miami 33315, United States",
     },
-    passport: {
-      passportNumber: "F6789012",
-      nationality: "American",
-      issueDate: "05 Jun 2019",
-      expiryDate: "05 Jun 2034",
-      scanCopy: "passport.pdf"
-    },
     bankAccount: {
       accountHolderName: "Amanda Taylor",
       accountNumber: "6789012345",
@@ -378,13 +336,6 @@ const employeeData: IEmployee[] = [
       secondaryEmailAddress: "daniel.wilson@example.com",
       secondaryAddress: "800 Terminal, Fort Lauderdale, Miami 33315, United States",
     },
-    passport: {
-      passportNumber: "G7890123",
-      nationality: "American",
-      issueDate: "10 Jul 2017",
-      expiryDate: "10 Jul 2032",
-      scanCopy: "passport.pdf"
-    },
     bankAccount: {
       accountHolderName: "Michael Wilson",
       accountNumber: "7890123456",
@@ -429,13 +380,6 @@ const employeeData: IEmployee[] = [
       secondaryPhoneNumber2: "+15551234571",
       secondaryEmailAddress: "matthew.clark@example.com",
       secondaryAddress: "900 Terminal, Fort Lauderdale, Miami 33315, United States",
-    },
-    passport: {
-      passportNumber: "H8901234",
-      nationality: "American",
-      issueDate: "15 Aug 2016",
-      expiryDate: "15 Aug 2031",
-      scanCopy: "passport.pdf"
     },
     bankAccount: {
       accountHolderName: "David Clark",

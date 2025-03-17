@@ -40,13 +40,15 @@ const PatientPersonalInfo = ({ patient, onEdit }: PatientPersonalInfoProps) => {
                 </div>
                 <div className="profile-info">
                   <h3 className="user-name mb-[15px]">{patient.name}</h3>
-                  <h6 className="text-muted mb-[5px]">{patient.gender}</h6>
-                  <span className="block text-muted">Blood Group: {patient.bloodGroup || "Not specified"}</span>
-                  <h6 className="small employee-id text-black mb-[5px] mt-[5px]">
-                    Patient ID: {patient.patientID}
-                  </h6>
+                  <h6 className="text-muted mb-[10px]">{patient.gender}</h6>
                   <span className="block text-muted">
-                    Registration Date: {patient.registrationDate || "Not specified"}
+                    Patient ID : {patient.patientID}
+                  </span>
+                  <span className="block text-muted">
+                    Registration Date : {patient.registrationDate || "Not specified"}
+                  </span>
+                  <span className="block text-muted">
+                    Route No. : {patient.routeNumber || "Not specified"}
                   </span>
                   <div className="employee-msg mt-[20px]">
                     <Link href={`tel:${patient.phone}`} className="btn btn-primary">
@@ -71,6 +73,7 @@ const PatientPersonalInfo = ({ patient, onEdit }: PatientPersonalInfoProps) => {
                       </Link>
                     </div>
                   </li>
+                  
                   <li>
                     <div className="title">Birthday:</div>
                     <div className="text">{patient.dateOfBirth || "Not specified"}</div>

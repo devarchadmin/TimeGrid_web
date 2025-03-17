@@ -29,6 +29,7 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
       email: patient.email,
       phone: patient.phone,
       patientID: patient.patientID,
+      routeNumber: patient.routeNumber,
       gender: patient.gender,
       address: patient.address,
       city: patient.city,
@@ -69,7 +70,6 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
         registrationDate: patient.registrationDate,
         lastVisit: patient.lastVisit,
         // Preserve medical information
-        bloodGroup: patient.bloodGroup,
         medicalConditions: patient.medicalConditions,
         allergies: patient.allergies,
         medications: patient.medications,
@@ -88,7 +88,11 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
         primaryContactPhone: patient.primaryContactPhone,
         secondaryContactName: patient.secondaryContactName,
         secondaryContactPhone: patient.secondaryContactPhone,
-        socialLinks: patient.socialLinks
+        socialLinks: patient.socialLinks,
+        // Preserve new fields
+        description: patient.description,
+        medicineTimings: patient.medicineTimings,
+        progressiveNotes: patient.progressiveNotes
       };
       
       // In a real application, this would be an API call to update the patient
@@ -175,6 +179,17 @@ const EditPersonalInfoModal = ({ open, setOpen, patient }: EditPersonalInfoModal
                       required: "Patient ID is required",
                     })}
                     error={errors.patientID}
+                  />
+                </div>
+                <div className="col-span-12 md:col-span-6">
+                  <InputField
+                    label="Route Number"
+                    id="routeNumber"
+                    type="text"
+                    register={register("routeNumber", {
+                      required: "Route Number is required",
+                    })}
+                    error={errors.routeNumber}
                   />
                 </div>
                 <div className="col-span-12 md:col-span-6">

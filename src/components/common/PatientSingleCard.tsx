@@ -23,7 +23,7 @@ const PatientSingleCard = ({ patient, onEdit }: propsType) => {
         <div className="card__wrapper">
           <div className="employee__wrapper text-center">
             <div className="employee__thumb mb-[15px] flex justify-center">
-              <Link href={`/patient/${patient.id}`}>
+              <Link href={`/patients/${patient.id}`}>
                 <div className="w-[100px] h-[100px] rounded-full overflow-hidden relative">
                   <Image
                     src={patient.image}
@@ -38,7 +38,7 @@ const PatientSingleCard = ({ patient, onEdit }: propsType) => {
             <div className="employee__content">
               <div className="employee__meta mb-[15px]">
                 <h4 className="mb-2">
-                  <Link href={`/patient/${patient.id}`}>
+                  <Link href={`/patients/${patient.id}`}>
                     {patient.name}
                   </Link>
                 </h4>
@@ -53,7 +53,7 @@ const PatientSingleCard = ({ patient, onEdit }: propsType) => {
                   </Link>
                   <Link
                     className="btn btn-outline-primary"
-                    href={`/patient/${patient.id}`}
+                    href={`/patients/${patient.id}`}
                   >
                     View
                   </Link>
