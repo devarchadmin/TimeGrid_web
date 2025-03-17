@@ -11,7 +11,7 @@ const ClientDetailsMainArea = ({ id }: idType) => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Client Profile" subTitle="Client" />
+        <Breadcrumb breadTitle="Client Profile" subTitle="Client" subtitleLink='/clients'/>
 
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <div className="col-span-12 md:col-span-12 xl:col-span-12 xxl:col-span-3">

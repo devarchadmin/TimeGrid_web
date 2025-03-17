@@ -10,7 +10,7 @@ const ApexChartPolarAreaMain = () => {
     return (
         <>
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Polar Area' subTitle='Home' />
+                <Breadcrumb breadTitle='Polar Area' subTitle='Home' subtitleLink='/'/>
 
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

@@ -6,7 +6,7 @@ const ScheduleMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Schedule" subTitle="Home" />
+        <Breadcrumb breadTitle="Schedule" subTitle="Home" subtitleLink='/'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <ScheduleTable />
         </div>

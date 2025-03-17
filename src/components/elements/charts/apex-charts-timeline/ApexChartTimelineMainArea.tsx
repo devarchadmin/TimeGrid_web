@@ -13,7 +13,7 @@ const ApexChartTimelineMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Timeline' subTitle='Home' />
+                <Breadcrumb breadTitle='Timeline' subTitle='Home' subtitleLink='/'/>
 
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

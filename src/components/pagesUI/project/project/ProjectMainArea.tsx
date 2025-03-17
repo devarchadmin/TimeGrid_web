@@ -7,7 +7,7 @@ const ProjectMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Projects" subTitle="Projects" />
+        <Breadcrumb breadTitle="Projects" subTitle="Projects" subtitleLink='/'/>
 
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           {projectData.slice(0, 6).map((item) => (

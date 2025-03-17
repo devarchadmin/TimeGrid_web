@@ -50,7 +50,7 @@ const PayrollSlipMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle={payrollData ? `Payslip - ${payrollData.employeeName}` : "Payslip"} subTitle="Home" />
+        <Breadcrumb breadTitle={payrollData ? `Payslip - ${payrollData.employeeName}` : "Payslip"} subTitle="Payroll" subtitleLink='/payroll'/>
         <div className="grid grid-cols-12 justify-center">
           <div className="col-span-12">
             <div className="card__wrapper">

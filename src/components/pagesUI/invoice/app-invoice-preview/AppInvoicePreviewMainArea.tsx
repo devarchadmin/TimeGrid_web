@@ -11,7 +11,7 @@ const AppInvoicePreviewMainArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Invoice Preview" subTitle="Home" />
+        <Breadcrumb breadTitle="Invoice Preview" subTitle="Home" subtitleLink='/'/>
         <div className="grid grid-cols-12 justify-center">
           <div className="col-span-12">
             <div className="card__wrapper">

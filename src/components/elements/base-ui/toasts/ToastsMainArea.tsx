@@ -27,7 +27,7 @@ const ToastsMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Toasts' subTitle='Toasts UI Elements' />
+                <Breadcrumb breadTitle='Toasts' subTitle='Toasts UI Elements' subtitleLink='/ui-elements'/>
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     <div className="col-span-12 xl:col-span-6 xxl:col-span-12">
                         <div className="card__wrapper">

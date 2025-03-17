@@ -15,7 +15,7 @@ const ApexChartArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Area" subTitle="Home" />
+        <Breadcrumb breadTitle="Area" subTitle="Home" subtitleLink='/'/>
         <div className="grid grid-cols-12">
           <div className="col-span-12">
             <div className="card__wrapper style_two">

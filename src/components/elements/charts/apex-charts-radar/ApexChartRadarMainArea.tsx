@@ -9,7 +9,7 @@ const ApexChartRadarMainArea = () => {
     return (
         <>
               <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Radar' subTitle='Home'/>
+                <Breadcrumb breadTitle='Radar' subTitle='Home' subtitleLink='/'/>
         
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

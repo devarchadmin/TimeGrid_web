@@ -9,7 +9,7 @@ const EmployeeMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Employee" subTitle="Home" />
+        <Breadcrumb breadTitle="Employee" subTitle="Home" subtitleLink="/" />
         <EmployeeFilter />
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           {employeeData?.map((employee, index) => (

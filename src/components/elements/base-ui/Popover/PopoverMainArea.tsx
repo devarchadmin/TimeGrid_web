@@ -43,7 +43,7 @@ const PopoverMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Popover' subTitle='Ui Elements' />
+                <Breadcrumb breadTitle='Popover' subTitle='Ui Elements' subtitleLink='/ui-elements'/>
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     <div className="col-span-12 xl:col-span-6">
                         <div className="card__wrapper">

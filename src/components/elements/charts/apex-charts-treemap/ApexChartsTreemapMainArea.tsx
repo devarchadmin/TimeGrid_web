@@ -10,7 +10,7 @@ const ApexChartsTreemapMainArea = () => {
     return (
         <>
              <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Treemap' subTitle='Home'/>
+                <Breadcrumb breadTitle='Treemap' subTitle='Home' subtitleLink='/'/>
              
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

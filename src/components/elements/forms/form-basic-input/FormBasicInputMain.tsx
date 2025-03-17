@@ -18,7 +18,7 @@ const FormBasicInputMain = () => {
     return (
         <>
           <div className="app__slide-wrapper">
-            <Breadcrumb  breadTitle='Form Basic Input' subTitle='Home' />
+            <Breadcrumb  breadTitle='Form Basic Input' subTitle='Home' subtitleLink='/' />
 
             <div className="grid grid-cols-12 gap-x-5 maxXs:gap-x-0">
                 <div className="col-span-12 xxl:col-span-6">

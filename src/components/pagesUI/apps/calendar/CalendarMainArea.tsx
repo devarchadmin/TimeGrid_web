@@ -14,7 +14,7 @@ const CalendarMainArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Calendar" subTitle="Home" />
+        <Breadcrumb breadTitle="Calendar" subTitle="Home" subtitleLink='/'/>
         <div className="grid grid-cols-12">
           <div className="col-span-12 flex mb-5 justify-end text-end">
             <button type="button" onClick={() => setModalOpen(true)} className="btn btn-primary">Add

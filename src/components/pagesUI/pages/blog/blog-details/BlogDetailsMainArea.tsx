@@ -18,7 +18,7 @@ const BlogDetailsMainArea = ({ id }: idType) => {
   return <>
     {/* -- App side area start -- */}
     <div className="app__slide-wrapper">
-      <Breadcrumb breadTitle="Blog Details" subTitle="Home" />
+      <Breadcrumb breadTitle="Blog Details" subTitle="Home" subtitleLink='/'/>
 
       <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
         <div className="col-span-12 xl:col-span-8">

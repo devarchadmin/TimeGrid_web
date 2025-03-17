@@ -6,7 +6,7 @@ const ThemeColorPlate = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-              <Breadcrumb breadTitle='Color Plate' subTitle='Ui Elements'/>
+              <Breadcrumb breadTitle='Color Plate' subTitle='Ui Elements' subtitleLink='/ui-elements'/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
                         <div className="card__wrapper">

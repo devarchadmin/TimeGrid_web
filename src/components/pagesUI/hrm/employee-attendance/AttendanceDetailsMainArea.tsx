@@ -155,47 +155,47 @@ const AttendanceDetailsMainArea: React.FC<AttendanceDetailsMainAreaProps> = ({ i
         setSelectedDate(date);
         setSelectedStatus(status);
         setIsModalOpen(true);
-        
+
         // Generate attendance sessions data
         const dateObj = new Date(date);
         const sessions = generateMockAttendanceSessions(dateObj, status);
         setAttendanceSessions(sessions);
-        
+
         // Generate timeline data for the selected date
         if (sessions.length > 0) {
             const year = dateObj.getFullYear();
             const month = dateObj.getMonth();
             const day = dateObj.getDate();
-            
+
             // Create timeline data from sessions
             const timelineData = sessions.map((session, index) => {
                 // Parse check-in and check-out times
                 const checkInParts = session.checkIn.match(/(\d+):(\d+) ([AP]M)/);
                 const checkOutParts = session.checkOut.match(/(\d+):(\d+) ([AP]M)/);
-                
+
                 if (!checkInParts || !checkOutParts) return null;
-                
+
                 let checkInHour = parseInt(checkInParts[1]);
                 const checkInMinute = parseInt(checkInParts[2]);
                 const checkInAmPm = checkInParts[3];
-                
+
                 let checkOutHour = parseInt(checkOutParts[1]);
                 const checkOutMinute = parseInt(checkOutParts[2]);
                 const checkOutAmPm = checkOutParts[3];
-                
+
                 // Convert to 24-hour format
                 if (checkInAmPm === "PM" && checkInHour < 12) checkInHour += 12;
                 if (checkInAmPm === "AM" && checkInHour === 12) checkInHour = 0;
-                
+
                 if (checkOutAmPm === "PM" && checkOutHour < 12) checkOutHour += 12;
                 if (checkOutAmPm === "AM" && checkOutHour === 12) checkOutHour = 0;
-                
+
                 // Set color based on session type
                 let fillColor = '#6C5FFC'; // primary color for work
                 if (session.type === 'break') {
                     fillColor = '#FFAB00'; // yellow for breaks
                 }
-                
+
                 // Create timeline entry
                 return {
                     x: session.type === 'break' ? 'Break' : `Patient: ${session.patient?.name || 'None'}`,
@@ -211,7 +211,7 @@ const AttendanceDetailsMainArea: React.FC<AttendanceDetailsMainAreaProps> = ({ i
                     type: session.type
                 };
             }).filter(Boolean);
-            
+
             setTimelineData(timelineData);
         } else {
             setTimelineData(null);
@@ -279,7 +279,7 @@ const AttendanceDetailsMainArea: React.FC<AttendanceDetailsMainAreaProps> = ({ i
             <div className="page-header">
                 <div className="row">
                     <div className="col-span-12">
-                        <Breadcrumb breadTitle="Attendance Details" subTitle="Attendance" />
+                        <Breadcrumb breadTitle="Attendance Details" subTitle="Attendance" subtitleLink="/attendance" />
                     </div>
                 </div>
             </div>
@@ -340,75 +340,77 @@ const AttendanceDetailsMainArea: React.FC<AttendanceDetailsMainAreaProps> = ({ i
                             <div className="card__header-title flex justify-between mb-4">
                                 <h3>Attendance Records</h3>
                                 <div className="card__header-action">
-                                <div className="flex items-center">
-                                    <div className="date-filter-text mr-2">
-                                        <span className="text-sm text-gray-500">
-                                            {new Date(startDate).toLocaleDateString()} - {new Date(endDate).toLocaleDateString()}
-                                        </span>
-                                    </div>
-                                    <IconButton 
-                                        aria-describedby={popoverId}
-                                        onClick={handleDateFilterClick}
-                                        className="text-primary"
-                                        size="small"
-                                    >
-                                        <i className="fa fa-calendar"></i>
-                                    </IconButton>
-                                    <Popover
-                                        id={popoverId}
-                                        open={open}
-                                        anchorEl={anchorEl}
-                                        onClose={handleDateFilterClose}
-                                        anchorOrigin={{
-                                            vertical: 'bottom',
-                                            horizontal: 'right',
-                                        }}
-                                        transformOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'right',
-                                        }}
-                                    >
-                                        <div className="p-4 flex flex-col gap-4">
-                                            <h4 className="font-medium">Select Date Range</h4>
-                                            <div className="flex gap-4">
-                                                <TextField
-                                                    label="Start Date"
-                                                    type="date"
-                                                    value={startDate}
-                                                    onChange={handleStartDateChange}
-                                                    InputLabelProps={{
-                                                        shrink: true,
-                                                    }}
-                                                    size="small"
-                                                />
-                                                <TextField
-                                                    label="End Date"
-                                                    type="date"
-                                                    value={endDate}
-                                                    onChange={handleEndDateChange}
-                                                    InputLabelProps={{
-                                                        shrink: true,
-                                                    }}
-                                                    size="small"
-                                                />
-                                            </div>
-                                            <button 
-                                                className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark"
-                                                onClick={handleDateFilterClose}
-                                            >
-                                                Apply
-                                            </button>
+                                    <div className="flex items-center">
+                                        <div className="date-filter-text mr-2">
+                                            <span className="text-sm text-gray-500">
+                                                {new Date(startDate).toLocaleDateString()} - {new Date(endDate).toLocaleDateString()}
+                                            </span>
                                         </div>
-                                    </Popover>
+                                        <IconButton
+                                            aria-describedby={popoverId}
+                                            onClick={handleDateFilterClick}
+                                            className="text-primary"
+                                            size="small"
+                                        >
+                                            <i className="fa fa-calendar"></i>
+                                        </IconButton>
+                                        <Popover
+                                            id={popoverId}
+                                            open={open}
+                                            anchorEl={anchorEl}
+                                            onClose={handleDateFilterClose}
+                                            anchorOrigin={{
+                                                vertical: 'bottom',
+                                                horizontal: 'right',
+                                            }}
+                                            transformOrigin={{
+                                                vertical: 'top',
+                                                horizontal: 'right',
+                                            }}
+                                        >
+                                            <div className="p-4 flex flex-col gap-4">
+                                                <h4 className="font-medium">Select Date Range</h4>
+                                                <div className="gap-4">
+                                                    <label htmlFor="startDate">Start Date</label>
+                                                    <TextField
+                                                        id="startDate"
+                                                        type="date"
+                                                        value={startDate}
+                                                        onChange={handleStartDateChange}
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        size="small"
+                                                    />
+                                                    <label htmlFor="endDate">End Date</label>
+                                                    <TextField
+                                                        id="endDate"
+                                                        type="date"
+                                                        value={endDate}
+                                                        onChange={handleEndDateChange}
+                                                        InputLabelProps={{
+                                                            shrink: true,
+                                                        }}
+                                                        size="small"
+                                                    />
+                                                </div>
+                                                <button
+                                                    className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark"
+                                                    onClick={handleDateFilterClose}
+                                                >
+                                                    Apply
+                                                </button>
+                                            </div>
+                                        </Popover>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                            
+
                         </div>
                         <div className="card__body">
-                            <AttendanceDetailsTable 
-                                employee={employee} 
-                                onViewDetails={handleOpenModal} 
+                            <AttendanceDetailsTable
+                                employee={employee}
+                                onViewDetails={handleOpenModal}
                                 startDate={startDate}
                                 endDate={endDate}
                             />

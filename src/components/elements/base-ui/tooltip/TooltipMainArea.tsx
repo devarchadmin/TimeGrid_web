@@ -9,7 +9,7 @@ const TooltipMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Tooltip' subTitle='Ui Elements' />
+                <Breadcrumb breadTitle='Tooltip' subTitle='Ui Elements' subtitleLink='/ui-elements'/>
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     {/* Inline-Text Tooltip */}
                     <div className="col-span-12">

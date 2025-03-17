@@ -9,7 +9,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Jan 14 2024",
     salaryMonthly: 14500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?t=st=1742160620~exp=1742164220~hmac=e0a464f7d541a383d4aa7396e190ca8f64bcf217401fd06a958f454d5672f214&w=740",
   },
   {
     employeeId: "TG-115",
@@ -19,7 +19,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Dec 30 2024",
     salaryMonthly: 15480,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/free-photo/front-view-beautiful-happy-woman_23-2148369448.jpg",
   },
   {
     employeeId: "TG-116",
@@ -29,7 +29,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Dec 28 2024",
     salaryMonthly: 17500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-young-pretty-woman_298317-290.jpg",
   },
   {
     employeeId: "TG-117",
@@ -39,7 +39,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Nov 28 2024",
     salaryMonthly: 24500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/19987431/pexels-photo-19987431/free-photo-of-portrait-of-man-with-dyed-blonde-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-young-man-against-black-background_1048944-4397842.jpg?w=740",
   },
   {
     employeeId: "TG-118",
@@ -49,7 +49,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Oct 11 2024",
     salaryMonthly: 22500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/30701542/pexels-photo-30701542/free-photo-of-smiling-young-man-in-stylish-glasses-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/man-with-beard-suit_916191-428860.jpg?w=740",
   },
   {
     employeeId: "TG-119",
@@ -59,7 +59,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Sep 14 2024",
     salaryMonthly: 19500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/15235470/pexels-photo-15235470/free-photo-of-close-up-shot-of-a-blonde-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar4.b09a6ce6.png&w=750&q=75",
   },
   {
     employeeId: "TG-120",
@@ -69,7 +69,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Aug 11 2024",
     salaryMonthly: 16000,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/hyper-realistic-beautiful-elegant-indian-woman-wearing-light-pink-linen-salwar-short-hair_862994-213940.jpg",
   },
   {
     employeeId: "TG-121",
@@ -79,7 +79,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Jul 14 2024",
     salaryMonthly: 31500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/17887829/pexels-photo-17887829/free-photo-of-man-in-retro-clothing-smoking-cigarette.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/handsome-young-man-isolated-blue-background-looking-camera-smiling_1353756-14648.jpg?w=740",
   },
   {
     employeeId: "TG-122",
@@ -89,7 +89,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Jun 29 2024",
     salaryMonthly: 18500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/20094341/pexels-photo-20094341/free-photo-of-portrait-of-man-wearing-brown-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-confident-teenage-girl-against-wall_1048944-13976455.jpg",
   },
   {
     employeeId: "TG-123",
@@ -99,7 +99,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "May 16 2024",
     salaryMonthly: 16500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/15773193/pexels-photo-15773193/free-photo-of-portrait-of-smiling-blonde-woman-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar15.2e529f78.png&w=750&q=75",
   },
   {
     employeeId: "TG-124",
@@ -109,7 +109,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 19 2024",
     salaryMonthly: 20500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
+    employeeImg: "https://img.freepik.com/premium-photo/hyper-realistic-happiest-indian-handsome-man-chex-shirt-hands-up-isolated-yellow-background_862994-259312.jpg?w=740",
   },
   {
     employeeId: "TG-125",
@@ -119,7 +119,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 20 2024",
     salaryMonthly: 17500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/28686809/pexels-photo-28686809/free-photo-of-stylish-man-in-sunglasses-enjoying-sunny-day.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/young-beautiful-woman-with-big-happy-smile_118342-2597.jpg",
   },
   {
     employeeId: "TG-126",
@@ -129,7 +129,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 21 2024",
     salaryMonthly: 19500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.538199e6.png&w=750&q=75",
   },
   {
     employeeId: "TG-127",
@@ -139,7 +139,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 22 2024",
     salaryMonthly: 18500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/17050931/pexels-photo-17050931/free-photo-of-photo-of-a-pensive-young-man-in-a-suit-sitting-at-a-table-with-books.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/cute-woman_298317-1316.jpg",
   },
   {
     employeeId: "TG-128",
@@ -149,7 +149,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 23 2024",
     salaryMonthly: 17500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/arafed-man-black-shirt-posing-picture-with-white-background_771703-57711.jpg?w=740",
   },
   {
     employeeId: "TG-129",
@@ -159,7 +159,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 24 2024",
     salaryMonthly: 16500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar9.eb982a64.png&w=750&q=75",
   },
   {
     employeeId: "TG-130",
@@ -169,7 +169,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 25 2024",
     salaryMonthly: 19500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/15012251/pexels-photo-15012251/free-photo-of-photo-of-a-young-man-sitting-by-a-gray-wall-and-looking-at-a-smart-phone.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/close-up-portrait-young-man_1048944-10212836.jpg?w=740",
   },
   {
     employeeId: "TG-131",
@@ -179,7 +179,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 26 2024",
     salaryMonthly: 20500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/2599509/pexels-photo-2599509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/arafed-woman-with-long-brown-hair-wearing-black-jacket-generative-ai_900833-61432.jpg",
   },
   {
     employeeId: "TG-132",
@@ -189,7 +189,7 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 15 2024",
     salaryMonthly: 17500,
     status: "Paid",
-    employeeImg: "https://images.pexels.com/photos/5528835/pexels-photo-5528835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/free-photo/portrait-smiling-charming-young-man-grey-t-shirt-standing-against-plain-background_23-2148213406.jpg",
   },
   {
     employeeId: "TG-133",
@@ -199,6 +199,6 @@ export const payListData: IPaylist[] = [
     joiningDate: "Apr 16 2024",
     salaryMonthly: 22500,
     status: "Unpaid",
-    employeeImg: "https://images.pexels.com/photos/673021/pexels-photo-673021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/beautiful-girl_925342-89.jpg",
   },
 ];

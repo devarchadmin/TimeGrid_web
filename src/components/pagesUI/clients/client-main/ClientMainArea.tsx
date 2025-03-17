@@ -8,7 +8,7 @@ const ClientMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Clients Profile" subTitle="HRM" />
+        <Breadcrumb breadTitle="Clients Profile" subTitle="HRM" subtitleLink='#'/>
         <ClientFilter />
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           {clientData?.map((item, index) => (

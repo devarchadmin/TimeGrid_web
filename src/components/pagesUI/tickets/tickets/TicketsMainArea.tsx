@@ -8,7 +8,7 @@ const TicketsMainArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Tickets List" subTitle="Home" />
+        <Breadcrumb breadTitle="Tickets List" subTitle="Home" subtitleLink='/'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <TicketsSummary />
           <TicketsTable />

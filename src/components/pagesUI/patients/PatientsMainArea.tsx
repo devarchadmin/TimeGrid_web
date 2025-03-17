@@ -19,7 +19,7 @@ const PatientsMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Patients" subTitle="Home" />
+        <Breadcrumb breadTitle="Patients" subTitle="Home" subtitleLink='/'/>
         <PatientFilter />
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           {patientData?.map((patient) => (

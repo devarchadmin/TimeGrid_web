@@ -13,7 +13,7 @@ const ApexChartMixedMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Mixed' subTitle='Home' />
+                <Breadcrumb breadTitle='Mixed' subTitle='Home' subtitleLink='/'/>
 
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">

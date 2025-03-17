@@ -18,7 +18,7 @@ const TicketsReplyMainArea = () => {
     <>
       {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-              <Breadcrumb breadTitle="Tickets Reply" subTitle="Home"/>
+              <Breadcrumb breadTitle="Tickets Reply" subTitle="Home" subtitleLink='/'/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
                         <div className="chatbox__chatting-wrapper">

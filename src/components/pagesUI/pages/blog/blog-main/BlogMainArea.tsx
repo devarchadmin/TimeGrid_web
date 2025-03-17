@@ -19,7 +19,7 @@ const BlogMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Blog' subTitle='Home' />
+                <Breadcrumb breadTitle='Blog' subTitle='Home' subtitleLink='/'/>
                 {/* blog item*/}
                 <div className="grid grid-cols-12 gap-y-5 gap-x-6 maxXs:gap-x-0">
                     {

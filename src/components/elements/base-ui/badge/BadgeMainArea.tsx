@@ -12,7 +12,7 @@ const BadgeMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb subTitle='Ui Elements' breadTitle='Badge' />
+                <Breadcrumb subTitle='Ui Elements' breadTitle='Badge' subtitleLink='/elements'/>
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     <div className="col-span-12 xl:col-span-6">
                         <ThemePrimaryBadge />

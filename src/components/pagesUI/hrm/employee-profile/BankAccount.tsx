@@ -1,8 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import UpdateBankAccountModal from "./UpdateBankAccountModal";
+import { IEmployee } from "@/interface";
 
-const BankAccount = () => {
+interface propsType {
+  data?: IEmployee;
+}
+
+const BankAccount = ({ data }: propsType) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -23,23 +28,23 @@ const BankAccount = () => {
               <ul className="personal-info">
                 <li>
                   <div className="title">Account Holder Name:</div>
-                  <div className="text">Ethan Mitchell</div>
+                  <div className="text">{data?.bankAccount?.accountHolderName || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Account Number:</div>
-                  <div className="text">123456789</div>
+                  <div className="text">{data?.bankAccount?.accountNumber || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Bank Name:</div>
-                  <div className="text">ABC Bank</div>
+                  <div className="text">{data?.bankAccount?.bankName || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Branch Name:</div>
-                  <div className="text">XYZ Branch</div>
+                  <div className="text">{data?.bankAccount?.branchName || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">SWIFT Code:</div>
-                  <div className="text">ABCXYZ123</div>
+                  <div className="text">{data?.bankAccount?.swiftCode || "Not provided"}</div>
                 </li>
               </ul>
             </div>

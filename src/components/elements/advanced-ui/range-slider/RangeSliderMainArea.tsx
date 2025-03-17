@@ -13,7 +13,7 @@ const RangeSliderMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Range Slider' subTitle='Ui Elements' />
+                <Breadcrumb breadTitle='Range Slider' subTitle='Ui Elements' subtitleLink='/ui-elements' />
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     <div className="col-span-12">
                         <div className="card__wrapper material-slider-wrapper">

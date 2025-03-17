@@ -125,8 +125,9 @@ const PayrollHistoryModal: React.FC<PayrollHistoryModalProps> = ({
         <div className="card__wrapper mb-4">
           <div className="grid grid-cols-12 gap-4 items-end">
             <div className="col-span-12 md:col-span-4">
+              <label htmlFor="startDate" className="block mb-2">Start Date</label>
               <TextField
-                label="Start Date"
+                id="startDate"
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
@@ -139,8 +140,8 @@ const PayrollHistoryModal: React.FC<PayrollHistoryModalProps> = ({
               />
             </div>
             <div className="col-span-12 md:col-span-4">
+              <label htmlFor="endDate" className="block mb-2">End Date</label>
               <TextField
-                label="End Date"
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}

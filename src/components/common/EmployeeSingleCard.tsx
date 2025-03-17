@@ -16,7 +16,7 @@ const EmployeeSingleCard = ({ employee }: propsType) => {
         <div className="card__wrapper">
           <div className="employee__wrapper text-center">
             <div className="employee__thumb mb-[15px] flex justify-center">
-              <Link href={`/hrm/employee-profile/${employee.id}`}>
+              <Link href={`/employee/${employee.id}`}>
                 <Image
                   src={employee.image}
                   width={100}

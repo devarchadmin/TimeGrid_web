@@ -18,7 +18,7 @@ const InvoiceEditMainArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Invoice Edit" subTitle="Home" />
+        <Breadcrumb breadTitle="Invoice Edit" subTitle="Home" subtitleLink='/'/>
         <div className="card__wrapper">
           <div className="grid grid-cols-12 gap-5 maxXs:gap-x-0">
             <div className="col-span-12 sm:col-span-6">

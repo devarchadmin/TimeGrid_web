@@ -64,12 +64,12 @@ const UpdatePassportModal = ({ open, setOpen }: statePropsType) => {
                 </div>
                 <div className="col-span-12">
                   <SelectBox
-                    id="country"
-                    label="Country"
+                    id="nationality"
+                    label="Nationality"
                     isRequired={false}
                     options={countriesData}
                     control={control}
-                    error={errors.country}
+                    error={errors.nationality}
                   />
                 </div>
                 <div className="col-span-12">

@@ -21,7 +21,7 @@ const DropzoneMainArea: React.FC = () => {
     }, []);
     return (
         <div className="app__slide-wrapper">
-            <Breadcrumb breadTitle="Dropzone" subTitle="Ui Elements" />
+            <Breadcrumb breadTitle="Dropzone" subTitle="Ui Elements" subtitleLink="/ui-elements" />
             <div className="grid grid-cols-12">
                 <div className="col-span-12">
                     <div className="card__wrapper dropzone-wrapper dropzone-border">

@@ -3,7 +3,8 @@ import { IPatient } from "@/interface/patient.interface";
 const patientData: IPatient[] = [
   {
     id: 1,
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar2.2be06eb4.png&w=750&q=75", // Girl 1
     name: "Emma Thompson",
     firstName: "Emma",
     lastName: "Thompson",
@@ -36,7 +37,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 2,
-    image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://img.freepik.com/free-photo/portrait-smiling-charming-young-man-grey-t-shirt-standing-against-plain-background_23-2148213406.jpg", // Boy 1
     name: "James Wilson",
     firstName: "James",
     lastName: "Wilson",
@@ -69,7 +71,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 3,
-    image: "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next/static/media/avatar10.9634d33d.png&w=750&q=75", // Girl 2
     name: "Sophia Martinez",
     firstName: "Sophia",
     lastName: "Martinez",
@@ -102,7 +105,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 4,
-    image: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?t=st=1742160620~exp=1742164220~hmac=e0a464f7d541a383d4aa7396e190ca8f64bcf217401fd06a958f454d5672f214&w=740", // Boy 2
     name: "Michael Johnson",
     firstName: "Michael",
     lastName: "Johnson",
@@ -135,7 +139,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 5,
-    image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next/static/media/avatar13.915247b2.png&w=750&q=75", // Girl 3
     name: "Olivia Brown",
     firstName: "Olivia",
     lastName: "Brown",
@@ -168,7 +173,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 6,
-    image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next/static/media/avatar16.4f0b001c.png&w=750&q=75", // Boy 3
     name: "William Davis",
     firstName: "William",
     lastName: "Davis",
@@ -201,7 +207,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 7,
-    image: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next/static/media/avatar15.2e529f78.png&w=750&q=75", // Girl 4
     name: "Ava Garcia",
     firstName: "Ava",
     lastName: "Garcia",
@@ -234,7 +241,8 @@ const patientData: IPatient[] = [
   },
   {
     id: 8,
-    image: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://manez-dashboard.vercel.app/_next/image?url=%2F_next/static/media/avatar4.b09a6ce6.png&w=750&q=75", // Boy 4
     name: "Ethan Miller",
     firstName: "Ethan",
     lastName: "Miller",
@@ -267,4 +275,4 @@ const patientData: IPatient[] = [
   },
 ];
 
-export default patientData; 
+export default patientData;

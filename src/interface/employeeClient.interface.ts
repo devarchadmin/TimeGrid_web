@@ -15,18 +15,24 @@ export interface IEmployee {
   name: string;
   firstName?: string;
   lastName?: string;
-  email?: string;
+  email: string;
   userName?: string;
-  employeeID?: string;
-  joiningDate?: string;
-  accountNumber?: string;
-  address?: string;
-  bankName?: string;
-  accountHolderName?: string;
-  branchName?: string;
+  employeeID: string;
+  joiningDate: string;
   position: string;
   phone: string;
+  birthday: string;
+  address: string;
+  gender: string;
+  division: string;
+  nationalIdNo: string;
   socialLinks: SocialLinks;
+  emergencyContact?: IEmergenryContact;
+  educationQualification?: IEducationQualification;
+  workExperience?: IWorkExperience;
+  bankAccount?: IBankAccount;
+  passport?: IPassport;
+  socialMediaLinks?: ISocialMediaLinks;
 }
 
 export interface IEmployeeProfileDetails {
@@ -125,9 +131,10 @@ export interface IBankAccount {
 
 export interface IPassport {
   passportNumber: string;
+  nationality: string;
   issueDate: string;
   expiryDate: string;
-  country:string;
+  scanCopy?: string;
 }
 
 export interface ISocialMediaLinks {

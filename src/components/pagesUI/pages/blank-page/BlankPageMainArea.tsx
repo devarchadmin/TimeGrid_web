@@ -6,7 +6,7 @@ const BlankPageMainArea = () => {
     <>
          {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-              <Breadcrumb breadTitle="Blank Page" subTitle="Home"/>
+              <Breadcrumb breadTitle="Blank Page" subTitle="Home" subtitleLink='/'/>
                 <div className="grid grid-cols-12 justify-center">
 
                 </div>

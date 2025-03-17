@@ -8,7 +8,7 @@ const PaginationMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Pagination' subTitle='Ui Elements' />
+                <Breadcrumb breadTitle='Pagination' subTitle='Ui Elements' subtitleLink='/ui-elements' />
                 <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
                     <div className="col-span-12 xl:col-span-4">
                         <div className="card__wrapper">

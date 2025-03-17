@@ -32,30 +32,37 @@ const EmergencyContact = ({ data }: propsType) => {
                   <ul className="personal-info">
                     <li>
                       <div className="title">Name:</div>
-                      <div className="text">John Doe</div>
+                      <div className="text">{data?.emergencyContact?.fullName || "Not provided"}</div>
                     </li>
                     <li>
                       <div className="title">Relationship:</div>
-                      <div className="text">Father</div>
+                      <div className="text">{data?.emergencyContact?.relationship || "Not provided"}</div>
                     </li>
                     <li>
                       <div className="title">Phone:</div>
                       <div className="text text-link-hover">
-                        <Link href="tel:9876543210">9876543210</Link>,{" "}
-                        <Link href="tel:9876543210">9876543210</Link>
+                        <Link href={`tel:${data?.emergencyContact?.phoneNumber}`}>{data?.emergencyContact?.phoneNumber || "Not provided"}</Link>
+                        {data?.emergencyContact?.phoneNumber2 && (
+                          <>
+                            ,{" "}
+                            <Link href={`tel:${data?.emergencyContact?.phoneNumber2}`}>
+                              {data?.emergencyContact?.phoneNumber2}
+                            </Link>
+                          </>
+                        )}
                       </div>
                     </li>
                     <li>
                       <div className="title">Email:</div>
                       <div className="text text-link-hover">
-                        <Link href="mailto:father@example.com">
-                          father@example.com
+                        <Link href={`mailto:${data?.emergencyContact?.emailAddress}`}>
+                          {data?.emergencyContact?.emailAddress || "Not provided"}
                         </Link>
                       </div>
                     </li>
                     <li>
                       <div className="title">Address:</div>
-                      <div className="text">150, New York</div>
+                      <div className="text">{data?.emergencyContact?.address || "Not provided"}</div>
                     </li>
                   </ul>
                 </div>
@@ -66,30 +73,39 @@ const EmergencyContact = ({ data }: propsType) => {
                   <ul className="personal-info">
                     <li>
                       <div className="title">Name:</div>
-                      <div className="text">Jane Doe</div>
+                      <div className="text">{data?.emergencyContact?.secondaryFullName || "Not provided"}</div>
                     </li>
                     <li>
                       <div className="title">Relationship:</div>
-                      <div className="text">Mother</div>
+                      <div className="text">{data?.emergencyContact?.secondaryRelationship || "Not provided"}</div>
                     </li>
                     <li>
                       <div className="title">Phone:</div>
                       <div className="text text-link-hover">
-                        <Link href="tel:9876543211">9876543211</Link>,{" "}
-                        <Link href="tel:9876543211">9876543211</Link>
+                        <Link href={`tel:${data?.emergencyContact?.secondaryPhoneNumber}`}>
+                          {data?.emergencyContact?.secondaryPhoneNumber || "Not provided"}
+                        </Link>
+                        {data?.emergencyContact?.secondaryPhoneNumber2 && (
+                          <>
+                            ,{" "}
+                            <Link href={`tel:${data?.emergencyContact?.secondaryPhoneNumber2}`}>
+                              {data?.emergencyContact?.secondaryPhoneNumber2}
+                            </Link>
+                          </>
+                        )}
                       </div>
                     </li>
                     <li>
                       <div className="title">Email:</div>
                       <div className="text text-link-hover">
-                        <Link href="mailto:mother@example.com">
-                          mother@example.com
+                        <Link href={`mailto:${data?.emergencyContact?.secondaryEmailAddress}`}>
+                          {data?.emergencyContact?.secondaryEmailAddress || "Not provided"}
                         </Link>
                       </div>
                     </li>
                     <li>
                       <div className="title">Address:</div>
-                      <div className="text">150, New York</div>
+                      <div className="text">{data?.emergencyContact?.secondaryAddress || "Not provided"}</div>
                     </li>
                   </ul>
                 </div>

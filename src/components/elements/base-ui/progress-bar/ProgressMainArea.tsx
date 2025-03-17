@@ -9,7 +9,7 @@ const ProgressMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle="Progress Bar" subTitle="Ui Elements" />
+                <Breadcrumb breadTitle="Progress Bar" subTitle="Ui Elements" subtitleLink='/ui-elements'/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 xl:col-span-6">
                         <div className="card__wrapper">

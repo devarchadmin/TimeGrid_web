@@ -8,7 +8,7 @@ const ContactSMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Contacts" subTitle="HRM" />
+        <Breadcrumb breadTitle="Contacts" subTitle="HRM" subtitleLink='#'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <div className="col-span-12">
             <div className="card__wrapper">

@@ -7,7 +7,7 @@ const EmployeeAttendanceMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Attendance" subTitle="Home" />
+        <Breadcrumb breadTitle="Attendance" subTitle="Home" subtitleLink="/" />
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <EmployeeAttendanceSummary />
           <EmployeeAttendanceTable />

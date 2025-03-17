@@ -1,16 +1,9 @@
 "use client"
 import Link from "next/link";
 import React, { useState } from "react";
-import avatar9 from "../../../../../public/assets/images/avatar/avatar9.png";
-import avatar10 from "../../../../../public/assets/images/avatar/avatar10.png";
-import avatar11 from "../../../../../public/assets/images/avatar/avatar11.png";
-import avatar12 from "../../../../../public/assets/images/avatar/avatar12.png";
-import avatar13 from "../../../../../public/assets/images/avatar/avatar13.png";
-import avatar14 from "../../../../../public/assets/images/avatar/avatar14.png";
-import avatar15 from "../../../../../public/assets/images/avatar/avatar15.png";
-import messageTextImg from "../../../../../public/assets/images/message/text.png";
 import Image from "next/image";
 import ChattingFooter from "./ChattingFooter";
+import { dropdownItems } from "@/data/dropdown-data";
 
 const AppChartMainArea = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -32,11 +25,11 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item is-active">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/free-photo/portrait-smiling-charming-young-man-grey-t-shirt-standing-against-plain-background_23-2148213406.jpg" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>David Peters</h5>
-                          <span>Senior Developer</span>
+                          <span>Senior Manager</span>
                         </div>
                       </div>
 
@@ -82,7 +75,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/654696/pexels-photo-654696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/arafed-woman-black-shirt-posing-picture_899870-57451.jpg" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>Lisa Roy</h5>
@@ -97,7 +90,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/29881401/pexels-photo-29881401/free-photo-of-intense-portrait-of-a-young-man-in-studio-lighting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/18yearold-boy-with-small-beard-healthy-body-wearing-black-tshirt-confident-expression_896590-32894.jpg?w=740" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>Jamie Taylor</h5>
@@ -112,7 +105,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/10648919/pexels-photo-10648919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/hyper-realistic-beautiful-elegant-indian-woman-wearing-light-pink-linen-salwar-short-hair_862994-109462.jpg" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>Amy Frost</h5>
@@ -127,7 +120,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/3483800/pexels-photo-3483800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/man-suit-with-blue-shirt-blue-shirt_905510-41744.jpg?w=740" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>Paul Wilson</h5>
@@ -142,7 +135,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__author-item">
                       <div className="chatbox__author-content">
                         <div className="chatbox__author-thumb">
-                          <Image src="https://images.pexels.com/photos/12453979/pexels-photo-12453979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/cute-teenager-girl_146671-1608.jpg" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatbox__author-info">
                           <h5>Ana Wlliams</h5>
@@ -161,7 +154,7 @@ const AppChartMainArea = () => {
                     <div className="chatbox__header">
                       <div className="chatting__user">
                         <div className="chatting__user-thumb">
-                          <Image src="https://images.pexels.com/photos/29881401/pexels-photo-29881401/free-photo-of-intense-portrait-of-a-young-man-in-studio-lighting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width={100} height={100} alt="image not found" />
+                          <Image src="https://img.freepik.com/premium-photo/18yearold-boy-with-small-beard-healthy-body-wearing-black-tshirt-confident-expression_896590-32894.jpg?w=740" width={100} height={100} alt="image not found" />
                         </div>
                         <div className="chatting__user-content">
                           <h5 className="chatting__user-info">Jamie Taylor</h5>

@@ -8,7 +8,7 @@ const ProjectDetailsMainArea = ({ id }: idType) => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Project Details" subTitle="Projects" />
+        <Breadcrumb breadTitle="Project Details" subTitle="Projects" subtitleLink='/'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <LeftContent />
           <RightContent />

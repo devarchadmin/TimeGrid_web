@@ -6,7 +6,7 @@ const BlogCreateMainArea = () => {
   return <>
     {/* -- App side area start -- */}
     <div className="app__slide-wrapper">
-      <Breadcrumb breadTitle="Blog Create" subTitle="Home" />
+      <Breadcrumb breadTitle="Blog Create" subTitle="Home" subtitleLink='/'/>
       <BlogCreateForm />
     </div>
     {/* -- App side area end -- */}

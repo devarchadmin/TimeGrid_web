@@ -6,7 +6,7 @@ const ElementIconMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Home' subTitle='icomoon' />
+                <Breadcrumb breadTitle='Home' subTitle='icomoon' subtitleLink='#'/>
                 <div className="grid">
                     <div className="clearfix mhl ptl mb-20">
                         <div className="glyph fs1">

@@ -11,7 +11,7 @@ const FormStyleMain = () => {
     return (
         <>
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Form Style' subTitle='Home' />
+                <Breadcrumb breadTitle='Form Style' subTitle='Home' subtitleLink='/'/>
                 <div className="grid grid-cols-12 gap-x-5 maxXs:gap-x-0">
                     <div className="col-span-12 lg:col-span-6">
                         <FormVariationOne />

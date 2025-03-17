@@ -6,7 +6,7 @@ const ProjectCreateMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Project Create" subTitle="Projects" />
+        <Breadcrumb breadTitle="Project Create" subTitle="Projects" subtitleLink='/'/>
         <ProjectCreateForm />
       </div>
     </>

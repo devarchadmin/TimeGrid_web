@@ -6,7 +6,7 @@ const BiometricAttendanceMainArea = () => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Biometric Attendance" subTitle="Home" />
+        <Breadcrumb breadTitle="Biometric Attendance" subTitle="Home" subtitleLink="/" />
         <div className="grid grid-cols-12 gap-x-5 maxXs:gap-x-0">
           <BiometricAttendanceTable />
         </div>

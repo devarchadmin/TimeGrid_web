@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import UpdateEducationQualificationModal from "./UpdateEducationQualificationModal";
 import Link from "next/link";
+import { IEmployee } from "@/interface";
 
-const EducationQualification = () => {
+interface propsType {
+  data?: IEmployee;
+}
+
+const EducationQualification = ({ data }: propsType) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -24,48 +29,66 @@ const EducationQualification = () => {
             </div>
             <div className="education__box">
               <ul className="education__list">
-                <li>
-                  <div className="education__user">
-                    <div className="before__circle"></div>
-                  </div>
-                  <div className="education__content">
-                    <div className="timeline-content">
-                      <Link href="#" className="name">
-                        International College of Arts and Science (UG)
-                      </Link>
-                      <span className="degree">MSc In Computer Science</span>
-                      <span className="year">2000 - 2003</span>
+                {data?.educationQualification ? (
+                  <>
+                    <li>
+                      <div className="education__user">
+                        <div className="before__circle"></div>
+                      </div>
+                      <div className="education__content">
+                        <div className="timeline-content">
+                          <Link href="#" className="name">
+                            {data.educationQualification.higherDegreeInstitutionName || "Not provided"}
+                          </Link>
+                          <span className="degree">{data.educationQualification.higherDegree || "Not provided"}</span>
+                          <span className="year">
+                            {data.educationQualification.higherDegreeStartingDate || "N/A"} - {data.educationQualification.higherDegreeCompleteDate || "N/A"}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="education__user">
+                        <div className="before__circle"></div>
+                      </div>
+                      <div className="education__content">
+                        <div className="timeline-content">
+                          <Link href="#" className="name">
+                            {data.educationQualification.bachelorDegreeInstitutionName || "Not provided"}
+                          </Link>
+                          <span className="degree">{data.educationQualification.bachelorDegree || "Not provided"}</span>
+                          <span className="year">
+                            {data.educationQualification.bachelorDegreeStartingDate || "N/A"} - {data.educationQualification.bachelorDegreeCompleteDate || "N/A"}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="education__user">
+                        <div className="before__circle"></div>
+                      </div>
+                      <div className="education__content">
+                        <div className="timeline-content">
+                          <Link href="#" className="name">
+                            {data.educationQualification.secondaryDegreeInstitutionName || "Not provided"}
+                          </Link>
+                          <span className="degree">{data.educationQualification.secondaryDegree || "Not provided"}</span>
+                          <span className="year">
+                            {data.educationQualification.secondaryDegreeStartingDate || "N/A"} - {data.educationQualification.secondaryDegreeCompleteDate || "N/A"}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    <div className="education__content">
+                      <div className="timeline-content">
+                        <span className="degree">No education information available</span>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="education__user">
-                    <div className="before__circle"></div>
-                  </div>
-                  <div className="education__content">
-                    <div className="timeline-content">
-                      <Link href="#" className="name">
-                        International College of Arts and Science (PG)
-                      </Link>
-                      <span className="degree">BSc In Computer Science</span>
-                      <span className="year">2000 - 2003</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="education__user">
-                    <div className="before__circle"></div>
-                  </div>
-                  <div className="education__content">
-                    <div className="timeline-content">
-                      <Link href="#" className="name">
-                        International College of Arts and Science (PG)
-                      </Link>
-                      <span className="degree">Bsc Computer Science</span>
-                      <span className="year">2000 - 2003</span>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

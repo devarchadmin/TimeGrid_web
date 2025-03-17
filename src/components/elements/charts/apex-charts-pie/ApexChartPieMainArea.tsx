@@ -10,7 +10,7 @@ const ApexChartPieMainArea = () => {
         <>
             {/* -- App side area start -- */}
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Pie' subTitle='Home' />
+                <Breadcrumb breadTitle='Pie' subTitle='Home' subtitleLink='/'/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
                         <div className="card__wrapper style_two">

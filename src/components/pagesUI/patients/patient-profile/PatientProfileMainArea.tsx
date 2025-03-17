@@ -37,7 +37,7 @@ const PatientProfileMainArea = ({ id }: PatientProfileMainAreaProps) => {
   if (!patient) {
     return (
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" />
+        <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" subtitleLink='/patients'/>
         <div className="card__wrapper p-6 text-center">
           <h3 className="text-xl font-semibold text-gray-700">Patient not found</h3>
           <p className="mt-2 text-gray-600">The patient you are looking for does not exist or has been removed.</p>
@@ -52,7 +52,7 @@ const PatientProfileMainArea = ({ id }: PatientProfileMainAreaProps) => {
   return (
     <>
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" />
+        <Breadcrumb breadTitle="Patient Profile" subTitle="Patients" subtitleLink='/patients'/>
         <div className="grid grid-cols-12 gap-x-6 maxXs:gap-x-0">
           <PatientPersonalInfo patient={patient} onEdit={() => setEditPersonalInfoModalOpen(true)} />
           <PatientEmergencyContact patient={patient} />

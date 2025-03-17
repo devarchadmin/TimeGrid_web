@@ -7,7 +7,7 @@ const PrivacyPolicyMainArea = () => {
     <>
       {/* -- App side area start -- */}
       <div className="app__slide-wrapper">
-        <Breadcrumb breadTitle="Privacy and Policy" subTitle="Home"/>
+        <Breadcrumb breadTitle="Privacy and Policy" subTitle="Home" subtitleLink='/'/>
 
         <div className="row justify-content-center">
           <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12">

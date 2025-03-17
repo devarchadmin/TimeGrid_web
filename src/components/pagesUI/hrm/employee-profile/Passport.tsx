@@ -3,8 +3,13 @@ import React, { useState } from "react";
 import UpdateBankAccountModal from "./UpdateBankAccountModal";
 import UpdatePassportModal from "./UpdatePassportModal";
 import Link from "next/link";
+import { IEmployee } from "@/interface";
 
-const Passport = () => {
+interface propsType {
+  data?: IEmployee;
+}
+
+const Passport = ({ data }: propsType) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -26,24 +31,28 @@ const Passport = () => {
               <ul className="personal-info">
                 <li>
                   <div className="title">Passport Number:</div>
-                  <div className="text">A1234567</div>
+                  <div className="text">{data?.passport?.passportNumber || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Nationality:</div>
-                  <div className="text">American</div>
+                  <div className="text">{data?.passport?.nationality || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Issue Date:</div>
-                  <div className="text">01 Jan 2010</div>
+                  <div className="text">{data?.passport?.issueDate || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Expiry Date:</div>
-                  <div className="text">01 Jan 2025</div>
+                  <div className="text">{data?.passport?.expiryDate || "Not provided"}</div>
                 </li>
                 <li>
                   <div className="title">Scan Copy:</div>
                   <div className="text">
-                    <Link href="#">passport.pdf</Link>
+                    {data?.passport?.scanCopy ? (
+                      <Link href="#">{data.passport.scanCopy}</Link>
+                    ) : (
+                      "Not provided"
+                    )}
                   </div>
                 </li>
               </ul>

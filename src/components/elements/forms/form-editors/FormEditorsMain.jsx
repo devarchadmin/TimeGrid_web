@@ -9,7 +9,7 @@ const FormEditorsArea = () => {
     return (
         <>
             <div className="app__slide-wrapper">
-                <Breadcrumb breadTitle='Forms Editors' subTitle='Home' />
+                <Breadcrumb breadTitle='Forms Editors' subTitle='Home' subtitleLink='/'/>
                 <div className="grid grid-cols-12">
                     <div className="col-span-12">
                         <div className="card__wrapper">

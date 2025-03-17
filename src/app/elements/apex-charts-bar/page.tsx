@@ -1,5 +1,4 @@
-
-import ApexChartBarMainArea from '@/components/elements/charts/apex-charts-bar/ApexChartBarMainArea';
+import ApexChartBarMainArea from '@/components/elements/charts/apex-charts-bar/ApexChartBarMain';
 import Wrapper from '@/components/layouts/DefaultWrapper';
 import MetaData from '@/hooks/useMetaData';
 import React from 'react';

@@ -11,7 +11,7 @@ import img8 from "../../../public/assets/images/avatar/avatar4.png";
 import img9 from "../../../public/assets/images/avatar/avatar6.png";
 export const adminAttendanceData: IAdminAttendance[] = [
   {
-    employeeImg: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar2.2be06eb4.png&w=750&q=75",
     name: "John Doe",
     date1: "Present",
     date2: "Holiday",
@@ -46,7 +46,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Absent",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar10.9634d33d.png&w=750&q=75",
     name: "Jane Smith",
     date1: "Present",
     date2: "Present",
@@ -81,7 +81,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/15773193/pexels-photo-15773193/free-photo-of-portrait-of-smiling-blonde-woman-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar13.915247b2.png&w=750&q=75",
     name: "Robert Johnson",
     date1: "Time Off",
     date2: "Present",
@@ -116,7 +116,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar15.2e529f78.png&w=750&q=75",
     name: "Michael Brown",
     date1: "Present",
     date2: "Present",
@@ -136,7 +136,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date16: "Present",
     date17: "Holiday",
     date18: "Time Off",
-    date19: "Present",
+    date19: "Absent",
     date20: "Present",
     date21: "Holiday",
     date22: "Present",
@@ -145,13 +145,13 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date25: "Time Off",
     date26: "Present",
     date27: "Present",
-    date28: "Absent",
+    date28: "Present",
     date29: "Holiday",
     date30: "Present",
     date31: "Time Off",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar12.787b1466.png&w=750&q=75",
     name: "Emily Davis",
     date1: "Absent",
     date2: "Holiday",
@@ -186,7 +186,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Holiday",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/18041953/pexels-photo-18041953/free-photo-of-woman-in-seductive-pose-looking-at-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar6.46722d2d.png&w=750&q=75",
     name: "Olivia Wilson",
     date1: "Time Off",
     date2: "Present",
@@ -221,7 +221,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar9.eb982a64.png&w=750&q=75",
     name: "Sophia Martinez",
     date1: "Present",
     date2: "Present",
@@ -241,7 +241,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date16: "Late",
     date17: "Present",
     date18: "Present",
-    date19: "Present",
+    date19: "Absent",
     date20: "Holiday",
     date21: "Present",
     date22: "Time Off",
@@ -256,7 +256,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://manez-dashboard.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar5.81bf53ea.png&w=750&q=75",
     name: "Jackson Taylor",
     date1: "Absent",
     date2: "Holiday",
@@ -291,7 +291,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/673021/pexels-photo-673021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/free-photo/portrait-smiling-blonde-woman_23-2148316635.jpg",
     name: "Ava White",
     date1: "Present",
     date2: "Holiday",
@@ -315,18 +315,18 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date20: "Holiday",
     date21: "Time Off",
     date22: "Present",
-    date23: "Present",
-    date24: "Holiday",
-    date25: "Present",
-    date26: "Time Off",
+    date23: "Holiday",
+    date24: "Present",
+    date25: "Late",
+    date26: "Present",
     date27: "Present",
-    date28: "Present",
-    date29: "Present",
+    date28: "Time Off",
+    date29: "Holiday",
     date30: "Present",
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/5528835/pexels-photo-5528835.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-confident-teenage-girl-against-wall_1048944-13976455.jpg",
     name: "John Doe",
     date1: "Present",
     date2: "Holiday",
@@ -361,7 +361,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2599509/pexels-photo-2599509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/free-photo/front-view-beautiful-happy-woman_23-2148369448.jpg",
     name: "Jane Smith",
     date1: "Absent",
     date2: "Present",
@@ -396,7 +396,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/15012251/pexels-photo-15012251/free-photo-of-photo-of-a-young-man-sitting-by-a-gray-wall-and-looking-at-a-smart-phone.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/young-beautiful-woman-with-big-happy-smile_118342-2597.jpg",
     name: "Robert Johnson",
     date1: "Time Off",
     date2: "Present",
@@ -431,7 +431,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2599509/pexels-photo-2599509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/close-up-portrait-young-emotional-woman_118342-22737.jpg",
     name: "Michael Brown",
     date1: "Present",
     date2: "Present",
@@ -466,7 +466,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Time Off",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/804009/pexels-photo-804009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/cute-woman_298317-1316.jpg",
     name: "Emily Davis",
     date1: "Absent",
     date2: "Holiday",
@@ -501,7 +501,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Holiday",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2693814/pexels-photo-2693814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/cute-teenager-girl_146671-1608.jpg",
     name: "Olivia Wilson",
     date1: "Time Off",
     date2: "Present",
@@ -536,7 +536,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/749091/pexels-photo-749091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/hyper-realistic-beautiful-elegant-indian-woman-wearing-light-pink-linen-salwar-short-hair_862994-213940.jpg",
     name: "Sophia Martinez",
     date1: "Present",
     date2: "Present",
@@ -571,7 +571,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
+    employeeImg: "https://img.freepik.com/premium-photo/arafed-woman-with-long-brown-hair-wearing-black-jacket-generative-ai_900833-61432.jpg",
     name: "Jackson Taylor",
     date1: "Absent",
     date2: "Holiday",
@@ -606,7 +606,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-young-lady-red-jacket_926199-2840597.jpg",
     name: "Benjamin Moore",
     date1: "Time Off",
     date2: "Holiday",
@@ -641,7 +641,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/15235470/pexels-photo-15235470/free-photo-of-close-up-shot-of-a-blonde-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/cute-happy-indian-girl_758367-178181.jpg",
     name: "Lucas Clark",
     date1: "Present",
     date2: "Holiday",
@@ -676,7 +676,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/30701542/pexels-photo-30701542/free-photo-of-smiling-young-man-in-stylish-glasses-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/face-portrait-different-type-beautiful-younge-women_1084302-1568.jpg",
     name: "Mason Lee",
     date1: "Absent",
     date2: "Time Off",
@@ -711,7 +711,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Late",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/19987431/pexels-photo-19987431/free-photo-of-portrait-of-man-with-dyed-blonde-hair.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/beautiful-girl_925342-89.jpg",
     name: "Ethan Harris",
     date1: "Holiday",
     date2: "Present",
@@ -746,7 +746,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Time Off",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/15502152/pexels-photo-15502152/free-photo-of-posed-photo-of-a-young-woman-in-a-black-hat-covered-in-snow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/arafed-woman-black-shirt-posing-picture_899870-57451.jpg",
     name: "Charlotte Martin",
     date1: "Absent",
     date2: "Time Off",
@@ -781,7 +781,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/2341350/pexels-photo-2341350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/arafed-woman-black-shirt-posing-picture-with-black-background_899870-57464.jpg",
     name: "Amelia Wilson",
     date1: "Time Off",
     date2: "Holiday",
@@ -816,7 +816,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/27897903/pexels-photo-27897903/free-photo-of-close-up-portrait-of-a-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    employeeImg: "https://img.freepik.com/premium-photo/portrait-handsome-bearded-hispanic-man-with-curly-hair_251136-43920.jpg?w=740",
     name: "Isabella Thompson",
     date1: "Present",
     date2: "Time Off",
@@ -851,7 +851,7 @@ export const adminAttendanceData: IAdminAttendance[] = [
     date31: "Present",
   },
   {
-    employeeImg: "https://images.pexels.com/photos/10850674/pexels-photo-10850674.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2PropogendaÍ",
+    employeeImg: "https://img.freepik.com/premium-photo/close-up-portrait-young-man_1048944-10212836.jpg?w=740",
     name: "Henry Walker",
     date1: "Time Off",
     date2: "Present",

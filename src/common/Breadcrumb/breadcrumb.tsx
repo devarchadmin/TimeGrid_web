@@ -4,9 +4,10 @@ import React from "react";
 interface TBreadcrumb {
   breadTitle: string;
   subTitle: string;
+  subtitleLink: string;
 }
 
-const Breadcrumb = ({ breadTitle, subTitle }: TBreadcrumb) => {
+const Breadcrumb = ({ breadTitle, subTitle, subtitleLink }: TBreadcrumb) => {
   return (
     <>
       <div className="breadcrumb__area">
@@ -14,7 +15,7 @@ const Breadcrumb = ({ breadTitle, subTitle }: TBreadcrumb) => {
           <nav>
             <ol className="breadcrumb flex items-center mb-0">
               <li className="breadcrumb-item">
-                <Link href="/">{subTitle}</Link>
+                <Link href={subtitleLink}>{subTitle}</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 {breadTitle}
