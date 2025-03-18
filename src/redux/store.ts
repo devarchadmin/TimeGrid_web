@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { configureStore as configureStoreRTK } from '@reduxjs/toolkit';
 import { cartSlice } from './slices/cartSlice';
+import chatReducer from './features/chatSlice';
 
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, Persistor } from 'redux-persist';
 
@@ -30,7 +31,8 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, combineReducers({
   cart: cartSlice.reducer,
-  wishlist: wishlistSlice.reducer
+  wishlist: wishlistSlice.reducer,
+  chat: chatReducer
 }));
 
 // Configure Redux store

@@ -1,14 +1,14 @@
 import Wrapper from "@/components/layouts/DefaultWrapper";
-import AppChartMainArea from "@/components/pagesUI/apps/app-chat/AppChartMainArea";
+import AppChatMainArea from "@/components/pagesUI/apps/app-chat/AppChatMainArea";
 import MetaData from "@/hooks/useMetaData";
 import React from "react";
 
 const AppChatMain = () => {
   return (
     <>
-      <MetaData pageTitle="App Chart">
+      <MetaData pageTitle="App Chat">
         <Wrapper>
-         <AppChartMainArea/>
+         <AppChatMainArea/>
         </Wrapper>
       </MetaData>
     </>

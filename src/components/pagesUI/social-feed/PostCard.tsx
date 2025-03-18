@@ -127,8 +127,8 @@ const PostCard: React.FC<PostCardProps> = ({
                       <i className="fa-regular fa-pen-to-square text-gray-600 dark:text-gray-300"></i>
                     </div>
                     <div>
-                      <p className="font-medium">Edit post</p>
-                      <p className="text-xs text-body">Edit the content of your post</p>
+                      <p className="font-medium !mb-0">Edit post</p>
+                      <p className="text-xs text-body !mb-0">Edit the content of your post</p>
                     </div>
                   </button>
                 </li>
@@ -144,8 +144,8 @@ const PostCard: React.FC<PostCardProps> = ({
                       <i className="fa-regular fa-trash-can text-danger"></i>
                     </div>
                     <div>
-                      <p className="font-medium">Delete post</p>
-                      <p className="text-xs text-body">Remove this post permanently</p>
+                      <p className="font-medium !mb-0">Delete post</p>
+                      <p className="text-xs text-body !mb-0">Remove this post permanently</p>
                     </div>
                   </button>
                 </li>
