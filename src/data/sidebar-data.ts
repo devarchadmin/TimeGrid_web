@@ -43,6 +43,12 @@ const sidebarData: SidebarCategory[] = [
         link: "/",
       },
       {
+        id: 16,
+        label: "Social Feed",
+        icon: "fa-regular fa-share-nodes",
+        link: "/social-feed",
+      },
+      {
         id: 5,
         label: "Employees",
         icon: "fa-regular fa-users",
