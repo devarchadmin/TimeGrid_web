@@ -121,8 +121,15 @@ const GroupMembersModal: React.FC<GroupMembersModalProps> = ({ chatInfo, onClose
                 return (
                   <div key={user.id} className="flex items-center justify-between p-2 hover:bg-gray-100">
                     <div className="flex items-center">
-                      <div className="h-10 w-10 rounded-full overflow-hidden mr-3">
-                        <Image src={user.avatar} width={40} height={40} alt={user.name} />
+                      <div className="h-10 w-10 rounded-full overflow-hidden mr-3" style={{ aspectRatio: '1/1' }}>
+                        <Image 
+                          src={user.avatar} 
+                          width={40} 
+                          height={40} 
+                          alt={user.name} 
+                          className="object-cover w-full h-full"
+                          style={{ objectPosition: 'center' }}
+                        />
                       </div>
                       <div>
                         <div className="font-medium flex items-center">
@@ -211,8 +218,15 @@ const GroupMembersModal: React.FC<GroupMembersModalProps> = ({ chatInfo, onClose
                     className="mr-2"
                   />
                   <div className="flex items-center">
-                    <div className="h-10 w-10 rounded-full overflow-hidden mr-3">
-                      <Image src={user.avatar} width={40} height={40} alt={user.name} />
+                    <div className="h-10 w-10 rounded-full overflow-hidden mr-3" style={{ aspectRatio: '1/1' }}>
+                      <Image 
+                        src={user.avatar} 
+                        width={40} 
+                        height={40} 
+                        alt={user.name} 
+                        className="object-cover w-full h-full"
+                        style={{ objectPosition: 'center' }}
+                      />
                     </div>
                     <div>
                       <div className="font-medium">{user.name}</div>

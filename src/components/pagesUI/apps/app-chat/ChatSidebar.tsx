@@ -15,23 +15,23 @@ const ChatSidebar = () => {
   const [showCreateGroupModal, setShowCreateGroupModal] = useState(false);
 
   // Sort chats by updated time (most recent first)
-  const sortedChats = [...chats].sort((a, b) => 
+  const sortedChats = [...chats].sort((a, b) =>
     new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
   );
 
   // Filter chats based on search query
-  const filteredChats = searchQuery.trim() === '' 
-    ? sortedChats 
+  const filteredChats = searchQuery.trim() === ''
+    ? sortedChats
     : sortedChats.filter(chat => {
-        if (chat.type === 'direct') {
-          // Search in direct chats by other participant's name
-          const otherParticipant = chat.participants.find(p => p.id !== currentUser?.id);
-          return otherParticipant?.name.toLowerCase().includes(searchQuery.toLowerCase());
-        } else {
-          // Search in group chats by group name
-          return chat.name.toLowerCase().includes(searchQuery.toLowerCase());
-        }
-      });
+      if (chat.type === 'direct') {
+        // Search in direct chats by other participant's name
+        const otherParticipant = chat.participants.find(p => p.id !== currentUser?.id);
+        return otherParticipant?.name.toLowerCase().includes(searchQuery.toLowerCase());
+      } else {
+        // Search in group chats by group name
+        return chat.name.toLowerCase().includes(searchQuery.toLowerCase());
+      }
+    });
 
   // Function to handle chat selection
   const handleChatSelect = (chatId: string) => {
@@ -51,7 +51,7 @@ const ChatSidebar = () => {
     } else {
       return {
         name: chat.name,
-        image: './assets/images/logo/GW-Fav.svg',
+        image: chat.icon || './assets/images/logo/GW-Fav.svg',
         status: 'group',
         position: chat.description || ''
       };
@@ -61,14 +61,14 @@ const ChatSidebar = () => {
   // Function to search for users
   const handleSearchUser = () => {
     if (searchQuery.trim() === '') return;
-    
+
     // Find the user by name or ID
-    const foundUser = users.find(user => 
-      user.id !== currentUser?.id && 
-      (user.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-       user.id.toLowerCase().includes(searchQuery.toLowerCase()))
+    const foundUser = users.find(user =>
+      user.id !== currentUser?.id &&
+      (user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        user.id.toLowerCase().includes(searchQuery.toLowerCase()))
     );
-    
+
     if (foundUser) {
       dispatch(startDirectChat({ userId: foundUser.id }));
       setSearchQuery('');
@@ -77,7 +77,7 @@ const ChatSidebar = () => {
 
   // Function to render unread count
   const renderUnreadCount = (chat: DirectChat | GroupChat | CompanyChat) => {
-    const unreadCount = chat.messages.filter(msg => 
+    const unreadCount = chat.messages.filter(msg =>
       msg.sender !== currentUser?.id && !msg.read
     ).length;
 
@@ -87,7 +87,7 @@ const ChatSidebar = () => {
       );
     } else if (chat.lastMessage && chat.lastMessage.sender === currentUser?.id) {
       return (
-        <span className="text__number"><i className="fa-light fa-check"></i></span>
+        <span className="w-2 h-2 rounded-full bg-blue-500"></span>
       );
     }
     return null;
@@ -109,35 +109,41 @@ const ChatSidebar = () => {
         <div className="chatbox__author-item is-active">
           <div className="chatbox__author-content">
             <div className="chatbox__author-thumb">
-              <Image src={currentUser?.avatar || ''} width={100} height={100} alt="Current user" />
+              <Image
+                src={currentUser?.avatar || ''}
+                width={100}
+                height={100}
+                className="object-cover w-full h-full"
+                style={{ objectPosition: 'center' }}
+                alt="Current user"
+              />
             </div>
+
             <div className="chatbox__author-info">
               <h5>{currentUser?.name}</h5>
               <span>{currentUser?.position}</span>
             </div>
           </div>
-          <div className="chatbox__edit">
-            <button 
-              onClick={() => setShowCreateGroupModal(true)}
-              className="bg-primary text-white rounded-full p-2"
-            >
-              <i className="fa-light fa-plus"></i>
-            </button>
-          </div>
+          <button
+            onClick={() => setShowCreateGroupModal(true)}
+            className="chatbox__edit !bg-primary !text-white"
+          >
+            <i className="fa-light fa-plus"></i>
+          </button>
         </div>
 
         {/* Search input */}
         <div className="chatbox__inbox-search">
           <form onSubmit={(e) => { e.preventDefault(); handleSearchUser(); }}>
             <div className="chatbox__inbox-input">
-              <input 
-                type="search" 
-                placeholder="Search users or chats..." 
+              <input
+                type="search"
+                placeholder="Search users or chats..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button 
-                className="chatbox__inbox-btn" 
+              <button
+                className="chatbox__inbox-btn !mt-[2px]"
                 type="submit"
               >
                 <i className="icon-magnifying-glass"></i>
@@ -149,21 +155,30 @@ const ChatSidebar = () => {
         {/* Chat list */}
         {filteredChats.map((chat) => {
           const chatInfo = getChatInfo(chat);
-          const lastMessage = chat.lastMessage ? 
-            (chat.lastMessage.content.length > 30 
-              ? chat.lastMessage.content.substring(0, 30) + '...' 
+          const lastMessage = chat.lastMessage ?
+            (chat.lastMessage.content.length > 30
+              ? chat.lastMessage.content.substring(0, 30) + '...'
               : chat.lastMessage.content)
             : '??';
-            
+
           return (
-            <div 
-              key={chat.id} 
-              className={`chatbox__author-item ${activeChat === chat.id ? 'is-active' : ''}`}
+            <div
+              key={chat.id}
+              className={`chatbox__author-item cursor-pointer transition-colors hover:bg-gray-100 px-3 py-1 rounded-md
+                ${activeChat === chat.id ? 'bg-gray-200 hover:bg-gray-200' : ''}`}
               onClick={() => handleChatSelect(chat.id)}
             >
               <div className="chatbox__author-content">
                 <div className="chatbox__author-thumb">
-                  <Image src={chatInfo.image} width={100} height={100} alt={chatInfo.name} />
+                  <Image
+                    src={chatInfo.image}
+                    width={100}
+                    height={100}
+                    alt={chatInfo.name}
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: 'center', aspectRatio: '1/1' }}
+                  />
+                  
                   {chatInfo.status === 'online' && (
                     <span className="status-badge status-online"></span>
                   )}
@@ -175,7 +190,7 @@ const ChatSidebar = () => {
                   )}
                 </div>
                 <div className="chatbox__author-info">
-                  <h5>{chatInfo.name}</h5>
+                  <h5 className="text-base font-medium">{chatInfo.name}</h5>
                   <p>{lastMessage}</p>
                 </div>
               </div>
@@ -187,7 +202,7 @@ const ChatSidebar = () => {
           );
         })}
       </div>
-      
+
       {/* Create Group Modal */}
       {showCreateGroupModal && (
         <CreateGroupModal onClose={() => setShowCreateGroupModal(false)} />

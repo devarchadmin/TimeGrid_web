@@ -42,6 +42,7 @@ export interface GroupChat extends Chat {
   type: 'group';
   name: string;
   description?: string;
+  icon?: string;
   participants: User[];
   createdBy: string; // User ID
   createdAt: string;

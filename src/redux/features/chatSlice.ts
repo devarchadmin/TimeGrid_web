@@ -53,8 +53,8 @@ export const chatSlice = createSlice({
       }
     },
     
-    createGroup: (state, action: PayloadAction<{ name: string; description?: string; participants: string[] }>) => {
-      const { name, description, participants } = action.payload;
+    createGroup: (state, action: PayloadAction<{ name: string; description?: string; participants: string[]; icon?: string }>) => {
+      const { name, description, participants, icon } = action.payload;
       
       if (state.currentUser) {
         const participantUsers = state.users.filter(user => 
@@ -66,6 +66,7 @@ export const chatSlice = createSlice({
           type: 'group',
           name,
           description,
+          icon: icon || './assets/images/logo/GW-Fav.svg',
           participants: participantUsers,
           createdBy: state.currentUser.id,
           createdAt: new Date().toISOString(),
@@ -83,14 +84,16 @@ export const chatSlice = createSlice({
       chatId: string; 
       name?: string; 
       description?: string;
+      icon?: string;
     }>) => {
-      const { chatId, name, description } = action.payload;
+      const { chatId, name, description, icon } = action.payload;
       const chat = state.chats.find(chat => chat.id === chatId) as GroupChat | undefined;
       
       if (chat && chat.type === 'group' && state.currentUser) {
         if (chat.admins.includes(state.currentUser.id)) {
           if (name) chat.name = name;
           if (description !== undefined) chat.description = description;
+          if (icon) chat.icon = icon;
         }
       }
     },

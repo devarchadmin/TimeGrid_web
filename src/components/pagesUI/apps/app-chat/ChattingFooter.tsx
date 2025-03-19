@@ -41,7 +41,7 @@ const ChattingFooter: React.FC<ChattingFooterProps> = ({ chatId }) => {
     <div className="chatbox__chatting-footer">
       <form 
         onSubmit={handleSendMessage} 
-        className='border-2 py-3 pl-0 pr-3 rounded-full'
+        className='border-2 py-1 pl-0 pr-1 rounded-full'
       >
         <div className="chatbox__footer-input">
           <input 

@@ -10,6 +10,7 @@ interface GroupInfoModalProps {
     participants?: User[];
     admins?: string[];
     isCompanyWide?: boolean;
+    image?: string;
   };
   onClose: () => void;
 }
@@ -30,6 +31,20 @@ const GroupInfoModal: React.FC<GroupInfoModalProps> = ({ chatInfo, onClose }) =>
           <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
             <i className="fa-light fa-times"></i>
           </button>
+        </div>
+        
+        {/* Group Icon */}
+        <div className="mb-4 flex justify-center">
+          <div className="w-20 h-20 rounded-full overflow-hidden" style={{ aspectRatio: '1/1' }}>
+            <Image 
+              src={chatInfo.image || './assets/images/logo/GW-Fav.svg'} 
+              width={80} 
+              height={80} 
+              alt={chatInfo.name}
+              className="object-cover w-full h-full"
+              style={{ objectPosition: 'center' }}
+            />
+          </div>
         </div>
         
         {chatInfo.description && (
@@ -64,8 +79,15 @@ const GroupInfoModal: React.FC<GroupInfoModalProps> = ({ chatInfo, onClose }) =>
               return (
                 <div key={user.id} className="flex items-center justify-between p-2 hover:bg-gray-100">
                   <div className="flex items-center">
-                    <div className="h-10 w-10 rounded-full overflow-hidden mr-3">
-                      <Image src={user.avatar} width={40} height={40} alt={user.name} />
+                    <div className="h-10 w-10 rounded-full overflow-hidden mr-3" style={{ aspectRatio: '1/1' }}>
+                      <Image 
+                        src={user.avatar} 
+                        width={40} 
+                        height={40} 
+                        alt={user.name} 
+                        className="object-cover w-full h-full"
+                        style={{ objectPosition: 'center' }}
+                      />
                     </div>
                     <div>
                       <div className="font-medium flex items-center">

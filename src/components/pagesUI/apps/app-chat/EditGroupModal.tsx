@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { deleteGroup, editGroup } from '@/redux/features/chatSlice';
+import Image from 'next/image';
 
 interface EditGroupModalProps {
   chatInfo: {
     name: string;
     description?: string;
+    icon?: string;
   };
   onClose: () => void;
 }
@@ -18,7 +20,28 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ chatInfo, onClose }) =>
   
   const [groupName, setGroupName] = useState(chatInfo.name);
   const [groupDescription, setGroupDescription] = useState(chatInfo.description || '');
+  const [groupIcon, setGroupIcon] = useState<string>(chatInfo.icon || './assets/images/logo/GW-Fav.svg');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  
+  // Handle image selection
+  const handleImageSelect = () => {
+    fileInputRef.current?.click();
+  };
+  
+  // Handle image change
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          setGroupIcon(event.target.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
   
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
@@ -31,7 +54,8 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ chatInfo, onClose }) =>
     dispatch(editGroup({
       chatId: activeChat || '',
       name: groupName.trim(),
-      description: groupDescription.trim()
+      description: groupDescription.trim(),
+      icon: groupIcon
     }));
     
     onClose();
@@ -59,6 +83,34 @@ const EditGroupModal: React.FC<EditGroupModalProps> = ({ chatInfo, onClose }) =>
             </div>
             
             <form onSubmit={handleSubmit}>
+              {/* Group Icon */}
+              <div className="mb-6 flex flex-col items-center">
+                <div 
+                  className="w-24 h-24 rounded-full overflow-hidden mb-2 relative cursor-pointer" 
+                  onClick={handleImageSelect}
+                  style={{ aspectRatio: '1/1' }}
+                >
+                  <Image 
+                    src={groupIcon} 
+                    fill
+                    alt="Group icon" 
+                    className="object-cover"
+                    style={{ objectPosition: 'center' }}
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                    <i className="fa-light fa-camera text-white text-xl"></i>
+                  </div>
+                </div>
+                <input 
+                  type="file" 
+                  ref={fileInputRef} 
+                  className="hidden" 
+                  accept="image/*" 
+                  onChange={handleImageChange}
+                />
+                <p className="text-sm text-gray-500">Click to change the group icon</p>
+              </div>
+              
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-1">Group Name</label>
                 <input

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { createGroup } from '@/redux/features/chatSlice';
@@ -17,6 +17,8 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose }) => {
   const [groupDescription, setGroupDescription] = useState('');
   const [selectedUsers, setSelectedUsers] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [groupIcon, setGroupIcon] = useState<string>('./assets/images/logo/GW-Fav.svg');
+  const fileInputRef = useRef<HTMLInputElement>(null);
   
   // Filter users (exclude current user and already in company chat)
   const availableUsers = users.filter(user => 
@@ -33,6 +35,25 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose }) => {
     }
   };
   
+  // Handle image selection
+  const handleImageSelect = () => {
+    fileInputRef.current?.click();
+  };
+  
+  // Handle image change
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          setGroupIcon(event.target.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,7 +65,8 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose }) => {
     dispatch(createGroup({
       name: groupName.trim(),
       description: groupDescription.trim(),
-      participants: selectedUsers
+      participants: selectedUsers,
+      icon: groupIcon
     }));
     
     onClose();
@@ -61,6 +83,34 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose }) => {
         </div>
         
         <form onSubmit={handleSubmit}>
+          {/* Group Icon */}
+          <div className="mb-6 flex flex-col items-center">
+            <div 
+              className="w-24 h-24 rounded-full overflow-hidden mb-2 relative cursor-pointer" 
+              onClick={handleImageSelect}
+              style={{ aspectRatio: '1/1' }}
+            >
+              <Image 
+                src={groupIcon} 
+                fill
+                alt="Group icon" 
+                className="object-cover"
+                style={{ objectPosition: 'center' }}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <i className="fa-light fa-camera text-white text-xl"></i>
+              </div>
+            </div>
+            <input 
+              type="file" 
+              ref={fileInputRef} 
+              className="hidden" 
+              accept="image/*" 
+              onChange={handleImageChange}
+            />
+            <p className="text-sm text-gray-500">Click to upload a group icon</p>
+          </div>
+          
           <div className="mb-4">
             <label className="block text-sm font-medium mb-1">Group Name</label>
             <input
@@ -109,8 +159,15 @@ const CreateGroupModal: React.FC<CreateGroupModalProps> = ({ onClose }) => {
                       className="mr-2"
                     />
                     <div className="flex items-center">
-                      <div className="h-8 w-8 rounded-full overflow-hidden mr-2">
-                        <Image src={user.avatar} width={32} height={32} alt={user.name} />
+                      <div className="h-8 w-8 rounded-full overflow-hidden mr-2" style={{ aspectRatio: '1/1' }}>
+                        <Image 
+                          src={user.avatar} 
+                          width={32} 
+                          height={32} 
+                          alt={user.name}
+                          className="object-cover w-full h-full"
+                          style={{ objectPosition: 'center' }}
+                        />
                       </div>
                       <div>
                         <div className="font-medium">{user.name}</div>

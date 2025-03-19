@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
-import Link from 'next/link';
 import { User } from '@/interface/chat.interface';
-import GroupInfoModal from './GroupInfoModal';
 import GroupMembersModal from './GroupMembersModal';
+import GroupInfoModal from './GroupInfoModal';
 import EditGroupModal from './EditGroupModal';
+
 
 interface ChatHeaderProps {
   chatInfo: {
@@ -18,6 +18,7 @@ interface ChatHeaderProps {
     participants?: User[];
     isCompanyWide?: boolean;
     admins?: string[];
+    icon?: string;
   };
 }
 
@@ -41,8 +42,15 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ chatInfo }) => {
     <div className="chatbox__chatting-top">
       <div className="chatbox__header">
         <div className="chatting__user">
-          <div className="chatting__user-thumb">
-            <Image src={chatInfo.image} width={100} height={100} alt={chatInfo.name} />
+          <div className="chatting__user-thumb" style={{ aspectRatio: '1/1' }}>
+            <Image 
+              src={chatInfo.image} 
+              width={100} 
+              height={100} 
+              alt={chatInfo.name} 
+              className="object-cover w-full h-full"
+              style={{ objectPosition: 'center' }}
+            />
           </div>
           <div className="chatting__user-content">
             <h5 className="chatting__user-info">{chatInfo.name}</h5>

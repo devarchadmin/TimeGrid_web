@@ -8,7 +8,7 @@ const AppChatMain = () => {
     <>
       <MetaData pageTitle="App Chat">
         <Wrapper>
-         <AppChatMainArea/>
+          <AppChatMainArea />
         </Wrapper>
       </MetaData>
     </>
