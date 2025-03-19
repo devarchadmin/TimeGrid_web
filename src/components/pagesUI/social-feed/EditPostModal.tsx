@@ -111,7 +111,7 @@ const EditPostModal: React.FC<EditPostModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4">
+    <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black bg-opacity-70 p-4">
       <div
         ref={modalRef}
         className="bg-white dark:bg-card-dark rounded-xl shadow-lg w-full max-w-xl max-h-[90vh] overflow-hidden"

@@ -85,7 +85,7 @@ const GroupMembersModal: React.FC<GroupMembersModalProps> = ({ chatInfo, onClose
   };
   
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold">

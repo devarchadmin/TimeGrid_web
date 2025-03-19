@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 import { RootState } from '@/redux/store';
-import {Message } from '@/interface/chat.interface';
+import { Message } from '@/interface/chat.interface';
 import ChattingFooter from './ChattingFooter';
 import { format } from 'date-fns';
 import ChatHeader from './ChatHeader';
@@ -105,8 +105,12 @@ const ChatWindow = () => {
 
   return (
     <div className="chatbox__chatting-wrapper !rounded-lg">
+
+      {/* Chat Header */}
       <ChatHeader chatInfo={chatInfo} />
-      <div className="chatbox__chatting-body  p-4 overflow-y-auto max-h-[calc(100vh-250px)]">
+
+      {/* Chat Body */}
+      <div className='h-[77%] max-h-[77%] overflow-y-auto'>
         {messageGroups.map((group, groupIndex) => (
           <React.Fragment key={groupIndex}>
             <div className="chat__message-item is-time">
@@ -188,6 +192,8 @@ const ChatWindow = () => {
         ))}
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Chat Footer */}
       <ChattingFooter chatId={activeChatData.id} />
     </div>
   );
