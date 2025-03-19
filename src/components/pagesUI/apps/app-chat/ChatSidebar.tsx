@@ -103,8 +103,8 @@ const ChatSidebar = () => {
   };
 
   return (
-    <div className="chatbox__inbox-wrapper">
-      <div className="chatbox__inbox-inner">
+    <div className="chatbox__inbox-wrapper !rounded-lg">
+      <div className="chatbox__inbox-inner !rounded-lg">
         {/* Current user profile */}
         <div className="chatbox__author-item is-active">
           <div className="chatbox__author-content">
@@ -153,54 +153,57 @@ const ChatSidebar = () => {
         </div>
 
         {/* Chat list */}
-        {filteredChats.map((chat) => {
-          const chatInfo = getChatInfo(chat);
-          const lastMessage = chat.lastMessage ?
-            (chat.lastMessage.content.length > 30
-              ? chat.lastMessage.content.substring(0, 30) + '...'
-              : chat.lastMessage.content)
-            : '??';
+        <div className="h-full overflow-y-auto">
+          {filteredChats.map((chat) => {
+            const chatInfo = getChatInfo(chat);
+            const lastMessage = chat.lastMessage ?
+              (chat.lastMessage.content.length > 30
+                ? chat.lastMessage.content.substring(0, 30) + '...'
+                : chat.lastMessage.content)
+              : '??';
 
-          return (
-            <div
-              key={chat.id}
-              className={`chatbox__author-item cursor-pointer transition-colors hover:bg-gray-100 px-3 py-1 rounded-md
+            return (
+              <div
+                key={chat.id}
+                className={`chatbox__author-item cursor-pointer transition-colors hover:bg-gray-100 px-3 py-1 rounded-md
                 ${activeChat === chat.id ? 'bg-gray-200 hover:bg-gray-200' : ''}`}
-              onClick={() => handleChatSelect(chat.id)}
-            >
-              <div className="chatbox__author-content">
-                <div className="chatbox__author-thumb">
-                  <Image
-                    src={chatInfo.image}
-                    width={100}
-                    height={100}
-                    alt={chatInfo.name}
-                    className="object-cover w-full h-full"
-                    style={{ objectPosition: 'center', aspectRatio: '1/1' }}
-                  />
-                  
-                  {chatInfo.status === 'online' && (
-                    <span className="status-badge status-online"></span>
-                  )}
-                  {chatInfo.status === 'busy' && (
-                    <span className="status-badge status-busy"></span>
-                  )}
-                  {chatInfo.status === 'away' && (
-                    <span className="status-badge status-away"></span>
-                  )}
+                onClick={() => handleChatSelect(chat.id)}
+              >
+                <div className="chatbox__author-content">
+                  <div className="chatbox__author-thumb">
+                    <Image
+                      src={chatInfo.image}
+                      width={100}
+                      height={100}
+                      alt={chatInfo.name}
+                      className="object-cover w-full h-full"
+                      style={{ objectPosition: 'center', aspectRatio: '1/1' }}
+                    />
+
+                    {chatInfo.status === 'online' && (
+                      <span className="status-badge status-online"></span>
+                    )}
+                    {chatInfo.status === 'busy' && (
+                      <span className="status-badge status-busy"></span>
+                    )}
+                    {chatInfo.status === 'away' && (
+                      <span className="status-badge status-away"></span>
+                    )}
+                  </div>
+                  <div className="chatbox__author-info">
+                    <h5 className="text-base font-medium">{chatInfo.name}</h5>
+                    <p>{lastMessage}</p>
+                  </div>
                 </div>
-                <div className="chatbox__author-info">
-                  <h5 className="text-base font-medium">{chatInfo.name}</h5>
-                  <p>{lastMessage}</p>
+                <div className="chatbox__notification">
+                  <span className="time">{chat.lastMessage ? formatTime(chat.lastMessage.timestamp) : ''}</span>
+                  {renderUnreadCount(chat)}
                 </div>
               </div>
-              <div className="chatbox__notification">
-                <span className="time">{chat.lastMessage ? formatTime(chat.lastMessage.timestamp) : ''}</span>
-                {renderUnreadCount(chat)}
-              </div>
-            </div>
-          );
-        })}
+              
+            );
+          })}
+        </div>
       </div>
 
       {/* Create Group Modal */}

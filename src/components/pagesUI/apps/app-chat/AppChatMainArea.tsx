@@ -1,15 +1,26 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import ChatSidebar from "./ChatSidebar";
 import ChatWindow from "./ChatWindow";
 
 const AppChatMainArea = () => {
+  function removeFooter() {
+    const footer = document.querySelector('.footer');
+    if (footer) {
+      footer.remove();
+    }
+  }
+
+  useEffect(() => {
+    removeFooter();
+  }, []);
+  
   return (
     <>
       {/* -- App side area start -- */}
-      <div className="app__slide-wrapper">
-        <div className="chatbox__area mb-5">
-          <div className="chatbox__main-wrapper">
+      <div className="app__slide-wrapper !rounded-lg">
+        <div className="chatbox__area mb-5 !rounded-lg">
+          <div className="chatbox__main-wrapper !rounded-lg">
             <ChatSidebar />
             <ChatWindow />
           </div>

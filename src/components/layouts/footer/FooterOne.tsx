@@ -14,10 +14,10 @@ const DashboardFooter = () => {
         <div className="grid grid-cols-12">
           <div className="col-span-12 xl:col-span-12">
             <div className="card__footer flex justify-center">
-              {/* <p>
+              <p>
                 Copyright © {getCurrentYear()}{' '}
                 <span className="text-black dark:text-black-dark">Time Grid.</span> All rights reserved
-              </p> */}
+              </p>
             </div>
           </div>
         </div>
